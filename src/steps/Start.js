@@ -21,15 +21,24 @@ function Start({ next }) {
           <strong>Identifikačné číslo</strong>
         </label>
         <ErrorMessage name="idType" />
-        {/* Zadajte správne rodné číslo, BIČ alebo ID pridelené inou krajinou.{" "} */}
-        <div
-          className="govuk-radios govuk-radios--conditional"
-          data-module="govuk-radios"
-        >
-          <RadioInputField name="idType" value="slovak">
+        <div className="govuk-radios">
+          <RadioInputField
+            name="idType"
+            value="slovak"
+            conditionalRender={<InputField name="idSlovak" />}
+          >
             Slovenské rodné číslo alebo BIČ
           </RadioInputField>
-          <RadioInputField name="idType" value="foreign">
+          <RadioInputField
+            name="idType"
+            value="foreign"
+            conditionalRender={
+              <InputField
+                name="idForeign"
+                hint="Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ."
+              />
+            }
+          >
             ID pridelené inou krajinou
           </RadioInputField>
         </div>
@@ -41,12 +50,22 @@ function Start({ next }) {
 
 Start.initialValues = {
   firstName: "",
-  idType: "",
+  idType: "slovak",
+  idSlovak: "",
+  idForeign: "",
 };
 
 Start.validationSchema = Yup.object({
   firstName: Yup.string().max(5, "Must be 5 characters or less").required(),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
+  idSlovak: Yup.string().when(["idType"], {
+    is: "slovak",
+    then: Yup.string().required(),
+  }),
+  idForeign: Yup.string().when(["idType"], {
+    is: "foreign",
+    then: Yup.string().required(),
+  }),
 });
 
 export default Start;

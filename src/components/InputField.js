@@ -8,6 +8,7 @@ function InputField(props) {
       <label className="govuk-label">
         <strong>{props.label}</strong>
       </label>
+      <div class="govuk-hint">{props.hint}</div>
       <ErrorMessage name={props.name}>
         {(msg) => <span className="govuk-error-message">{msg}</span>}
       </ErrorMessage>
