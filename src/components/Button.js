@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 
 function Button({ label, onClick }) {
   return (
-    <button class="govuk-button js-uc-submit govuk-button--start" type="submit">
+    <button
+      className="govuk-button js-uc-submit govuk-button--start"
+      type="submit"
+    >
       <span>{label || "Pokračovať"}</span>
       <svg
-        class="govuk-button__start-icon"
+        className="govuk-button__start-icon"
         xmlns="http://www.w3.org/2000/svg"
         width="17.5"
         height="19"

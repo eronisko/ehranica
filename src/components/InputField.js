@@ -4,8 +4,8 @@ import { ErrorMessage, Field } from "formik";
 
 function InputField(props) {
   return (
-    <div class="govuk-form-group govuk-!-margin-bottom-3">
-      <label class="govuk-label">
+    <div className="govuk-form-group govuk-!-margin-bottom-3">
+      <label className="govuk-label">
         <strong>{props.label}</strong>
       </label>
       <ErrorMessage name={props.name}>
