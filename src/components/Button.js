@@ -8,7 +8,7 @@ function Button({ label, onClick }) {
       type="submit"
       onClick={onClick}
     >
-      <span>{label}</span>
+      <span>{label || "Pokračovať"}</span>
       <svg
         class="govuk-button__start-icon"
         xmlns="http://www.w3.org/2000/svg"

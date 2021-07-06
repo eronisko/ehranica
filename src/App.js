@@ -1,5 +1,9 @@
-import "./App.css";
 import { useEffect } from "react";
+import "./App.css";
+import { Wizard, Steps, Step } from "react-albus";
+
+import StartStep from "steps/Start";
+import Step2Step from "steps/Step2";
 
 function App() {
   useEffect(() => {
@@ -13,55 +17,21 @@ function App() {
       role="main"
     >
       <div className="govuk-width-container">
-        <div
-          className="govuk-accordion myClass"
-          data-module="govuk-accordion"
-          id="default-example"
-          data-attribute="value"
-        >
-          <div className="govuk-accordion__section ">
-            <div className="govuk-accordion__section-header">
-              <h2 className="govuk-accordion__section-heading">
-                <span
-                  className="govuk-accordion__section-button"
-                  id="default-example-heading-1"
-                >
-                  Section A
-                </span>
-              </h2>
-            </div>
-            <div
-              id="default-example-content-1"
-              className="govuk-accordion__section-content"
-              aria-labelledby="default-example-heading-1"
-            >
-              <ul className="govuk-list govuk-list--bullet">
-                <li>Example item 1</li>
-              </ul>
-            </div>
-          </div>
-          <div className="govuk-accordion__section ">
-            <div className="govuk-accordion__section-header">
-              <h2 className="govuk-accordion__section-heading">
-                <span
-                  className="govuk-accordion__section-button"
-                  id="default-example-heading-2"
-                >
-                  Section B
-                </span>
-              </h2>
-            </div>
-            <div
-              id="default-example-content-2"
-              className="govuk-accordion__section-content"
-              aria-labelledby="default-example-heading-2"
-            >
-              <ul className="govuk-list govuk-list--bullet">
-                <li>Example item 2</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
+          Registrácia pri príchode zo zahraničia
+        </h1>
+        <Wizard>
+          <Steps>
+            <Step
+              id="start"
+              render={(stepProps) => <StartStep {...stepProps} />}
+            />
+            <Step
+              id="step_2"
+              render={(stepProps) => <Step2Step {...stepProps} />}
+            />
+          </Steps>
+        </Wizard>
 
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <label className="govuk-label">
