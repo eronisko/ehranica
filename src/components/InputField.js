@@ -9,7 +9,7 @@ function InputField(props) {
         <strong>{props.label}</strong>
       </label>
       <ErrorMessage name={props.name}>
-        {(msg) => <span class="govuk-error-message">{msg}</span>}
+        {(msg) => <span className="govuk-error-message">{msg}</span>}
       </ErrorMessage>
       <Field
         name={props.name}

@@ -61,9 +61,9 @@ function App() {
               )}
             </Formik>
           )}
-        ></Wizard>
+        />
 
-        <div className="govuk-form-group govuk-!-margin-bottom-1">
+        {/* <div className="govuk-form-group govuk-!-margin-bottom-1">
           <label className="govuk-label">
             <strong>Identifikačné číslo</strong>
           </label>
@@ -140,7 +140,7 @@ function App() {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </main>
   );
