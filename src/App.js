@@ -1,9 +1,26 @@
 import { useEffect } from "react";
 import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
+import { Formik, Form } from "formik";
 
 import StartStep from "steps/Start";
 import Step2Step from "steps/Step2";
+
+function onSubmit(values, wizard) {
+  const { step, push } = wizard;
+
+  if (step.id === "StartStep") push("step_2");
+}
+
+// Partial validation schemas for each step
+const validationSchemas = {
+  StartStep: StartStep.validationSchema,
+};
+
+// Initial values combined from each step
+const initialValues = {
+  ...StartStep.initialValues,
+};
 
 function App() {
   useEffect(() => {
@@ -20,18 +37,31 @@ function App() {
         <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
           Registrácia pri príchode zo zahraničia
         </h1>
-        <Wizard>
-          <Steps>
-            <Step
-              id="start"
-              render={(stepProps) => <StartStep {...stepProps} />}
-            />
-            <Step
-              id="step_2"
-              render={(stepProps) => <Step2Step {...stepProps} />}
-            />
-          </Steps>
-        </Wizard>
+        <Wizard
+          render={(wizard) => (
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchemas[wizard.step.id]}
+              onSubmit={(values) => onSubmit(values, wizard)}
+            >
+              {({ values }) => (
+                <Form>
+                  <Steps>
+                    <Step
+                      id="StartStep"
+                      render={(stepProps) => <StartStep {...stepProps} />}
+                    />
+                    <Step
+                      id="step_2"
+                      render={(stepProps) => <Step2Step {...stepProps} />}
+                    />
+                  </Steps>
+                  <span>{values.name}</span>
+                </Form>
+              )}
+            </Formik>
+          )}
+        ></Wizard>
 
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <label className="govuk-label">
