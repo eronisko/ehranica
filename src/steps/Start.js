@@ -4,6 +4,7 @@ import InputField from "components/InputField";
 import DateField from "components/Date";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
+import AutocompleteField from "components/AutocompleteField";
 import ErrorMessage from "components/ErrorMessage";
 
 function Start({ next }) {
@@ -14,10 +15,8 @@ function Start({ next }) {
           Zadajte krajinu a dátum príchodu na Slovensko
         </h2>
       </legend>
-
       <InputField name="firstName" label="Meno" />
       <DateField name="arrivalDate" label="Dátum príchodu na Slovensko" />
-
       <div className="govuk-form-group govuk-!-margin-bottom-1">
         <label className="govuk-label">
           <strong>Identifikačné číslo</strong>
@@ -45,10 +44,17 @@ function Start({ next }) {
           </RadioInputField>
         </div>
       </div>
+      <AutocompleteField
+        name="originCountry"
+        label="Z ktorej krajiny ste prišli?"
+        options={countries}
+      />
       <Button />
     </div>
   );
 }
+
+const countries = ["France", "Germany", "United Kingdom"];
 
 const today = new Date();
 
@@ -62,6 +68,7 @@ Start.initialValues = {
   idType: "slovak",
   idSlovak: "",
   idForeign: "",
+  originCountry: "",
 };
 
 Yup.addMethod(Yup.object, "isValidArrivalDate", function (errorMessage) {
@@ -104,6 +111,7 @@ Start.validationSchema = Yup.object({
     is: "foreign",
     then: Yup.string().required("Zadajte správne ID pridelené inou krajinou."),
   }),
+  originCountry: Yup.string().oneOf(countries).required(),
 });
 
 export default Start;
