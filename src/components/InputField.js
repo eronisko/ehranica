@@ -1,11 +1,11 @@
 import React from "react";
-import { Field, useFormikContext } from "formik";
+import { Field, useField } from "formik";
 import cn from "classnames";
 import ErrorMessage from "components/ErrorMessage";
 
 function InputField(props) {
-  const { errors, touched } = useFormikContext();
-  const hasError = errors[props.name] && touched[props.name];
+  const [_field, meta] = useField(props.name);
+  const hasError = meta.error && meta.touched;
   const groupClassName = cn("govuk-form-group govuk-!-margin-bottom-3", {
     "govuk-form-group--error": hasError,
   });
