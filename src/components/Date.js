@@ -10,9 +10,9 @@ function Date(props) {
 
   return (
       <div className={`govuk-form-group ${errorClassName(props.name, 'govuk-form-group--error')}`}>
-          <label className="govuk-label" htmlFor={props.name + '-day'}>
+        {props.label && <label className="govuk-label" htmlFor={props.name + '-day'} >
               <strong>{props.label}</strong>
-          </label>
+          </label>}
           <span className="govuk-hint">Mesiac zadávajte ako číslo od 1 do 12.</span>
           <ErrorMessage name={props.name}>
               {(msg) => <span className="govuk-error-message">{msg}</span>}

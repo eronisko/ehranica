@@ -10,7 +10,7 @@ function CountryField(props) {
     <AutocompleteField
       name={props.name}
       onConfirm={onConfirm}
-      label="Z ktorej krajiny ste prišli?"
+      label={props.label}
       options={countries}
     />
   );

@@ -6,45 +6,70 @@ import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
 import CountryField from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
+import Fieldset from "components/Fieldset";
 
 function Start({ next }) {
   return (
     <div>
-      <legend className="govuk-fieldset__legend govuk-fieldset__legend--m">
-        <h2 className="govuk-fieldset__heading">
-          Zadajte krajinu a dátum príchodu na Slovensko
-        </h2>
-      </legend>
-      <InputField name="firstName" label="Meno" />
-      <DateField name="arrivalDate" label="Dátum príchodu na Slovensko" />
-      <div className="govuk-form-group govuk-!-margin-bottom-1">
-        <label className="govuk-label">
-          <strong>Identifikačné číslo</strong>
-        </label>
-        <ErrorMessage name="idType" />
-        <div className="govuk-radios">
-          <RadioInputField
-            name="idType"
-            value="slovak"
-            conditionalRender={<InputField name="idSlovak" />}
-          >
-            Slovenské rodné číslo alebo BIČ
-          </RadioInputField>
-          <RadioInputField
-            name="idType"
-            value="foreign"
-            conditionalRender={
-              <InputField
-                name="idForeign"
-                hint="Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ."
-              />
-            }
-          >
-            ID pridelené inou krajinou
-          </RadioInputField>
+      <Fieldset legend="Zadajte krajinu a dátum príchodu na Slovensko">
+        <DateField name="arrivalDate" />
+        {/*<CountryField name="originCountry" label="Z ktorej krajiny prichádzate?" />*/}
+      </Fieldset>
+
+      <Fieldset legend="Osobné údaje">
+        <InputField name="firstName" label="Meno" />
+        <InputField name="lastName" label="Priezvisko" />
+      </Fieldset>
+
+      <Fieldset legend="Identifikačné číslo">
+        <div className="govuk-form-group govuk-!-margin-bottom-1">
+          <ErrorMessage name="idType" />
+          <div className="govuk-radios">
+            <RadioInputField
+              name="idType"
+              value="slovak"
+              conditionalRender={<InputField name="idSlovak" />}
+            >
+              Slovenské rodné číslo alebo BIČ
+            </RadioInputField>
+            <RadioInputField
+              name="idType"
+              value="foreign"
+              conditionalRender={
+                <InputField
+                  name="idForeign"
+                  hint="Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ."
+                />
+              }
+            >
+              ID pridelené inou krajinou
+            </RadioInputField>
+          </div>
         </div>
-      </div>
-      <CountryField name="originCountry" />
+      </Fieldset>
+
+      <Fieldset legend="Dátum narodenia">
+        <DateField name="birthDate" />
+      </Fieldset>
+
+      <Fieldset legend="Emailová adresa a telefónne číslo">
+        <InputField
+          type="email"
+          name="email"
+          label="Emailová adresa"
+          hint="Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko." />
+        <InputField
+          name="phoneNumber"
+          label="Telefónne číslo (s ktorým ste pricestovali zo zahraničia)"
+          hint="Zadajte aj s medzinárodnou predvoľbou, napríklad +421 pre slovenské čísla."
+        />
+        <InputField
+          name="phoneNumberVerification"
+          label="Zadajte telefónne číslo ešte raz"
+          hint="Pozorne si skontrolujte, či ste vo Vašom telefónnom čísle omylom nezamenili niektorú číslicu."
+        />
+      </Fieldset>
+
       <Button />
     </div>
   );
@@ -54,19 +79,28 @@ const today = new Date();
 
 Start.initialValues = {
   firstName: "",
+  lastName: "",
   arrivalDate: {
     day: today.getDate(),
     month: today.getMonth() + 1,
     year: today.getFullYear(),
   },
+  birthDate: {
+    day: '',
+    month: '',
+    year: '',
+  },
   idType: "slovak",
   idSlovak: "",
   idForeign: "",
-  originCountry: "",
+  // originCountry: "",
+  email: "",
+  phoneNumber: "",
+  phoneNumberVerification: "",
 };
 
-Yup.addMethod(Yup.object, "isValidArrivalDate", function (errorMessage) {
-  return this.test(`test-card-type`, errorMessage, function (value) {
+Yup.addMethod(Yup.object, "isValidDate", function (errorMessage) {
+  return this.test(`test-valid-date`, errorMessage, function (value) {
     const { path, createError } = this;
 
     const day = parseInt(value.day);
@@ -91,10 +125,21 @@ Yup.addMethod(Yup.object, "isValidArrivalDate", function (errorMessage) {
   });
 });
 
+Yup.addMethod(Yup.string, "isAllowedPhoneNumber", function (errorMessage) {
+  return this.test(`test-allowed-phone-number`, errorMessage, function (value) {
+    const { path, createError } = this;
+    return (value && /^(\+|00)\d{8}\d*$/.test(value.replace(/[ \-\(\)]/g, ''))) || createError({ path, message: errorMessage });
+  });
+});
+
 Start.validationSchema = Yup.object({
   firstName: Yup.string().required("Zadajte meno."),
-  arrivalDate: Yup.object().isValidArrivalDate(
+  lastName: Yup.string().required("Zadajte priezvisko."),
+  arrivalDate: Yup.object().isValidDate(
     "Zadajte správny deň a mesiac príchodu."
+  ),
+  birthDate: Yup.object().isValidDate(
+    "Zadajte správny deň, mesiac a rok narodenia."
   ),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
@@ -105,7 +150,12 @@ Start.validationSchema = Yup.object({
     is: "foreign",
     then: Yup.string().required("Zadajte správne ID pridelené inou krajinou."),
   }),
-  originCountry: Yup.string().required(),
+  // originCountry: Yup.string().required(),
+  email: Yup.string().required('Zadajte správnu emailovú adresu.'),
+  phoneNumber: Yup.string().isAllowedPhoneNumber('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.'),
+  phoneNumberVerification: Yup.string()
+    .isAllowedPhoneNumber('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.')
+    .oneOf([Yup.ref('phoneNumber'), null], 'Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.')
 });
 
 export default Start;
