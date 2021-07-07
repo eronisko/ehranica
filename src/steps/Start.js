@@ -8,21 +8,22 @@ import CountryField from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
 import { validDate, allowedPhoneNumber, slovakId } from "validations/Validations";
+import { __ } from "@wordpress/i18n";
 
 function Start({ next }) {
   return (
     <div>
-      <Fieldset legend="Zadajte krajinu a dátum príchodu na Slovensko">
+      <Fieldset legend={__('Zadajte krajinu a dátum príchodu na Slovensko', 'ehranica')}>
         <DateField name="arrivalDate" />
         {/*<CountryField name="originCountry" label="Z ktorej krajiny prichádzate?" />*/}
       </Fieldset>
 
-      <Fieldset legend="Osobné údaje">
-        <InputField name="firstName" label="Meno" />
-        <InputField name="lastName" label="Priezvisko" />
+      <Fieldset legend={__('Osobné údaje', 'ehranica')}>
+        <InputField name="firstName" label={__('Meno', 'ehranica')} />
+        <InputField name="lastName" label={__('Priezvisko', 'ehranica')} />
       </Fieldset>
 
-      <Fieldset legend="Identifikačné číslo">
+      <Fieldset legend={__('Identifikačné číslo', 'ehranica')}>
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <ErrorMessage name="idType" />
           <div className="govuk-radios">
@@ -31,7 +32,7 @@ function Start({ next }) {
               value="slovak"
               conditionalRender={<InputField name="idSlovak" />}
             >
-              Slovenské rodné číslo alebo BIČ
+              {__('Slovenské rodné číslo alebo BIČ', 'ehranica')}
             </RadioInputField>
             <RadioInputField
               name="idType"
@@ -39,35 +40,35 @@ function Start({ next }) {
               conditionalRender={
                 <InputField
                   name="idForeign"
-                  hint="Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ."
+                  hint={__('Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ.', 'ehranica')}
                 />
               }
             >
-              ID pridelené inou krajinou
+              {__('ID pridelené inou krajinou', 'ehranica')}
             </RadioInputField>
           </div>
         </div>
       </Fieldset>
 
-      <Fieldset legend="Dátum narodenia">
+      <Fieldset legend={__('Dátum narodenia', 'ehranica')}>
         <DateField name="birthDate" />
       </Fieldset>
 
-      <Fieldset legend="Emailová adresa a telefónne číslo">
+      <Fieldset legend={__('Emailová adresa a telefónne číslo', 'ehranica')}>
         <InputField
           type="email"
           name="email"
-          label="Emailová adresa"
-          hint="Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko." />
+          label={__('Emailová adresa', 'ehranica')}
+          hint={__('Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko.', 'ehranica')} />
         <InputField
           name="phoneNumber"
-          label="Telefónne číslo (s ktorým ste pricestovali zo zahraničia)"
-          hint="Zadajte aj s medzinárodnou predvoľbou, napríklad +421 pre slovenské čísla."
+          label={__('Telefónne číslo (s ktorým ste pricestovali zo zahraničia)', 'ehranica')}
+          hint={__('Zadajte aj s medzinárodnou predvoľbou, napríklad +421 pre slovenské čísla.', 'ehranica')}
         />
         <InputField
           name="phoneNumberVerification"
-          label="Zadajte telefónne číslo ešte raz"
-          hint="Pozorne si skontrolujte, či ste vo Vašom telefónnom čísle omylom nezamenili niektorú číslicu."
+          label={__('Zadajte telefónne číslo ešte raz', 'ehranica')}
+          hint={__('Pozorne si skontrolujte, či ste vo Vašom telefónnom čísle omylom nezamenili niektorú číslicu.', 'ehranica')}
         />
       </Fieldset>
 
@@ -105,30 +106,30 @@ Yup.addMethod(Yup.string, "isAllowedPhoneNumber", allowedPhoneNumber);
 Yup.addMethod(Yup.string, "isValidSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
-  firstName: Yup.string().required("Zadajte meno."),
-  lastName: Yup.string().required("Zadajte priezvisko."),
+  firstName: Yup.string().required(__('Zadajte meno.', 'ehranica')),
+  lastName: Yup.string().required(__('Zadajte priezvisko.', 'ehranica')),
   arrivalDate: Yup.object().isValidDate(
-    "Zadajte správny deň a mesiac príchodu."
+    __('Zadajte správny deň a mesiac príchodu.', 'ehranica')
   ),
   birthDate: Yup.object().isValidDate(
-    "Zadajte správny deň, mesiac a rok narodenia."
+    __('Zadajte správny deň, mesiac a rok narodenia.', 'ehranica')
   ),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
     is: "slovak",
-    then: Yup.string().isValidSlovakId("Zadajte správne rodné číslo alebo BIČ."),
+    then: Yup.string().isValidSlovakId(__('Zadajte správne rodné číslo alebo BIČ.', 'ehranica')),
   }),
   idForeign: Yup.string().when(["idType"], {
     is: "foreign",
-    then: Yup.string().required("Zadajte správne ID pridelené inou krajinou."),
+    then: Yup.string().required(__('Zadajte správne ID pridelené inou krajinou.', 'ehranica')),
   }),
   // originCountry: Yup.string().required(),
-  email: Yup.string().required('Zadajte emailovú adresu.').email('Zadajte správnu emailovú adresu.'),
+  email: Yup.string().required(__('Zadajte emailovú adresu.', 'ehranica')).email(__('Zadajte správnu emailovú adresu.', 'ehranica')),
   phoneNumber: Yup.string().isAllowedPhoneNumber(
-    'Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.'),
+    __('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.', 'ehranica')),
   phoneNumberVerification: Yup.string()
-    .isAllowedPhoneNumber('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.')
-    .oneOf([Yup.ref('phoneNumber'), null], 'Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.')
+    .isAllowedPhoneNumber(__('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.', 'ehranica'))
+    .oneOf([Yup.ref('phoneNumber'), null], __('Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.', 'ehranica'))
 });
 
 export default Start;
