@@ -18,7 +18,7 @@ function onSubmit(values, wizard) {
 // Partial validation schemas for each step
 const validationSchemas = {
   StartStep: StartStep.validationSchema,
-  Step2Step: Step2Step.validationSchema,
+  Step2: Step2Step.validationSchema,
 };
 
 // Initial values combined from each step
@@ -40,7 +40,7 @@ function App() {
     >
       <div className="govuk-width-container">
         <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
-          {__('Registrácia pri príchode zo zahraničia', 'ehranica')}
+          {__("Registrácia pri príchode zo zahraničia", "ehranica")}
         </h1>
         <Wizard
           render={(wizard) => (
@@ -51,7 +51,7 @@ function App() {
             >
               <Form>
                 <Steps>
-                  {/*<Step id="StartStep" render={() => <StartStep />} />*/}
+                  <Step id="StartStep" render={() => <StartStep />} />
                   <Step id="Step2" render={() => <Step2Step />} />
                   <Step id="Step3" render={() => <Step3Step />} />
                 </Steps>

@@ -138,18 +138,20 @@ Yup.addMethod(Yup.string, "allowedPhoneNumber", allowedPhoneNumber);
 Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
-  firstName: Yup.string().required(__('Zadajte meno.', 'ehranica')),
-  lastName: Yup.string().required(__('Zadajte priezvisko.', 'ehranica')),
+  firstName: Yup.string().required(__("Zadajte meno.", "ehranica")),
+  lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
   arrivalDate: Yup.object().validDate(
-    __('Zadajte správny deň a mesiac príchodu.', 'ehranica')
+    __("Zadajte správny deň a mesiac príchodu.", "ehranica")
   ),
   birthDate: Yup.object().validDate(
-    __('Zadajte správny deň, mesiac a rok narodenia.', 'ehranica')
+    __("Zadajte správny deň, mesiac a rok narodenia.", "ehranica")
   ),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
     is: "slovak",
-    then: Yup.string().validSlovakId(__('Zadajte správne rodné číslo alebo BIČ.', 'ehranica')),
+    then: Yup.string().validSlovakId(
+      __("Zadajte správne rodné číslo alebo BIČ.", "ehranica")
+    ),
   }),
   idForeign: Yup.string().when(["idType"], {
     is: "foreign",
@@ -158,12 +160,29 @@ Start.validationSchema = Yup.object({
     ),
   }),
   // originCountry: Yup.string().required(),
-  email: Yup.string().required(__('Zadajte emailovú adresu.', 'ehranica')).email(__('Zadajte správnu emailovú adresu.', 'ehranica')),
+  email: Yup.string()
+    .required(__("Zadajte emailovú adresu.", "ehranica"))
+    .email(__("Zadajte správnu emailovú adresu.", "ehranica")),
   phoneNumber: Yup.string().allowedPhoneNumber(
-    __('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.', 'ehranica')),
+    __(
+      "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
+      "ehranica"
+    )
+  ),
   phoneNumberVerification: Yup.string()
-    .allowedPhoneNumber(__('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.', 'ehranica'))
-    .oneOf([Yup.ref('phoneNumber'), null], __('Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.', 'ehranica'))
+    .allowedPhoneNumber(
+      __(
+        "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
+        "ehranica"
+      )
+    )
+    .oneOf(
+      [Yup.ref("phoneNumber"), null],
+      __(
+        "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
+        "ehranica"
+      )
+    ),
 });
 
 export default Start;

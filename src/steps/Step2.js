@@ -41,12 +41,14 @@ function Step2({ wizard }) {
   );
 }
 
-Step2.initialValues = {
+let Step2WithWizard = withWizard(Step2);
+
+Step2WithWizard.initialValues = {
   under18HouseholdMemberIsolation: ''
 };
 
-Step2.validationSchema = Yup.object({
+Step2WithWizard.validationSchema = Yup.object({
   under18HouseholdMemberIsolation: Yup.string().required()
 });
 
-export default withWizard(Step2);
+export default Step2WithWizard;
