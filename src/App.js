@@ -3,7 +3,7 @@ import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { Formik, Form } from "formik";
 
-import StartStep, { initializeValues as initializeStartValues } from "steps/Start";
+import StartStep from "steps/Start";
 import Step2Step from "steps/Step2";
 
 function onSubmit(values, wizard) {
@@ -26,8 +26,6 @@ function App() {
   useEffect(() => {
     window.GOVUKFrontend.initAll();
   });
-
-  // let initialValues = initializeStartValues(initialValues);
 
   return (
     <main
