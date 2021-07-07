@@ -6,21 +6,25 @@ import { __ } from "@wordpress/i18n";
 
 import StartStep from "steps/Start";
 import Step2Step from "steps/Step2";
+import Step3Step from "steps/Step3";
 
 function onSubmit(values, wizard) {
   const { step, push } = wizard;
 
-  if (step.id === "StartStep") push("step_2");
+  if (step.id === "StartStep") push("Step2");
+  if (step.id === "Step2") push("Step3");
 }
 
 // Partial validation schemas for each step
 const validationSchemas = {
   StartStep: StartStep.validationSchema,
+  Step2Step: Step2Step.validationSchema,
 };
 
 // Initial values combined from each step
 let initialValues = {
   ...StartStep.initialValues,
+  ...Step2Step.initialValues,
 };
 
 function App() {
@@ -47,8 +51,9 @@ function App() {
             >
               <Form>
                 <Steps>
-                  <Step id="StartStep" render={() => <StartStep />} />
-                  <Step id="step_2" render={() => <Step2Step />} />
+                  {/*<Step id="StartStep" render={() => <StartStep />} />*/}
+                  <Step id="Step2" render={() => <Step2Step />} />
+                  <Step id="Step3" render={() => <Step3Step />} />
                 </Steps>
               </Form>
             </Formik>
