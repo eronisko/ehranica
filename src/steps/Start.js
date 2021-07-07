@@ -116,7 +116,7 @@ Start.validationSchema = Yup.object({
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
     is: "slovak",
-    then: Yup.string().required("Zadajte správne rodné číslo alebo BIČ."),
+    then: Yup.string().isValidSlovakId("Zadajte správne rodné číslo alebo BIČ."),
   }),
   idForeign: Yup.string().when(["idType"], {
     is: "foreign",
