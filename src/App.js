@@ -9,11 +9,15 @@ import Step2Step from "steps/Step2";
 import Step3Step from "steps/Step3";
 import QuarantineRegistrationStep from "steps/QuarantineRegistration";
 
+import StepFinalStep from "steps/StepFinal";
+
 function onSubmit(values, wizard) {
   const { step, push } = wizard;
 
   if (step.id === "StartStep") push("Step2");
   if (step.id === "Step2") push("Step3");
+  // if (step.id === "Step3") push("TestApi");
+  if (step.id === "Step3") push("StepFinal");
 }
 
 // Partial validation schemas for each step
@@ -21,6 +25,7 @@ const validationSchemas = {
   StartStep: StartStep.validationSchema,
   Step2: Step2Step.validationSchema,
   QuarantineRegistration: QuarantineRegistrationStep.validationSchema,
+  StepFinal: StepFinalStep.validationSchema,
 };
 
 // Initial values combined from each step
@@ -28,6 +33,7 @@ let initialValues = {
   ...StartStep.initialValues,
   ...Step2Step.initialValues,
   ...QuarantineRegistrationStep.initialValues,
+  ...StepFinalStep.initialValues,
 };
 
 function App() {
@@ -54,12 +60,16 @@ function App() {
             >
               <Form>
                 <Steps>
-                  <Step id="StartStep" render={() => <StartStep />} />
+                  {/* <Step id="StartStep" render={() => <StartStep />} /> */}
                   <Step id="Step2" render={() => <Step2Step />} />
                   <Step id="Step3" render={() => <Step3Step />} />
                   <Step
                     id="QuarantineRegistration"
                     render={() => <QuarantineRegistrationStep />}
+                  />
+                  <Step
+                    id="StepFinal"
+                    render={() => <StepFinalStep />}
                   />
                 </Steps>
               </Form>
