@@ -7,6 +7,7 @@ import { __ } from "@wordpress/i18n";
 import StartStep from "steps/Start";
 import Step2Step from "steps/Step2";
 import Step3Step from "steps/Step3";
+import QuarantineRegistrationStep from "steps/QuarantineRegistration";
 
 function onSubmit(values, wizard) {
   const { step, push } = wizard;
@@ -19,12 +20,14 @@ function onSubmit(values, wizard) {
 const validationSchemas = {
   StartStep: StartStep.validationSchema,
   Step2: Step2Step.validationSchema,
+  QuarantineRegistration: QuarantineRegistrationStep.validationSchema,
 };
 
 // Initial values combined from each step
 let initialValues = {
   ...StartStep.initialValues,
   ...Step2Step.initialValues,
+  ...QuarantineRegistrationStep.initialValues,
 };
 
 function App() {
@@ -54,6 +57,10 @@ function App() {
                   <Step id="StartStep" render={() => <StartStep />} />
                   <Step id="Step2" render={() => <Step2Step />} />
                   <Step id="Step3" render={() => <Step3Step />} />
+                  <Step
+                    id="QuarantineRegistration"
+                    render={() => <QuarantineRegistrationStep />}
+                  />
                 </Steps>
               </Form>
             </Formik>
