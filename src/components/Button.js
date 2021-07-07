@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { __ } from "@wordpress/i18n";
 
 function Button({ label, onClick }) {
   return (
@@ -7,7 +8,7 @@ function Button({ label, onClick }) {
       className="govuk-button js-uc-submit govuk-button--start"
       type="submit"
     >
-      <span>{label || "Pokračovať"}</span>
+      <span>{label || __('Pokračovať', 'ehranica')}</span>
       <svg
         className="govuk-button__start-icon"
         xmlns="http://www.w3.org/2000/svg"

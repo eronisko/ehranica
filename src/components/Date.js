@@ -1,5 +1,6 @@
 import React from "react";
 import {ErrorMessage, Field, useFormikContext} from "formik";
+import { __ } from "@wordpress/i18n";
 
 function Date(props) {
     const { errors, touched } = useFormikContext();
@@ -13,7 +14,7 @@ function Date(props) {
         {props.label && <label className="govuk-label" htmlFor={props.name + '-day'} >
               <strong>{props.label}</strong>
           </label>}
-          <span className="govuk-hint">Mesiac zadávajte ako číslo od 1 do 12.</span>
+          <span className="govuk-hint">{__('Mesiac zadávajte ako číslo od 1 do 12.', 'ehranica')}</span>
           <ErrorMessage name={props.name}>
               {(msg) => <span className="govuk-error-message">{msg}</span>}
           </ErrorMessage>
@@ -21,7 +22,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'day'}>
-                          Deň
+                          {__('Deň', 'ehranica')}
                       </label>
                       <Field
                           name={props.name + '.day'}
@@ -40,7 +41,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'month'}>
-                          Mesiac
+                          {__('Mesiac', 'ehranica')}
                       </label>
                       <Field
                           name={props.name + '.month'}
@@ -59,7 +60,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'year'}>
-                          Rok
+                          {__('Rok', 'ehranica')}
                       </label>
                       <Field
                           name={props.name + '.year'}
