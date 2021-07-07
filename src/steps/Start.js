@@ -116,14 +116,14 @@ Start.validationSchema = Yup.object({
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
     is: "slovak",
-    then: Yup.string().required("Zadajte správne rodné číslo alebo BIČ."),
+    then: Yup.string().isValidSlovakId("Zadajte správne rodné číslo alebo BIČ."),
   }),
   idForeign: Yup.string().when(["idType"], {
     is: "foreign",
     then: Yup.string().required("Zadajte správne ID pridelené inou krajinou."),
   }),
   // originCountry: Yup.string().required(),
-  email: Yup.string().required('Zadajte správnu emailovú adresu.'),
+  email: Yup.string().required('Zadajte emailovú adresu.').email('Zadajte správnu emailovú adresu.'),
   phoneNumber: Yup.string().isAllowedPhoneNumber(
     'Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.'),
   phoneNumberVerification: Yup.string()
