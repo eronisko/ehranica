@@ -7,6 +7,7 @@ import RadioInputField from "components/RadioInputField";
 import CountryField from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
+import { validDate, allowedPhoneNumber, slovakId } from "validations/Validations";
 
 function Start({ next }) {
   return (
@@ -99,38 +100,9 @@ Start.initialValues = {
   phoneNumberVerification: "",
 };
 
-Yup.addMethod(Yup.object, "isValidDate", function (errorMessage) {
-  return this.test(`test-valid-date`, errorMessage, function (value) {
-    const { path, createError } = this;
-
-    const day = parseInt(value.day);
-    const month = parseInt(value.month);
-    const year = parseInt(value.year);
-
-    let result = [];
-
-    if (isNaN(day) || day < 1 || day > 31) {
-      result.push("day");
-    }
-
-    if (isNaN(month) || month < 1 || month > 12) {
-      result.push("month");
-    }
-
-    if (isNaN(year) || year < 1900 || year > 2030) {
-      result.push("year");
-    }
-
-    return 0 === result.length || createError({ path, message: errorMessage });
-  });
-});
-
-Yup.addMethod(Yup.string, "isAllowedPhoneNumber", function (errorMessage) {
-  return this.test(`test-allowed-phone-number`, errorMessage, function (value) {
-    const { path, createError } = this;
-    return (value && /^(\+|00)\d{8}\d*$/.test(value.replace(/[ \-\(\)]/g, ''))) || createError({ path, message: errorMessage });
-  });
-});
+Yup.addMethod(Yup.object, "isValidDate", validDate);
+Yup.addMethod(Yup.string, "isAllowedPhoneNumber", allowedPhoneNumber);
+Yup.addMethod(Yup.string, "isValidSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
   firstName: Yup.string().required("Zadajte meno."),
@@ -152,7 +124,8 @@ Start.validationSchema = Yup.object({
   }),
   // originCountry: Yup.string().required(),
   email: Yup.string().required('Zadajte správnu emailovú adresu.'),
-  phoneNumber: Yup.string().isAllowedPhoneNumber('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.'),
+  phoneNumber: Yup.string().isAllowedPhoneNumber(
+    'Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.'),
   phoneNumberVerification: Yup.string()
     .isAllowedPhoneNumber('Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.')
     .oneOf([Yup.ref('phoneNumber'), null], 'Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.')
