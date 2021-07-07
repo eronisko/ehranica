@@ -13,6 +13,7 @@ import {
 } from "validations/Validations";
 import { __ } from "@wordpress/i18n";
 import Accordion from "components/Accordion";
+import CheckboxField from "components/CheckboxField";
 
 function Start({ next }) {
   return (
@@ -96,7 +97,7 @@ function Start({ next }) {
 
       <Accordion.Group>
         <Accordion.Section title="Accordion title">
-          <p class="govuk-body">
+          <p className="govuk-body">
             This is the content for Writing well for specialists.
           </p>
         </Accordion.Section>
@@ -104,6 +105,20 @@ function Start({ next }) {
           <p class="govuk-body">This is the other content.</p>
         </Accordion.Section>
       </Accordion.Group>
+
+      <Fieldset legend={__("Potvrdenia", "ehranica")}>
+        <CheckboxField
+          name="personalDataConsent"
+          hint={
+            <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
+              Poučenie o ochrane osobných údajov
+            </a>
+          }
+        >
+          Oboznámil(a) som sa s Poučením o ochrane osobných údajov
+        </CheckboxField>
+      </Fieldset>
+
       <Button />
     </div>
   );
@@ -131,6 +146,7 @@ Start.initialValues = {
   email: "",
   phoneNumber: "",
   phoneNumberVerification: "",
+  personalDataConsent: false,
 };
 
 Yup.addMethod(Yup.object, "validDate", validDate);
@@ -183,6 +199,10 @@ Start.validationSchema = Yup.object({
         "ehranica"
       )
     ),
+  personalDataConsent: Yup.bool().oneOf(
+    [true],
+    __("Prosím, akceptujte súhlas so spracovaním osobných údajov.", "ehranica")
+  ),
 });
 
 export default Start;
