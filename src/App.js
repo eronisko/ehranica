@@ -3,7 +3,7 @@ import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { Formik, Form } from "formik";
 
-import StartStep from "steps/Start";
+import StartStep, { initializeValues as initializeStartValues } from "steps/Start";
 import Step2Step from "steps/Step2";
 
 function onSubmit(values, wizard) {
@@ -18,7 +18,7 @@ const validationSchemas = {
 };
 
 // Initial values combined from each step
-const initialValues = {
+let initialValues = {
   ...StartStep.initialValues,
 };
 
@@ -26,6 +26,8 @@ function App() {
   useEffect(() => {
     window.GOVUKFrontend.initAll();
   });
+
+  // let initialValues = initializeStartValues(initialValues);
 
   return (
     <main
@@ -56,7 +58,6 @@ function App() {
                       render={(stepProps) => <Step2Step {...stepProps} />}
                     />
                   </Steps>
-                  <span>{values.name}</span>
                 </Form>
               )}
             </Formik>
