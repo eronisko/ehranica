@@ -44,20 +44,12 @@ function App() {
               validationSchema={validationSchemas[wizard.step.id]}
               onSubmit={(values) => onSubmit(values, wizard)}
             >
-              {({ values }) => (
-                <Form>
-                  <Steps>
-                    <Step
-                      id="StartStep"
-                      render={(stepProps) => <StartStep {...stepProps} />}
-                    />
-                    <Step
-                      id="step_2"
-                      render={(stepProps) => <Step2Step {...stepProps} />}
-                    />
-                  </Steps>
-                </Form>
-              )}
+              <Form>
+                <Steps>
+                  <Step id="StartStep" render={() => <StartStep />} />
+                  <Step id="step_2" render={() => <Step2Step />} />
+                </Steps>
+              </Form>
             </Formik>
           )}
         />

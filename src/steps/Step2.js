@@ -1,9 +1,11 @@
 import React from "react";
+import { withWizard } from "react-albus";
 
-function Step2({ next, previous }) {
+function Step2({ wizard }) {
   return (
     <div>
-      <a className="govuk-back-link" href="#" onClick={previous}>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a className="govuk-back-link" href="#" onClick={wizard.previous}>
         Späť
       </a>
       <br />
@@ -12,4 +14,4 @@ function Step2({ next, previous }) {
   );
 }
 
-export default Step2;
+export default withWizard(Step2);
