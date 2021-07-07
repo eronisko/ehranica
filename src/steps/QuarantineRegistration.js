@@ -10,11 +10,15 @@ import CheckboxField from "components/CheckboxField";
 import TextareaField from "components/TextareaField";
 import FormGroup from "components/FormGroup";
 import { useFormikContext } from "formik";
+import { withWizard } from "react-albus";
 
-function QuarantineRegistration() {
+function QuarantineRegistration({ wizard }) {
   const { values } = useFormikContext();
   return (
     <>
+      <a className="govuk-back-link" href="#" onClick={wizard.previous}>
+        {__("Späť")}
+      </a>
       <p className="govuk-body">
         {__(
           "Dokončite registráciu do ehranice. Po vstupe na Slovensko je nutné ostať v domácej izolácii.",
@@ -170,7 +174,9 @@ function QuarantineRegistration() {
   );
 }
 
-QuarantineRegistration.initialValues = {
+let step = withWizard(QuarantineRegistration);
+
+step.initialValues = {
   insuranceCompany: "",
   quarantineAddress: {
     city: "",
@@ -196,7 +202,7 @@ const addressSchema = Yup.object({
   zip: Yup.string().required(__("Zadajte PSČ.", "ehranica")),
 });
 
-QuarantineRegistration.validationSchema = Yup.object({
+step.validationSchema = Yup.object({
   quarantineAddress: addressSchema.required(),
 
   permanentAddress: Yup.object().when(
@@ -220,4 +226,4 @@ QuarantineRegistration.validationSchema = Yup.object({
   ),
 });
 
-export default QuarantineRegistration;
+export default step;

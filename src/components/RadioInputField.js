@@ -2,9 +2,18 @@ import React from "react";
 import { Field, useFormikContext } from "formik";
 import cn from "classnames";
 
-function RadioInputField({ name, value, conditionalRender, children }) {
+function RadioInputField({
+  name,
+  value,
+  conditionalRender,
+  dangerouslySetInnerHTML,
+  insetText,
+  alwaysExpandedInsetText,
+  children,
+}) {
   const { values: formValues } = useFormikContext();
 
+  alwaysExpandedInsetText = alwaysExpandedInsetText || false;
   const conditionalExpanded = formValues[name] === value;
 
   const id = `${name}-${value}`;
@@ -25,9 +34,19 @@ function RadioInputField({ name, value, conditionalRender, children }) {
           aria-controls={conditionalId}
           aria-expanded={conditionalExpanded}
         />
-        <label className="govuk-label govuk-radios__label" htmlFor={id}>
+        <label
+          className="govuk-label govuk-radios__label"
+          htmlFor={id}
+          dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+        >
           {children}
         </label>
+        {insetText && (conditionalExpanded || alwaysExpandedInsetText) && (
+          <div
+            className="govuk-inset-text"
+            dangerouslySetInnerHTML={{ __html: insetText }}
+          />
+        )}
       </div>
       {conditionalRender && (
         <div className={conditionalClasses} id={conditionalId}>

@@ -1,40 +1,47 @@
 import React, { useRef, useEffect } from "react";
+import uuid from "react-uuid";
 
 function Group(props) {
   const accordion = useRef();
 
   useEffect(() => {
-    new window.GOVUKFrontend.Accordion(accordion.current).init();
+    // new window.GOVUKFrontend.Accordion(accordion.current).init();
   });
 
   return (
-    <div ref={accordion} class="govuk-accordion" data-module="govuk-accordion">
+    <div
+      ref={accordion}
+      // className="govuk-accordion"
+      // data-module="govuk-accordion"
+    >
       {props.children}
     </div>
   );
 }
 
 function Section({ title, children }) {
+  const id = uuid();
   return (
-    <div class="govuk-accordion__section ">
-      <div class="govuk-accordion__section-header">
-        <h2 class="govuk-accordion__section-heading">
-          <span
-            class="govuk-accordion__section-button"
-            // id="accordion-default-heading-2"
-          >
-            {title}
-          </span>
-        </h2>
-      </div>
-      <div
-        id="accordion-default-content-2"
-        class="govuk-accordion__section-content"
-        // aria-labelledby="accordion-default-heading-2"
-      >
-        {children}
-      </div>
+    <div>
+      <h4>{title}</h4>
+      {children}
     </div>
+    // <div className="govuk-accordion__section ">
+    //   <div className="govuk-accordion__section-header">
+    //     <h2 className="govuk-accordion__section-heading">
+    //           <span className="govuk-accordion__section-button" id={id}>
+    //             {title}
+    //           </span>
+    //     </h2>
+    //   </div>
+    //   <div
+    //     id="accordion-default-content-2"
+    //     className="govuk-accordion__section-content"
+    //     aria-labelledby={id}
+    //   >
+    //     {children}
+    //   </div>
+    // </div>
   );
 }
 

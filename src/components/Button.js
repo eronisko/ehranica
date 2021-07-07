@@ -2,13 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { __ } from "@wordpress/i18n";
 
-function Button({ label, onClick }) {
+function Button({ label, disabled }) {
+  disabled = disabled || false;
   return (
     <button
-      className="govuk-button js-uc-submit govuk-button--start"
+      className={`govuk-button js-uc-submit govuk-button--start ${
+        disabled ? "govuk-button govuk-button--disabled" : ""
+      } `}
       type="submit"
+      disabled={disabled}
+      aria-disabled={disabled}
     >
-      <span>{label || __('Pokračovať', 'ehranica')}</span>
+      <span>{label || __("Pokračovať", "ehranica")}</span>
       <svg
         className="govuk-button__start-icon"
         xmlns="http://www.w3.org/2000/svg"

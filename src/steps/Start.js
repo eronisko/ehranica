@@ -99,30 +99,6 @@ function Start({ next }) {
         />
       </Fieldset>
 
-      <Accordion.Group>
-        <Accordion.Section title="Accordion title">
-          <p className="govuk-body">
-            This is the content for Writing well for specialists.
-          </p>
-        </Accordion.Section>
-        <Accordion.Section title="Accordion title 2">
-          <p class="govuk-body">This is the other content.</p>
-        </Accordion.Section>
-      </Accordion.Group>
-
-      <Fieldset legend={__("Potvrdenia", "ehranica")}>
-        <CheckboxField
-          name="personalDataConsent"
-          hint={
-            <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
-              Poučenie o ochrane osobných údajov
-            </a>
-          }
-        >
-          Oboznámil(a) som sa s Poučením o ochrane osobných údajov
-        </CheckboxField>
-      </Fieldset>
-
       <Button />
     </div>
   );
@@ -139,9 +115,9 @@ Start.initialValues = {
     year: today.getFullYear(),
   },
   birthDate: {
-    day: "",
-    month: "",
-    year: "",
+    day: 13,
+    month: 1,
+    year: 1982,
   },
   idType: "slovak",
   idSlovak: "",
@@ -150,7 +126,6 @@ Start.initialValues = {
   email: "",
   phoneNumber: "",
   phoneNumberVerification: "",
-  personalDataConsent: false,
 };
 
 Yup.addMethod(Yup.object, "validDate", validDate);
@@ -203,10 +178,6 @@ Start.validationSchema = Yup.object({
         "ehranica"
       )
     ),
-  personalDataConsent: Yup.bool().oneOf(
-    [true],
-    __("Prosím, akceptujte súhlas so spracovaním osobných údajov.", "ehranica")
-  ),
 });
 
 export default Start;
