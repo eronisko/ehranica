@@ -4,7 +4,7 @@ import InputField from "components/InputField";
 import DateField from "components/Date";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
-import AutocompleteField from "components/AutocompleteField";
+import CountryField from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 
 function Start({ next }) {
@@ -44,17 +44,11 @@ function Start({ next }) {
           </RadioInputField>
         </div>
       </div>
-      <AutocompleteField
-        name="originCountry"
-        label="Z ktorej krajiny ste prišli?"
-        options={countries}
-      />
+      <CountryField name="originCountry" />
       <Button />
     </div>
   );
 }
-
-const countries = ["France", "Germany", "United Kingdom"];
 
 const today = new Date();
 
@@ -111,7 +105,7 @@ Start.validationSchema = Yup.object({
     is: "foreign",
     then: Yup.string().required("Zadajte správne ID pridelené inou krajinou."),
   }),
-  originCountry: Yup.string().oneOf(countries).required(),
+  originCountry: Yup.string().required(),
 });
 
 export default Start;

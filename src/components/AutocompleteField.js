@@ -25,6 +25,15 @@ function AutocompleteField(props) {
     populateResults(filteredResults);
   }
 
+  function onConfirm(value) {
+    props.onConfirm(value);
+    setValue(value);
+  }
+
+  function onNotFound() {
+    return 'not found';
+  }
+
   const groupClassName = cn("govuk-form-group govuk-!-margin-bottom-3", {
     "govuk-form-group--error": hasError,
   });
@@ -39,7 +48,10 @@ function AutocompleteField(props) {
         id={id}
         source={suggest}
         showAllValues
-        onConfirm={setValue}
+        onConfirm={onConfirm}
+        tNoResults={onNotFound}
+        // confirmOnBlur={false}
+        // autoselect={true}
         value={value}
         dropdownArrow={(config) => (
           <svg
