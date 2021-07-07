@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { Formik, Form } from "formik";
+import { __ } from "@wordpress/i18n";
 
 import StartStep from "steps/Start";
 import Step2Step from "steps/Step2";
@@ -35,7 +36,7 @@ function App() {
     >
       <div className="govuk-width-container">
         <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
-          Registrácia pri príchode zo zahraničia
+          {__('Registrácia pri príchode zo zahraničia', 'ehranica')}
         </h1>
         <Wizard
           render={(wizard) => (
