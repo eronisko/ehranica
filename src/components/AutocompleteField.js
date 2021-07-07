@@ -31,7 +31,7 @@ function AutocompleteField(props) {
   }
 
   function onNotFound() {
-    return 'not found';
+    return "not found";
   }
 
   const groupClassName = cn("govuk-form-group govuk-!-margin-bottom-3", {
@@ -46,10 +46,11 @@ function AutocompleteField(props) {
       <ErrorMessage name={props.name} />
       <Autocomplete
         id={id}
-        source={suggest}
+        source={props.source}
+        templates={props.templates}
         showAllValues
         onConfirm={onConfirm}
-        tNoResults={onNotFound}
+        tNoResults={props.tNoResults}
         // confirmOnBlur={false}
         // autoselect={true}
         value={value}

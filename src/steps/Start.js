@@ -4,6 +4,7 @@ import InputField from "components/InputField";
 import DateField from "components/Date";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
+import CountryField from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
 import {
@@ -22,7 +23,10 @@ function Start({ next }) {
         legend={__("Zadajte krajinu a dátum príchodu na Slovensko", "ehranica")}
       >
         <DateField name="arrivalDate" />
-        {/*<CountryField name="originCountry" label="Z ktorej krajiny prichádzate?" />*/}
+        <CountryField
+          name="originCountry"
+          label="Z ktorej krajiny prichádzate?"
+        />
       </Fieldset>
 
       <Fieldset legend={__("Osobné údaje", "ehranica")}>
