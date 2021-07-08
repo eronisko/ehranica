@@ -3,17 +3,15 @@ import { withWizard } from "react-albus";
 import Fieldset from "../components/Fieldset";
 import ErrorMessage from "../components/ErrorMessage";
 import RadioInputField from "../components/RadioInputField";
-import InputField from "../components/InputField";
 import * as Yup from "yup";
 import Button from "../components/Button";
 import { Field, useFormikContext } from "formik";
-import { age } from "helpers/Helpers";
 
-import {useTranslation} from "react-i18next";
-import {__} from "@wordpress/i18n";
+import { useTranslation } from "react-i18next";
+import { __ } from "@wordpress/i18n";
 
 function AgeDependent({ wizard }) {
-  const {t, i18n} = useTranslation('common');
+  const { t, i18n } = useTranslation("common");
   const { values } = useFormikContext();
   const isAdult = values.isAdult;
   const isButtonDisabled =
@@ -79,9 +77,7 @@ function AgeDependent({ wizard }) {
       )}
 
       {!values.isAdult && (
-        <Fieldset
-          legend={t("ageDependent.noAdultLegend")}
-        >
+        <Fieldset legend={t("ageDependent.noAdultLegend")}>
           <div className="govuk-form-group govuk-!-margin-bottom-1">
             <ErrorMessage name="hasHouseholdMemberInIsolation" />
             <div className="govuk-radios">
@@ -113,11 +109,15 @@ step.initialValues = {
 step.validationSchema = Yup.object({
   isVaccinated: Yup.string().when(["isAdult"], {
     is: true,
-    then: Yup.string().required(__("Vyberte si jednu z možností.")/*__("Vyberte si jednu z možností.")*/),
+    then: Yup.string().required(
+      __("Vyberte si jednu z možností.") /*__("Vyberte si jednu z možností.")*/
+    ),
   }),
   hasHouseholdMemberInIsolation: Yup.string().when(["isAdult"], {
     is: false,
-    then: Yup.string().required(__("Vyberte si jednu z možností.")),/*t("ageDependent.chooseOne")*/
+    then: Yup.string().required(
+      __("Vyberte si jednu z možností.")
+    ) /*t("ageDependent.chooseOne")*/,
   }),
 });
 
