@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { Formik, Form } from "formik";
@@ -48,7 +47,7 @@ function onSubmit(values, wizard) {
   if (step.id === "Consents") {
     push("StepFinal");
   }
-  
+
   if (step.id === "StepFinal") {
     push("StartStep");
   }
@@ -74,10 +73,6 @@ let initialValues = {
 };
 
 function App() {
-  useEffect(() => {
-    window.GOVUKFrontend.initAll();
-  });
-
   return (
     <main
       className="govuk-main-wrapper govuk-!-padding-top-6 govuk-!-padding-bottom-6 govuk-body"
