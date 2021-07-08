@@ -1,5 +1,4 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../../components/Fieldset";
 import RadioInputField from "../../../components/RadioInputField";
 import { useTranslation } from "react-i18next";

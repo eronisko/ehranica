@@ -11,7 +11,7 @@ function Ministry() {
     <div>
       <Fieldset legend={t("exceptions.withoutTest.legendMinistry")}>
         <Accordion.Group>
-          <Accordion.Section title={t("exceptions.withoutTest.legendMinistryOfHealth")}>
+          <Accordion.Section title={t("ministry.ministryOfHealth")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
@@ -24,7 +24,7 @@ function Ministry() {
               </div>
             </div>
           </Accordion.Section>
-          <Accordion.Section title={t("exceptions.withoutTest.legendMinistryOfInterior")}>
+          <Accordion.Section title={t("ministry.ministryOfInterior")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
@@ -58,7 +58,7 @@ function Ministry() {
               </div>
             </div>
           </Accordion.Section>
-          <Accordion.Section title={t("exceptions.withoutTest.legendMinistryOfDefence")}>
+          <Accordion.Section title={t("ministry.ministryOfDefence")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField

@@ -42,7 +42,9 @@
   },
   "exceptions": {
     "ag7Days": {
-      "legend": "Výnimky s negatívnym výsledok antigénového testu nie starším ako 7 dní"
+      "legend": "Výnimky s negatívnym výsledok antigénového testu nie starším ako 7 dní",
+      "legendPermanentNeighbour": "Dodatočné podmienky na vstup na Slovensko",
+      "legendPermanentSlovakia": "Dodatočné podmienky na vstup na Slovensko"
     },
     "list": {
       "10": "Mám výnimku po schválení Ministerstvom na vstup, tranzit alebo pobyt príslušníkov ozbrojených síl na plnenie úloh vyplývajúcich z členstva EÚ a NATO alebo osôb, ktoré vstupujú na územie Slovenskej republiky za účelom údržby, revízie a opravy techniky a materiálu ako majetku v správe Ministerstva obrany Slovenskej republiky.",
@@ -54,10 +56,42 @@
       "15": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce prevoz špeciálnej výjazdovej hasičskej a záchranárskej techniky nevyhnutne potrebnej pre zabezpečenie zásahovej činnosti hasičských jednotiek na vykonanie servisných úkonov a odborných prehliadok.",
       "16": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce hasebné práce a záchranné práce pri mimoriadnych udalostiach v prihraničnej oblasti na základe žiadosti operačného strediska susednej krajiny.",
       "17": "Prekračujem hranicu Slovenskej republiky z dôvodu návštevy zastupiteľského úradu cudzej krajiny akreditovaného pre Slovenskú republiku, ktorý sa nachádza na území Českej republiky, Maďarska alebo Rakúskej republiky, na dobu kratšiu než 12 hodín a zároveň mám trvalý alebo prechodný pobyt na území Slovenskej republiky a viem sa preukázať o návšteve zastupiteľského úradu.",
+      "18": "Mám potvrdenie o tom, že mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine a zároveň mám potvrdenie o tom, že som držiteľ/ka potvrdenia od zamestnávateľa o takomto výkone práce alebo potvrdenia o takomto výkone práce, podľa prílohy č. 3. a  zároveň mám potvrdenie o to, že vstupujem a opúšťam územie susedných štátov výhradne za účelom potreby výkonu práce.",
+      "19": "Mám potvrdenie o tom, že mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území Slovenskej republiky a zároveň mám potvrdenie o tom, že som držiteľ/ka potvrdenia od zamestnávateľa o takomto výkone práce alebo potvrdenia o takomto výkone práce, podľa prílohy č. 3.",
       "20": "Som občanom Slovenska a mám trvalý alebo prechodný pobyt v prihraničných oblastiach susedného štátu do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
+      "21": "V dobe prekročenia hranice Slovenska aktívne navštevujem, študujem alebo sa uchádzam o navštevovanie alebo štúdium na materskej, základnej, strednej škole alebo vysokej škole v Česku, Poľsku, Maďarsku, Ukrajine alebo Rakúsku a mám potvrdenie vydané školou <strong>alebo som sprievodná osoba</strong> (maximálne 1 osoba) žiaka alebo študenta a mám o tom doklad.",
+      "22": "V dobe prekročenia hranice Slovenska na území Slovenska aktívne navštevujú, študujú alebo sa uchádzajú o navštevovanie alebo štúdium na materskej, základnej, strednej škole alebo vysokej škole a o prezenčnej forme štúdia potvrdenie vydané školou <strong>alebo som sprievodná osoba</strong> žiaka alebo študenta a mám o tom doklad.",
+      "23": "Som žiak, študent strednej alebo vysokej školy do 26 rokov a zúčastňujem sa tréningového procesu, ako riadni členovia športového klubu v Česku, Poľsku Maďarsku alebo Rakúsku a mám o tom doklad od príslušných inštitúcií alebo som sprievodná osoba (maximálne 1 osoba) žiaka alebo študenta a mám o tom doklad.",
+      "24": "V dobe prekročenia hranice Slovenska aktívne navštevujem, študujem alebo sa uchádzam o navštevovanie alebo štúdium na materskej, základnej, strednej alebo vysokej škole v Česku, Poľsku, Maďarsku, Ukrajine alebo Rakúsku a mám potvrdenie vydané školou alebo som sprievodná osoba žiaka alebo študenta a mám o tom doklad.",
+      "25": "V dobe prekročenia hranice Slovenska na území Slovenska aktívne navštevujem, študujem alebo sa uchádzam o navštevovanie alebo štúdium na materskej, základnej, strednej škole alebo vysokej škole a o prezenčnej forme štúdia mám potvrdenie vydané školou alebo <strong>som sprievodná osoba žiaka alebo študenta</strong> a mám o tom doklad.",
+      "26": "Som žiak/študent strednej alebo vysokej školy do 26 rokov a zúčastňujem sa tréningového procesu ako riaden člen športového klubu v Česku, Poľsku, Maďarsku alebo Rakúsku a mám o tom doklad od príslušných inštitúcií <strong>alebo som sprievodná osoba žiaka alebo študenta</strong> a mám o tom doklad.",
+      "27": "Poskytujem neodkladnú starostlivosti o blízkych rodinných príslušníkov na území susedného štátu, ktorí nie sú schopní sa sami o seba postarať a mám doklad o neodkladnej starostlivosti od ošetrujúceho lekára blízkeho rodinného príslušníka a čestným prehlásením o rodinnom vzťahu; oboje v slovenskom jazyku.",
+      "28": "Prekračujem hranicu Slovenska z dôvodu neodkladnej starostlivosti o blízkych rodinných príslušníkov na území Slovenskej republiky, ktorí nie sú schopní sa sami o seba postarať a a mám doklad o neodkladnej starostlivosti od ošetrujúceho lekára blízkeho rodinného príslušníka a čestným prehlásením o rodinnom vzťahu; oboje v slovenskom jazyku.",
+      "29": "Obhospodarujem pozemky nachádzajúce sa na území Českej republiky, Poľskej republiky, Maďarska alebo Rakúskej republiky do vzdialenosti 10 km od štátnej hranice Slovenskej republiky a viem sa preukázať o tejto skutočnosti.",
+      "30": "Obhospodarujem pozemky nachádzajúce sa na území Slovenska do vzdialenosti 10 km od štátnej hranice Česka, Poľska, Maďarska alebo Rakúska a viem sa preukázať o tejto skutočnosti.",
+      "31": "Mám trvalý alebo prechodný pobyt v Slovenskej republike, Českej republike, Poľskej republike, Maďarsku alebo Rakúskej republike, podieľam sa ako účinkujúci alebo člen štábu na území Slovenska, Česka, Poľska, Maďarska alebo Rakúska na cezhraničnej produkcii <strong>audiovizuálneho diela</strong> alebo <strong>televízneho programu</strong>, alebo ako <strong>vyslaný redaktor</strong> alebo <strong>člen štábu</strong> na spravodajskej mediálnej produkcii, podieľam sa ako účinkujúci alebo člen štábu na cezhraničnej produkcii vrátane skúšania alebo on-line vysielania divadelného diela, hudobno-dramatického diela alebo hudobného diela, podieľam sa na reštaurovaní, podieľam sa na výskume na archeologickom nálezisku, v múzeu, archíve alebo v inej pamäťovej, akademickej alebo vedeckej inštitúcii, podieľam sa na inštalácii alebo odinštalovaní výstavy v múzeu, galérii alebo výstavnej sieni, alebo mam angažmán v divadle alebo hudobnej inštitúcii a mám potvrdenie od osoby zodpovednej za realizáciu činnosti.",
+      "32": "Zúčasťňujem sa športových súťaží: <strong>TIPOS extraliga</strong> (hokej - muži), <strong>ICE HOCKEY, LEAGUE</strong> (hokej – muži) alebo <strong>MOL Liga</strong> (hádzaná – ženy) a prekračujem hranice Slovenska z dôvodu účasti v týchto súťažiach alebo účasti v medzinárodných súťažiach organizovaných športovou federáciou na základe účasti v týchto súťažiach a viem sa o tom preukázať.",
+      "33": "Zúčasťňujem sa športových súťaží: <strong>TIPOS extraliga</strong> (hokej - muži), <strong>FORTUNA Liga</strong> (futbal-muži), <strong>SLOVNAFT Handball Extraliga</strong> (hádzaná-muži), <strong>Extraliga</strong> muži (volejbal), <strong>Extraliga</strong> ženy (volejbal), <strong>Slovenská basketbalová liga</strong> (muži), <strong>Extraliga</strong> ženy (basketbal) alebo <strong>MOL Liga</strong> (hádzaná – ženy) a prekračujem hranice Slovenska z dôvodu účasti v medzinárodných súťažiach organizovaných športovou federáciou na základe účasti v týchto súťažiach a viem sa o tom preukázať.",
+      "34": "Som reprezentant Slovenska alebo člen realizačných tímov podľa dekrétu Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky, vrátane držiteľov dekrétu kandidáta Hier XXXII. olympiády Tokio 2020, Hier XXIV zimných olympijských hier Peking 2022, alebo XVI. paralympijských hrách Tokio 2020, ktorí vstupujú na územie SR pri návrate z medzinárodného športového podujatia alebo sústredenia za účelom ich prípravy na medzinárodné podujatia a mám o tom potvrdenie.",
+      "35": "Podieľam sa na audiovizuálnej tvorbe na <strong>Hrách XXXII. olympiády Tokio 2020, XXIV. zimných olympijských hier Peking 2022</strong>, alebo <strong>XVI. paralympijských hrách Tokio 2020</strong> alebo <strong>medzinárodnom športovom podujatí</strong>, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujatie s dĺžkou trvania do 48 hodín alebo nad 4 dni.",
       "36": "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie alebo som sprievodná osoba a mám o tom doklad.",
+      "37": "Vstupujem na územie Slovenska a som oficiálne pozvaná osoba na podujatia usporadúvané Kanceláriou prezidenta SR, Národnou radou SR, vládou SR, alebo ústrednými orgánmi štátnej správy a mám potvrdením o uvedenej skutočnosti.",
+      "38": "Som členom delegácie zastupujúcej Slovensko na úrovni Kancelárie prezidenta, Národnej rady, vlády a ústredných orgánov štátnej správy, štátnym zamestnancom a zamestnancom pri výkone práce vo verejnom záujme vyslanými na zahraničnú pracovnú cestu za účelom plnenia pracovných úloh alebo vyslanými na plnenie úloh vyplývajúcich zo zastupovania Slovenskej republiky v zahraničí.",
+      "39": "Som zamestnanec medzinárodných organizácií, medzinárodných finančných inštitúcií a inštitúcií Európskej únie, ktorí majú na území Slovenskej republiky miesto výkonu práce alebo ich rodinný príslušník.",
+      "40": "Som poslanec Európskeho parlamentu zvolenými v Slovenskej republike alebo som rodinným príslušníkom.",
+      "41": "Som vyslaná osoba na zastupiteľský úrad Slovenskej republiky, alebo vyslaná na plnenie úloh vyplývajúcich zo zastupovania Slovenskej republiky v medzinárodnej organizácii alebo medzinárodného vojenského zastupiteľstva mimo územia Slovenskej republiky a vstupujem počas a po skončení vyslania v cudzine spolu  alebo som rodinným príslušníkom.",
+      "42": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú zamestnancami prevádzkovateľov prvkov kritickej infraštruktúry v sektore energetika a priemysel, ako aj zamestnancami ich subdodávateľov, na žiadosť príslušného prevádzkovateľa prvkov kritickej infraštruktúry, ktorí nepretržitým spôsobom zabezpečujú strategicky a životne dôležité funkcie chodu Slovenskej republiky.",
+      "43": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú expertami/špecialistami/technikmi pre odstránenie krízových situácií v sektore priemysel.",
+      "44": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré zamestnancami prevádzkovateľov prvkov kritickej infraštruktúry v sektore elektronických komunikácií.",
+      "45": "Mám výnimku odsúhlasenú Ministerstvom pre osoby dôležité z hľadiska udržania prevádzkyschopnosti prevádzok vykonávajúcich činnosť v sektoroch poľnohospodárstva, potravinárstva, lesného hospodárstva a pre osoby zabezpečujúce veterinárnu starostlivosť pre hospodárske zvieratá.",
+      "46": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú vlastníkmi alebo držiteľmi zvierat za účelom zabezpečenia špecializovaného diagnostického veterinárneho vyšetrenia, chirurgického zákroku alebo liečby zvierat, ktorú poskytujú špecializované veterinárne pracoviská v iných členských štátoch Európskej únie.",
+      "47": "Mám výnimku odsúhlasenú Ministerstvom pre osoby zabezpečujúce servis a údržbu poľnohospodárskej a lesnej techniky, posádky poľnohospodárskej a lesnej techniky a ich sprievod.",
+      "48": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom servisných, inštalačných a revíznych služieb zdravotníckej techniky, zabezpečenia školenia zdravotníckych zamestnancov, monitorov klinických štúdií, osoby zabezpečujúce plynulý chod zdravotníckej infraštruktúry.",
       "49": "Mám trvalé kontraindikácie očkovania na základe potvrdenia od lekára podľa <a href='#' target='_blank'>Prílohy č. 4.</a>",
       "5": "Som vodič alebo posádka osobnej dopravy, leteckej dopravy alebo autobusovej dopravy, ktorí vykonávajú prepravu repatriovaných osôb na územie Slovenskej republiky.",
+      "50": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú na územie Slovenskej republiky na základe žiadosti súdu alebo orgánov činných v trestnom konaní.",
+      "51": "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru a vstupujem na Slovnesko za účelom účasti na medzinárodnom športovom podujatí, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujaties dĺžkou trvania do 48 hodín a mám o tom potvrdenie.",
+      "52": "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru podujatia, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujatie s dĺžkou trvania nad 4 dni a mám o tom potvrdenie.",
       "8": "Mám výnimku po odsúhlasení Ministerstvom na osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom zabezpečenia akútnej a neodkladnej diagnostiky a liečby, protokolárnej prevencie a liečby a pokračujúcej liečby zdravotných stavov svojich, alebo osôb im blízkym. Osoby, ktoré za týmto účelom vstupujú alebo opúšťajú územie Slovenskej republiky na obdobie kratšie než 12 hodín môže prejsť štátnu hranicu aj bez potvrdenia vystaveného Ministerstvom zdravotníctva Slovenskej republiky ak sa preukážu v ten deň vystaveným lekárskym pozvaním na ošetrenie alebo pri návrate potvrdením o ošetrení. V prípade potreby pobytu presahujúceho 12 hodín je potrebné požiadať o posúdenie žiadosti prostredníctvom webovej stránky Ministerstva zdravotníctva Slovenskej republiky <a href='https://cestujem.standardnepostupy.sk' target='_blank'>cestujem.standardnepostupy.sk</a>.",
       "9": "Mám výnimku po odsúhlasení Ministerstvom vnútra Slovenskej republiky na vstup príslušníkov policajných zborov alebo tranzit príslušníkov policajných zborov prechádzajúcich územím Slovenskej republiky na plnenie úloh vyplývajúcich z členstva v EÚ.",
       "Culture": "Pracujem v kultúre alebo výskume (redaktori, herci, reštaurátori a podobne).",
@@ -76,10 +110,19 @@
       "Sport": "Som hráč športového tímu, člen realizačného výboru alebo rozhodca."
     },
     "pcr72Hours": {
-      "legend": "Výnimky s negatívnym výsledkom PCR testu nie starším ako 72-hodín"
+      "legend": "Výnimky s negatívnym výsledkom PCR testu nie starším ako 72-hodín",
+      "legendCulture": "Mám výnimku na základe toho, že pracujem v kultúre alebo výskume",
+      "legendMinistry": "Výnimky udeľované Ministerstvami",
+      "legendPolitician": "Výnimka pri výkone politickej funkcie",
+      "legendSport": "Výnimky pre  hráčov športových tímov, členov realizačných tímov alebo rozhodcov"
     },
     "pcr7Days": {
-      "legend": "Výnimky s negatívnym PCR testom nie starším ako 7 dní"
+      "legend": "Výnimky s negatívnym PCR testom nie starším ako 7 dní",
+      "legendPendlerPermanentEu": "Dodatočné podmienky na vstup na Slovensko",
+      "legendPendlerPermanentSlovakia": "Dodatočné podmienky na vstup na Slovensko",
+      "legendPermanentNeighbour": "Dodatočné podmienky na vstup na Slovensko",
+      "legendPermanentSlovakia": "Dodatočné podmienky na vstup na Slovensko",
+      "legendPermanentUkraine": "Dodatočné podmienky na vstup na Slovensko"
     },
     "start": {
       "hasException": {
@@ -99,10 +142,7 @@
     "withoutTest": {
       "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu",
       "legendDriver": "Vodič alebo člen posádky",
-      "legendMinistry": "Výnimky údeľované Ministerstvami",
-      "legendMinistryOfDefence": "Ministerstvo obrany SR",
-      "legendMinistryOfHealth": "Ministerstvo zdravotníctva SR",
-      "legendMinistryOfInterior": "Ministerstvo vnútra SR"
+      "legendMinistry": "Výnimky údeľované Ministerstvami"
     }
   },
   "global": {
@@ -122,6 +162,16 @@
   "home": {
     "exceptionNone": "ziadna",
     "exceptionNotSelected": "nezvolena"
+  },
+  "ministry": {
+    "ministryOfAgriculture": "Ministerstvo pôdohospodárstva a rozvoja vidieka SR",
+    "ministryOfDefence": "Ministerstvo obrany SR",
+    "ministryOfEconomy": "Ministerstvo hospodárstva SR",
+    "ministryOfEducation": "Ministerstvo školstva, vedy, výskumu a športu SR",
+    "ministryOfForeign": "Ministerstvo zahraničných vecí a európskych záležitostí SR",
+    "ministryOfHealth": "Ministerstvo zdravotníctva SR",
+    "ministryOfInterior": "Ministerstvo vnútra SR",
+    "ministryOfTransport": "Ministerstvo dopravy a výstavby SR"
   },
   "quarantineRegistration": {
     "additionalInfoDoctorsName": "Meno a priezvisko všeobecného lekára",
