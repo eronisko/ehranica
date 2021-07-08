@@ -11,6 +11,7 @@ import TextareaField from "components/TextareaField";
 import FormGroup from "components/FormGroup";
 import { useFormikContext } from "formik";
 import { withWizard } from "react-albus";
+import { validZip } from "../validations/Validations";
 
 function QuarantineRegistration({ wizard }) {
   const { values } = useFormikContext();
@@ -127,6 +128,7 @@ function QuarantineRegistration({ wizard }) {
         </p>
         <InputField
           name="additionalInfo.numberOfPersonsInSameHousehold"
+          type="number"
           label={__(
             "Počet osôb žijúcich alebo zdržiavajúcich sa v mieste izolácie",
             "ehranica"
@@ -175,6 +177,11 @@ function QuarantineRegistration({ wizard }) {
 let step = withWizard(QuarantineRegistration);
 
 step.initialValues = {
+  additionalInfo: {
+    numberOfPersonsInSameHousehold: "",
+    note: "",
+    doctorsFullName: "",
+  },
   insuranceCompany: "",
   quarantineAddress: {
     city: "",
@@ -193,14 +200,23 @@ step.initialValues = {
   correctnessStatement: false,
 };
 
+Yup.addMethod(Yup.string, "validZip", validZip);
+
 const addressSchema = Yup.object({
   city: Yup.string().required(__("Vyberte mesto/obec zo zoznamu.", "ehranica")),
   street: Yup.string().required(__("Zadajte ulicu.", "ehranica")),
   houseNumber: Yup.string().required(__("Zadajte číslo domu.", "ehranica")),
-  zip: Yup.string().required(__("Zadajte PSČ.", "ehranica")),
+  zip: Yup.string()
+    .required(__("Zadajte PSČ.", "ehranica"))
+    .validZip("PSČ musí obsahovať presne 5 cifier."),
 });
 
 step.validationSchema = Yup.object({
+  additionalInfo: Yup.object({
+    numberOfPersonsInSameHousehold: Yup.number()
+      .moreThan(-1, __("Zadajte celé kladné číslo."))
+      .integer(__("Zadajte celé kladné číslo.")),
+  }),
   quarantineAddress: addressSchema.required(),
 
   permanentAddress: Yup.object().when(

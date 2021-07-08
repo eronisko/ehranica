@@ -26,7 +26,7 @@ function validRcDatePart(rc) {
 
   year += century;
 
-  var maxNumberOfDays = (new Date(year, month, 0)).getDate();
+  var maxNumberOfDays = new Date(year, month, 0).getDate();
 
   if (month === 0 || month > 12) {
     return [];
@@ -50,7 +50,7 @@ function isValidSlovakId(value) {
 
   if (value.length === 10) {
     // BIC
-    if (value[2] === '7') {
+    if (value[2] === "7") {
       return parseInt(value) % 11 === 0;
     }
 
@@ -66,18 +66,37 @@ function isValidSlovakId(value) {
   return false;
 }
 
+export function validZip(errorMessage) {
+  return this.test(`test-valid-zip`, errorMessage, function (value) {
+    const { path, createError } = this;
+
+    if (value) {
+      value = value.replace(/[^0-9]/g, "");
+    }
+
+    return (
+      (value && value.match(/^[0-9]{5}$/)) ||
+      createError({ path, message: errorMessage })
+    );
+  });
+}
+
 export function slovakId(errorMessage) {
   return this.test(`test-valid-slovak-id`, errorMessage, function (value) {
     const { path, createError } = this;
-    return isValidSlovakId(value) || createError({ path, message: errorMessage });
+    return (
+      isValidSlovakId(value) || createError({ path, message: errorMessage })
+    );
   });
 }
 
 export function allowedPhoneNumber(errorMessage) {
   return this.test(`test-allowed-phone-number`, errorMessage, function (value) {
     const { path, createError } = this;
-    return (value && /^(\+|00)\d{8}\d*$/.test(value.replace(/[ \-\(\)]/g,
-      ''))) || createError({ path, message: errorMessage });
+    return (
+      (value && /^(\+|00)\d{8}\d*$/.test(value.replace(/[ \-\(\)]/g, ""))) ||
+      createError({ path, message: errorMessage })
+    );
   });
 }
 
@@ -90,9 +109,15 @@ export function validDate(errorMessage) {
     const year = parseInt(value.year);
 
     const hasError =
-      isNaN(day) || day < 1 || day > 31
-      || isNaN(month) || month < 1 || month > 12
-      || isNaN(year) || year < 1900 || year > 2030;
+      isNaN(day) ||
+      day < 1 ||
+      day > 31 ||
+      isNaN(month) ||
+      month < 1 ||
+      month > 12 ||
+      isNaN(year) ||
+      year < 1900 ||
+      year > 2030;
 
     return !hasError || createError({ path, message: errorMessage });
   });

@@ -30,14 +30,7 @@ function StepFinal({ wizard }) {
     permanentAddress = quarantineAddress;
   }
 
-  // TODO: Remove these hardcoded values
-  quarantineAddress = {
-    city: "x",
-    zip: "03601",
-    street: "x",
-    houseNumber: "x",
-  };
-  values.exceptionId = values.exceptionId > 0 ? 1 : null;
+  // TODO: Remove hardcoded values
   values.originCountry = "DE";
 
   let personData = {
@@ -66,13 +59,13 @@ function StepFinal({ wizard }) {
     dEntry_from_abroad_planned_at: formatDate(values.arrivalDate),
     dDateOfBirth: formatDate(values.birthDate),
 
+    nHouseHoldPersonsCount:
+      values.additionalInfo.numberOfPersonsInSameHousehold,
+    vGp_name: values.additionalInfo.doctorsFullName,
+    vOtherSymptoms: values.additionalInfo.note,
+
     vOther_countries_visited: [],
-    nHouseHoldPersonsCount: "",
-    vGp_name: "",
-    vOtherSymptoms: "",
     vSex: "X",
-    employer_name: "x",
-    employer_address: "x",
   };
 
   people.push(personData);

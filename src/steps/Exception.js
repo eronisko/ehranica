@@ -65,8 +65,4 @@ Exception.initialValues = {
   exceptionPermanentResidencyInNeighbourPendler: "",
 };
 
-Exception.validationSchema = Yup.object({
-  under18HouseholdMemberIsolation: Yup.string().oneOf(["yes", "no"]).required(),
-});
-
 export default withWizard(Exception);
