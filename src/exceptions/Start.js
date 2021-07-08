@@ -85,7 +85,7 @@ function Start(props) {
               name="exceptionStart"
               value="Pcr7Days"
               insetText={__(
-                "Obsahuje aj výnimku pre <strong>“Pendlerov”</strong>."
+                "Obsahuje aj výnimku pre <strong>pendlerov</strong>."
               )}
               alwaysExpandedInsetText={true}
               dangerouslySetInnerHTML={{

@@ -44,7 +44,7 @@ function onSubmit(values, wizard) {
     }
   }
 
-  if (step.id === "Consents") {
+  if (step.id === "Consents" || step.id === "QuarantineRegistration") {
     push("StepFinal");
   }
 
@@ -59,7 +59,6 @@ const validationSchemas = {
   AgeDependentStep: AgeDependentStep.validationSchema,
   QuarantineRegistration: QuarantineRegistrationStep.validationSchema,
   Consents: ConsentsStep.validationSchema,
-  StepFinal: StepFinalStep.validationSchema,
 };
 
 // Initial values combined from each step
@@ -69,7 +68,6 @@ let initialValues = {
   ...QuarantineRegistrationStep.initialValues,
   ...ConsentsStep.initialValues,
   ...ExceptionStep.initialValues,
-  ...StepFinalStep.initialValues,
 };
 
 function App() {
@@ -110,6 +108,7 @@ function App() {
                         : values.exceptionId
                       : "nezvolena"}
                   </div>
+                  {values.originCountry}
                   <Steps>
                     <Step id="StartStep" render={() => <StartStep />} />
                     <Step

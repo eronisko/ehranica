@@ -36,7 +36,7 @@ function Pcr72Hours() {
               value="36"
               dangerouslySetInnerHTML={{
                 __html: __(
-                  "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie.",
+                  "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie alebo som sprievodná osoba a mám o tom doklad.",
                   "ehranica"
                 ),
               }}

@@ -26,7 +26,7 @@ function PermanentResidencyInSlovakia() {
               value="26"
               dangerouslySetInnerHTML={{
                 __html: __(
-                  "Som žiak/študent strednej alebo vysokej školy do 26 rokov a zúčastňujem sa tréningového procesu ako riaden člen športového klubu v Česku, Poľsku, Maďarsku alebo Rakúsku a mám o tom doklad od príslušných inštitúcií alebo som sprievodná osoba žiaka alebo študenta a mám o tom doklad.",
+                  "Som žiak/študent strednej alebo vysokej školy do 26 rokov a zúčastňujem sa tréningového procesu ako riaden člen športového klubu v Česku, Poľsku, Maďarsku alebo Rakúsku a mám o tom doklad od príslušných inštitúcií <strong>alebo som sprievodná osoba žiaka alebo študenta</strong> a mám o tom doklad.",
                   "ehranica"
                 ),
               }}

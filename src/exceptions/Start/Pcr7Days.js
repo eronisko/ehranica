@@ -7,7 +7,6 @@ import PermanentResidencyInSlovakiaPcr7Days from "./Pcr7Days/PermanentResidencyI
 import PermanentResidencyInNeighbour from "./Pcr7Days/PermanentResidencyInNeighbour";
 import PermanentResidencyInUkraine from "./Pcr7Days/PermanentResidencyInUkraine";
 import PermanentResidencyInSlovakiaPendler from "./Pcr7Days/Pendler/PermanentResidencyInSlovakia";
-import PermanentResidencyInNeighbourPendler from "./Pcr7Days/Pendler/PermanentResidencyInNeighbour";
 import PermanentResidencyInEu from "./Pcr7Days/Pendler/PermanentResidencyInEu";
 
 function Pcr7Days() {
@@ -17,7 +16,7 @@ function Pcr7Days() {
     <div>
       <Fieldset
         legend={__(
-          "Výnimky s negatívnym PCR testom nie starším 7 dní",
+          "Výnimky s negatívnym PCR testom nie starším ako 7 dní",
           "ehranica"
         )}
       >
@@ -28,7 +27,7 @@ function Pcr7Days() {
               value="Pendler"
               dangerouslySetInnerHTML={{
                 __html: __(
-                  "Za posledných 14 dní som bol/a iba v štátoch EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine - <strong>“Pendleri”</strong>",
+                  "Za posledných 14 dní som bol/a iba v iných  štátoch štátoch EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine - <strong>pendleri</strong>",
                   "ehranica"
                 ),
               }}
@@ -56,7 +55,7 @@ function Pcr7Days() {
                   />
                   <RadioInputField
                     name="exceptionPendler"
-                    value="PermanentResidencyInNeighbourPendler"
+                    value="20"
                     dangerouslySetInnerHTML={{
                       __html: __(
                         "Som občanom Slovenska a mám trvalý alebo prechodný pobyt v prihraničných oblastiach susedného štátu do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
@@ -113,17 +112,15 @@ function Pcr7Days() {
         <PermanentResidencyInUkraine />
       )}
 
-      {values.exceptionPendler === "PermanentResidencyInSlovakiaPendler" && (
-        <PermanentResidencyInSlovakiaPendler />
-      )}
+      {values.exceptionPcr7Days === "Pendler" &&
+        values.exceptionPendler === "PermanentResidencyInSlovakiaPendler" && (
+          <PermanentResidencyInSlovakiaPendler />
+        )}
 
-      {values.exceptionPendler === "PermanentResidencyInEuPendler" && (
-        <PermanentResidencyInEu />
-      )}
-
-      {values.exceptionPendler === "PermanentResidencyInNeighbourPendler" && (
-        <PermanentResidencyInNeighbourPendler />
-      )}
+      {values.exceptionPcr7Days === "Pendler" &&
+        values.exceptionPendler === "PermanentResidencyInEuPendler" && (
+          <PermanentResidencyInEu />
+        )}
     </div>
   );
 }

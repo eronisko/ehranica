@@ -22,7 +22,7 @@ function PermanentResidencyInSlovakia() {
               }}
             />
             <RadioInputField
-              name="exceptionPermanentResidencyInSlovakia"
+              name="exceptionPermanentResidencyInSlovakiaPcr7Days"
               value="23"
               dangerouslySetInnerHTML={{
                 __html: __(
@@ -32,7 +32,7 @@ function PermanentResidencyInSlovakia() {
               }}
             />
             <RadioInputField
-              name="exceptionPermanentResidencyInSlovakia"
+              name="exceptionPermanentResidencyInSlovakiaPcr7Days"
               value="27"
               dangerouslySetInnerHTML={{
                 __html: __(
@@ -42,7 +42,7 @@ function PermanentResidencyInSlovakia() {
               }}
             />
             <RadioInputField
-              name="exceptionPermanentResidencyInSlovakia"
+              name="exceptionPermanentResidencyInSlovakiaPcr7Days"
               value="29"
               dangerouslySetInnerHTML={{
                 __html: __(

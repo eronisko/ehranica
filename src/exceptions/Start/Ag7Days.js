@@ -34,7 +34,7 @@ function Ag7Days() {
               value="PermanentResidencyInNeighbourAg7Days"
               dangerouslySetInnerHTML={{
                 __html: __(
-                  "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku alebo v Rakúsku. ",
+                  "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku, Rakúsku alebo na Ukrajine.",
                   "ehranica"
                 ),
               }}

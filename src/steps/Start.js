@@ -23,10 +23,10 @@ function Start({ next }) {
         legend={__("Zadajte krajinu a dátum príchodu na Slovensko", "ehranica")}
       >
         <DateField name="arrivalDate" />
-        <CountryField
-          name="originCountry"
-          label="Z ktorej krajiny prichádzate?"
-        />
+        {/*<CountryField*/}
+        {/*  name="originCountry"*/}
+        {/*  label="Z ktorej krajiny prichádzate?"*/}
+        {/*/>*/}
       </Fieldset>
 
       <Fieldset legend={__("Osobné údaje", "ehranica")}>
@@ -115,14 +115,14 @@ Start.initialValues = {
     year: today.getFullYear(),
   },
   birthDate: {
-    day: 13,
-    month: 1,
-    year: 1982,
+    day: "",
+    month: "",
+    year: "",
   },
   idType: "slovak",
   idSlovak: "",
   idForeign: "",
-  originCountry: "",
+  // originCountry: "",
   email: "",
   phoneNumber: "",
   phoneNumberVerification: "",
@@ -134,9 +134,9 @@ Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
   firstName: Yup.string().required(__("Zadajte meno.", "ehranica")),
-  originCountry: Yup.string()
-    .oneOf(Countries.map((c) => c.id))
-    .required(__("Vyberte krajinu zo zoznamu.", "ehranica")),
+  // originCountry: Yup.string()
+  //   .oneOf(Countries.map((c) => c.id))
+  //   .required(__("Vyberte krajinu zo zoznamu.", "ehranica")),
   lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
   arrivalDate: Yup.object().validDate(
     __("Zadajte správny deň a mesiac príchodu.", "ehranica")
