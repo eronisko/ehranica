@@ -40,20 +40,45 @@
     }
   },
   "exceptions": {
+    "ag7Days": {
+      "legend": ""
+    },
     "list": {
+      "10": "",
       "11": "",
       "12": "",
+      "13": "",
+      "13-hint": "",
+      "13hint": "",
+      "14": "",
+      "15": "",
+      "16": "",
       "17": "",
+      "20": "",
       "36": "",
       "49": "",
+      "5": "",
+      "8": "",
+      "9": "",
       "Culture": "",
       "Driver": "",
       "MinistryPcr72Hours": "",
       "MinistryWithoutTest": "",
+      "Pendler": "",
+      "PermanentResidencyInEuPendler": "",
+      "PermanentResidencyInNeighbourAg7Days": "",
+      "PermanentResidencyInNeighbourPcr7Days": "",
+      "PermanentResidencyInSlovakiaAg7Days": "",
+      "PermanentResidencyInSlovakiaPcr7Days": "",
+      "PermanentResidencyInSlovakiaPendler": "",
+      "PermanentResidencyInUkraine": "",
       "Politician": "",
       "Sport": ""
     },
     "pcr72Hours": {
+      "legend": ""
+    },
+    "pcr7Days": {
       "legend": ""
     },
     "start": {
@@ -72,7 +97,12 @@
       "warningBody": ""
     },
     "withoutTest": {
-      "legend": ""
+      "legend": "",
+      "legendDriver": "",
+      "legendMinistry": "",
+      "legendMinistryOfDefence": "",
+      "legendMinistryOfHealth": "",
+      "legendMinistryOfInterior": ""
     }
   },
   "global": {

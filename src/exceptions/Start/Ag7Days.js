@@ -1,21 +1,19 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../components/Fieldset";
 import RadioInputField from "../../components/RadioInputField";
 import { useFormikContext } from "formik";
 import PermanentResidencyInSlovakia from "./Ag7Days/PermanentResidencyInSlovakia";
 import PermanentResidencyInNeighbour from "./Ag7Days/PermanentResidencyInNeighbour";
+import { useTranslation } from "react-i18next";
 
 function Ag7Days() {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
 
   return (
     <div>
       <Fieldset
-        legend={__(
-          "Výnimky s negatívnym výsledok antigénového testu nie starším ako 7 dní",
-          "ehranica"
-        )}
+        legend={t("exceptions.ag7Days.legend")}
       >
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <div className="govuk-radios">
@@ -23,20 +21,14 @@ function Ag7Days() {
               name="exceptionAg7Days"
               value="PermanentResidencyInSlovakiaAg7Days"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám trvalý alebo prechodný pobyt v Slovenskej republike.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.PermanentResidencyInSlovakiaAg7Days")
               }}
             />
             <RadioInputField
               name="exceptionAg7Days"
               value="PermanentResidencyInNeighbourAg7Days"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku, Rakúsku alebo na Ukrajine.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.PermanentResidencyInNeighbourAg7Days")
               }}
             />
           </div>

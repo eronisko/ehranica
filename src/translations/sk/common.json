@@ -40,21 +40,45 @@
     }
   },
   "exceptions": {
+    "ag7Days": {
+      "legend": "Výnimky s negatívnym výsledok antigénového testu nie starším ako 7 dní"
+    },
     "list": {
+      "10": "Mám výnimku po schválení Ministerstvom na vstup, tranzit alebo pobyt príslušníkov ozbrojených síl na plnenie úloh vyplývajúcich z členstva EÚ a NATO alebo osôb, ktoré vstupujú na územie Slovenskej republiky za účelom údržby, revízie a opravy techniky a materiálu ako majetku v správe Ministerstva obrany Slovenskej republiky.",
       "11": "Som držiteľ diplomatického alebo služobného pasu vstupujúci na územie Slovenskej republiky.",
       "12": "Na základe  právoplatného súdneho rozhodnutia vo veci vykonávania striedavej starostlivosti rodičov o maloleté dieťa, alebo práva styku s maloletým dieťaťom. Musíte sa preukázať pravoplatným súdnym rozhodnutím súdu alebo rodičovskou dohodou a informovať  Centrum pre medzinárodnoprávnu ochranu detí a mládeže na Ministerstve  práce, sociálnych vecí a rodiny SR.",
+      "13": "Osoby zabezpečujúce prepravu iných osôb z a na medzinárodné letiská na území Česka, Poľska, Maďarska alebo Rakúska.",
+      "13hint": "<strong>Osoby zabezpečujúce prepravu sú povinné</strong> sa najneskôr pred prechodom štátnej hranice zo Slovenskej republiky zaregistrovať na webe <a href='https://naletisko.mzv.sk/' target='_blank'>naletisko.mzv.sk</a> a preukázať sa na požiadanie príslušníkom Policajného zboru vytlačeným alebo elektronickým potvrdením o splnení tejto povinnosti a letenkou prepravovanej osoby alebo jej elektronickou kópiou. Osoby zabezpečujúce prepravu sú povinné vykonať cestu výhradne cez územie členských štátov Európskej únie, a to bez zastavenia, okrem zastavenia na nevyhnutné tankovanie pohonných hmôt a nástup prepravovanej osoby.",
+      "14": "Mám výnimku po odsúhlasení Ministerstvom pre členov zahraničných záchranných tímov alebo expertov podieľajúcich sa na základe žiadosti štátnych orgánov Slovenskej republiky, alebo iného štátu na humanitárnej pomoci počas krízovej situácie alebo na záchranných prácach pri mimoriadnych udalostiach na území Slovenskej republiky alebo iného štátu.",
+      "15": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce prevoz špeciálnej výjazdovej hasičskej a záchranárskej techniky nevyhnutne potrebnej pre zabezpečenie zásahovej činnosti hasičských jednotiek na vykonanie servisných úkonov a odborných prehliadok.",
+      "16": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce hasebné práce a záchranné práce pri mimoriadnych udalostiach v prihraničnej oblasti na základe žiadosti operačného strediska susednej krajiny.",
       "17": "Prekračujem hranicu Slovenskej republiky z dôvodu návštevy zastupiteľského úradu cudzej krajiny akreditovaného pre Slovenskú republiku, ktorý sa nachádza na území Českej republiky, Maďarska alebo Rakúskej republiky, na dobu kratšiu než 12 hodín a zároveň mám trvalý alebo prechodný pobyt na území Slovenskej republiky a viem sa preukázať o návšteve zastupiteľského úradu.",
+      "20": "Som občanom Slovenska a mám trvalý alebo prechodný pobyt v prihraničných oblastiach susedného štátu do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
       "36": "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie alebo som sprievodná osoba a mám o tom doklad.",
       "49": "Mám trvalé kontraindikácie očkovania na základe potvrdenia od lekára podľa <a href='#' target='_blank'>Prílohy č. 4.</a>",
+      "5": "Som vodič alebo posádka osobnej dopravy, leteckej dopravy alebo autobusovej dopravy, ktorí vykonávajú prepravu repatriovaných osôb na územie Slovenskej republiky.",
+      "8": "Mám výnimku po odsúhlasení Ministerstvom na osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom zabezpečenia akútnej a neodkladnej diagnostiky a liečby, protokolárnej prevencie a liečby a pokračujúcej liečby zdravotných stavov svojich, alebo osôb im blízkym. Osoby, ktoré za týmto účelom vstupujú alebo opúšťajú územie Slovenskej republiky na obdobie kratšie než 12 hodín môže prejsť štátnu hranicu aj bez potvrdenia vystaveného Ministerstvom zdravotníctva Slovenskej republiky ak sa preukážu v ten deň vystaveným lekárskym pozvaním na ošetrenie alebo pri návrate potvrdením o ošetrení. V prípade potreby pobytu presahujúceho 12 hodín je potrebné požiadať o posúdenie žiadosti prostredníctvom webovej stránky Ministerstva zdravotníctva Slovenskej republiky <a href='https://cestujem.standardnepostupy.sk' target='_blank'>cestujem.standardnepostupy.sk</a>.",
+      "9": "Mám výnimku po odsúhlasení Ministerstvom vnútra Slovenskej republiky na vstup príslušníkov policajných zborov alebo tranzit príslušníkov policajných zborov prechádzajúcich územím Slovenskej republiky na plnenie úloh vyplývajúcich z členstva v EÚ.",
       "Culture": "Pracujem v kultúre alebo výskume (redaktori, herci, reštaurátori a podobne).",
       "Driver": "Som vodič alebo člen posádky (dopravy - železničná, osobná, letecká, nákladná, autobusová, lodná, preprava osôb na letiská, repriácia osôb, pohrebná služba, zdravotná služba - transport pacientov, orgánov a krvi).",
       "MinistryPcr72Hours": "Výnimky udeľované Ministerstvami.",
       "MinistryWithoutTest": "Výnimky udeľované Ministerstvami.",
+      "Pendler": "Za posledných 14 dní som bol/a iba v iných  štátoch štátoch EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine - <strong>pendleri</strong>",
+      "PermanentResidencyInEuPendler": "Mám trvalý pobyt alebo prechodný pobyt v iných  štátoch EÚ, Islandu, Nórskka, Lichtenštajnska, Švajčiarska alebo na Ukrajine prihraničných oblastiach Ukrajiny do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
+      "PermanentResidencyInNeighbourAg7Days": "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku, Rakúsku alebo na Ukrajine.",
+      "PermanentResidencyInNeighbourPcr7Days": "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku alebo v Rakúsku.",
+      "PermanentResidencyInSlovakiaAg7Days": "Mám trvalý alebo prechodný pobyt v Slovenskej republike.",
+      "PermanentResidencyInSlovakiaPcr7Days": "Mám trvalý alebo prechodný pobyt v Slovenskej republike.",
+      "PermanentResidencyInSlovakiaPendler": "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku alebo v Rakúsku.",
+      "PermanentResidencyInUkraine": "Mám trvalý alebo prechodný pobyt na Ukrajine.",
       "Politician": "Vykonávam politickú funkciu (oficiálne návštevy, delegácie, poslanci EP, zastupiteľské úrady).",
       "Sport": "Som hráč športového tímu, člen realizačného výboru alebo rozhodca."
     },
     "pcr72Hours": {
       "legend": "Výnimky s negatívnym výsledkom PCR testu nie starším ako 72-hodín"
+    },
+    "pcr7Days": {
+      "legend": "Výnimky s negatívnym PCR testom nie starším ako 7 dní"
     },
     "start": {
       "hasException": {
@@ -72,7 +96,12 @@
       "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='#' target='_blank'>Prehľad výnimiek</a>"
     },
     "withoutTest": {
-      "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu"
+      "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu",
+      "legendDriver": "Vodič alebo člen posádky",
+      "legendMinistry": "Výnimky údeľované Ministerstvami",
+      "legendMinistryOfDefence": "Ministerstvo obrany SR",
+      "legendMinistryOfHealth": "Ministerstvo zdravotníctva SR",
+      "legendMinistryOfInterior": "Ministerstvo vnútra SR"
     }
   },
   "global": {
