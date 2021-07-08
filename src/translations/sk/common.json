@@ -34,7 +34,7 @@
       "ratingLink": "Ohodnoťte službu e-Hranica.",
       "ratingLinks": "",
       "registerNextPerson": "Zaregistrovať ďalšiu osobu",
-      "warningText": "V prípade že prichádzate z <a href='https://korona.gov.sk/cestovanie-do-sr/#krajiny-nie-je-nutny-negat-72h-PCR-test' target='_blank'>týchto</a> krajín letecky, nemusíte mať negatívny 72 hodín starý PCR test - to sa netýka detí do 12 rokov."
+      "warningText": "V prípade že prichádzate z <a href='https://korona.gov.sk/cestovanie-do-sr/#krajiny-nie-je-nutny-negat-72h-PCR-test' target='_blank'>týchto</a> krajín letecky, nemusíte mať negatívny 72 hodín starý PCR test."
     },
     "warningText": {
       "warning": "Varovanie"
@@ -70,7 +70,7 @@
       "noException": "<strong>Nemám žiadnu výnimku</strong>  z absolvovania domácej izolácie.",
       "noExceptionLabel": "Nemám výnimku z absolvovania domácej izolácie",
       "warning": "Upozornenie",
-      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='#' target='_blank'>Prehľad výnimiek</a>"
+      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='https://korona.gov.sk/cestovanie-do-sr/#vynimky-pre-nezaockovanych' target='_blank'>Prehľad výnimiek</a>"
     },
     "withoutTest": {
       "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu"
