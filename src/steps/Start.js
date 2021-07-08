@@ -11,12 +11,22 @@ import {
   validDate,
   allowedPhoneNumber,
   slovakId,
+  birthNumberToDate,
 } from "validations/Validations";
 import { __ } from "@wordpress/i18n";
-import Accordion from "components/Accordion";
-import CheckboxField from "components/CheckboxField";
+import { useFormikContext } from "formik";
 
 function Start({ next }) {
+  const { values } = useFormikContext();
+
+  const birthDateParts = birthNumberToDate(values.idSlovak);
+
+  if (birthDateParts.length === 3) {
+    values.birthDate.day = birthDateParts[0];
+    values.birthDate.month = birthDateParts[1];
+    values.birthDate.year = birthDateParts[2];
+  }
+
   return (
     <div>
       <Fieldset

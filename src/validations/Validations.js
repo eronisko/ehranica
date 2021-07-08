@@ -1,8 +1,39 @@
-function isValidRcDatePart(rc) {
-  return validRcDatePart(rc).length === 3;
+function hasValidSlovakIdDateParts(rc) {
+  return validSlovakIdDateParts(rc).length === 3;
 }
 
-function validRcDatePart(rc) {
+function isValidSlovakId(value) {
+  if (!value) {
+    return false;
+  }
+
+  if (!value.match(/^[0-9]{9,10}$/)) {
+    return false;
+  }
+
+  if (value.length === 10) {
+    // BIC
+    if (value[2] === "7") {
+      return parseInt(value) % 11 === 0;
+    }
+
+    // 10 miestne rodne cislo
+    return parseInt(value) % 11 === 0 && hasValidSlovakIdDateParts(value);
+  }
+
+  // 9 miestne rodne cislo
+  if (value.length === 9) {
+    return hasValidSlovakIdDateParts(value);
+  }
+
+  return false;
+}
+
+function validSlovakIdDateParts(rc) {
+  if (rc[2] === "7") {
+    return [];
+  }
+
   var year = parseInt(rc.substring(0, 2));
   var month = parseInt(rc.substring(2, 4)) % 50;
   var day = parseInt(rc.substring(4, 6));
@@ -39,31 +70,12 @@ function validRcDatePart(rc) {
   return [day, month, year];
 }
 
-function isValidSlovakId(value) {
-  if (!value) {
-    return false;
+export function birthNumberToDate(birthNumber) {
+  if (isValidSlovakId(birthNumber)) {
+    return validSlovakIdDateParts(birthNumber);
   }
 
-  if (!value.match(/^[0-9]{9,10}$/)) {
-    return false;
-  }
-
-  if (value.length === 10) {
-    // BIC
-    if (value[2] === "7") {
-      return parseInt(value) % 11 === 0;
-    }
-
-    // 10 miestne rodne cislo
-    return parseInt(value) % 11 === 0 && isValidRcDatePart(value);
-  }
-
-  // 9 miestne rodne cislo
-  if (value.length === 9) {
-    return isValidRcDatePart(value);
-  }
-
-  return false;
+  return [];
 }
 
 export function validZip(errorMessage) {
