@@ -1,5 +1,4 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../components/Fieldset";
 import RadioInputField from "../../components/RadioInputField";
 import { useFormikContext } from "formik";
@@ -7,17 +6,16 @@ import Politican from "./Pcr72Hours/Politician";
 import Ministry from "./Pcr72Hours/Ministry";
 import Sport from "./Pcr72Hours/Sport";
 import Culture from "./Pcr72Hours/Culture";
+import { useTranslation } from "react-i18next";
 
 function Pcr72Hours() {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
 
   return (
     <div>
       <Fieldset
-        legend={__(
-          "Výnimky s negatívnym výsledkom PCR testu nie starším ako 72-hodín",
-          "ehranica"
-        )}
+        legend={t("exceptions.pcr72Hours.legend")}
       >
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <div className="govuk-radios">
@@ -25,57 +23,42 @@ function Pcr72Hours() {
               name="exceptionPcr72Hours"
               value="49"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  'Mám trvalé kontraindikácie očkovania na základe potvrdenia od lekára podľa <a href="#" target="_blank">Prílohy č. 4.</a>',
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.49")
               }}
             />
             <RadioInputField
               name="exceptionPcr72Hours"
               value="36"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie alebo som sprievodná osoba a mám o tom doklad.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.36")
               }}
             />
             <RadioInputField
               name="exceptionPcr72Hours"
               value="Politician"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Vykonávam politickú funkciu (oficiálne návštevy, delegácie, poslanci EP, zastupiteľské úrady).",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.Politician")
               }}
             />
             <RadioInputField
               name="exceptionPcr72Hours"
               value="MinistryPcr72Hours"
               dangerouslySetInnerHTML={{
-                __html: __("Výnimky udeľované Ministerstvami.", "ehranica"),
+                __html: t("exceptions.list.MinistryPcr72Hours")
               }}
             />
             <RadioInputField
               name="exceptionPcr72Hours"
               value="Sport"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Som hráč športového tímu, člen realizačného výboru alebo rozhodca.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.Sport")
               }}
             />
             <RadioInputField
               name="exceptionPcr72Hours"
               value="Culture"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Pracujem v kultúre alebo výskume (redaktori, herci, reštaurátori a podobne).",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.Culture")
               }}
             />
           </div>

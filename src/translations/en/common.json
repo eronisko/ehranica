@@ -39,6 +39,42 @@
       "warning": ""
     }
   },
+  "exceptions": {
+    "list": {
+      "11": "",
+      "12": "",
+      "17": "",
+      "36": "",
+      "49": "",
+      "Culture": "",
+      "Driver": "",
+      "MinistryPcr72Hours": "",
+      "MinistryWithoutTest": "",
+      "Politician": "",
+      "Sport": ""
+    },
+    "pcr72Hours": {
+      "legend": ""
+    },
+    "start": {
+      "hasException": {
+        "ag7Days": "",
+        "hint": "",
+        "label": "",
+        "pcr72Hours": "",
+        "pcr7Days": "",
+        "pcr7DaysHint": "",
+        "withoutTest": ""
+      },
+      "noException": "",
+      "noExceptionLabel": "",
+      "warning": "",
+      "warningBody": ""
+    },
+    "withoutTest": {
+      "legend": ""
+    }
+  },
   "global": {
     "confirmationLegend": "",
     "correctnessStatement": {
