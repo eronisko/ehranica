@@ -19,12 +19,14 @@ import { useFormikContext } from "formik";
 function Start({ next }) {
   const { values } = useFormikContext();
 
-  const birthDateParts = birthNumberToDate(values.idSlovak);
+  if (values.idType === "slovak") {
+    const birthDateParts = birthNumberToDate(values.idSlovak);
 
-  if (birthDateParts.length === 3) {
-    values.birthDate.day = birthDateParts[0];
-    values.birthDate.month = birthDateParts[1];
-    values.birthDate.year = birthDateParts[2];
+    if (birthDateParts.length === 3) {
+      values.birthDate.day = birthDateParts[0];
+      values.birthDate.month = birthDateParts[1];
+      values.birthDate.year = birthDateParts[2];
+    }
   }
 
   return (
