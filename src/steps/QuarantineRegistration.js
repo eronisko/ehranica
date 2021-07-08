@@ -16,7 +16,7 @@ import { validZip } from "../validations/Validations";
 import { useTranslation } from "react-i18next";
 
 function QuarantineRegistration({ wizard }) {
-  const {t} = useTranslation('common');
+  const { t } = useTranslation("common");
   const { values } = useFormikContext();
   return (
     <>
@@ -30,7 +30,7 @@ function QuarantineRegistration({ wizard }) {
         {t("quarantineRegistration.intro2")}
       </p>
       <Fieldset
-        legend={t("quarantineRegistration.insuranceCompanyLegend")} 
+        legend={t("quarantineRegistration.insuranceCompanyLegend")}
         name="insuranceCompany"
       >
         <FormGroup name="insuranceCompany">
@@ -99,8 +99,9 @@ function QuarantineRegistration({ wizard }) {
       </Fieldset>
       {values["permanentAddressSameAsQuarantineAddress"] === "different" && (
         <Fieldset legend={t("quarantineRegistration.addressPermanentLegend")}>
-          <InputField
-            name="permanentAddress.city"
+          <CityField
+            municipalityFieldName="permanentAddress.city"
+            countyFieldName="permanentAddress.county"
             label={t("quarantineRegistration.addressCity")}
           />
           <InputField

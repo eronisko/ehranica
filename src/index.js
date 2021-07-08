@@ -12,14 +12,14 @@ import common_en from "./translations/en/common.json";
 i18next.init({
   interpolation: { escapeValue: false },
   lng: window.LOCALE.toLowerCase(),
-  fallbackLng: 'sk',
+  fallbackLng: "sk",
   resources: {
     sk: {
       common: common_sk,
     },
-    en: {
-      common: common_en,
-    },
+    // en: {
+    //   common: common_en,
+    // },
   },
 });
 

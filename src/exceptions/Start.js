@@ -25,7 +25,7 @@ function Start(props) {
           <div
             dangerouslySetInnerHTML={{
               __html: __(
-                'Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href="#" target="_blank">Prehľad výnimiek</a>.'
+                'Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href="https://korona.gov.sk/cestovanie-do-sr/#vynimky-pre-nezaockovanych" target="_blank">Prehľad výnimiek</a>.'
               ),
             }}
           />

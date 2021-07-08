@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 function CityField(props) {
   // eslint-disable-next-line no-unused-vars
   const {t} = useTranslation('common');
-  const [_, __, { setValue, setTouched }] = useField(props.countyFieldName);
+  const [_, ___, { setValue, setTouched }] = useField(props.countyFieldName);
 
   return (
     <AutocompleteField
