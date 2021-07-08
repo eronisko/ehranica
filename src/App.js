@@ -83,7 +83,7 @@ function App() {
           <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
             {__("Registrácia pri príchode zo zahraničia", "ehranica")}
           </h1>
-          <Route exact path="/ehranica/">
+          <Route>
             <Wizard
               render={(wizard) => (
                 <Formik
@@ -118,7 +118,10 @@ function App() {
                           id="AgeDependentStep"
                           render={() => <AgeDependentStep />}
                         />
-                        <Step id="ExceptionStep" render={() => <ExceptionStep />} />
+                        <Step
+                          id="ExceptionStep"
+                          render={() => <ExceptionStep />}
+                        />
                         <Step
                           id="YoungerThan12Step"
                           render={() => <YoungerThan12Step />}
