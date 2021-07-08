@@ -40,6 +40,42 @@
       "warning": "Varovanie"
     }
   },
+  "exceptions": {
+    "list": {
+      "11": "Som držiteľ diplomatického alebo služobného pasu vstupujúci na územie Slovenskej republiky.",
+      "12": "Na základe  právoplatného súdneho rozhodnutia vo veci vykonávania striedavej starostlivosti rodičov o maloleté dieťa, alebo práva styku s maloletým dieťaťom. Musíte sa preukázať pravoplatným súdnym rozhodnutím súdu alebo rodičovskou dohodou a informovať  Centrum pre medzinárodnoprávnu ochranu detí a mládeže na Ministerstve  práce, sociálnych vecí a rodiny SR.",
+      "17": "Prekračujem hranicu Slovenskej republiky z dôvodu návštevy zastupiteľského úradu cudzej krajiny akreditovaného pre Slovenskú republiku, ktorý sa nachádza na území Českej republiky, Maďarska alebo Rakúskej republiky, na dobu kratšiu než 12 hodín a zároveň mám trvalý alebo prechodný pobyt na území Slovenskej republiky a viem sa preukázať o návšteve zastupiteľského úradu.",
+      "36": "Krátkodobo vstupujem alebo opúšťam Slovensko za účelom účasti na pohrebe blízkej osoby a mám o tom potvrdennie alebo som sprievodná osoba a mám o tom doklad.",
+      "49": "Mám trvalé kontraindikácie očkovania na základe potvrdenia od lekára podľa <a href='#' target='_blank'>Prílohy č. 4.</a>",
+      "Culture": "Pracujem v kultúre alebo výskume (redaktori, herci, reštaurátori a podobne).",
+      "Driver": "Som vodič alebo člen posádky (dopravy - železničná, osobná, letecká, nákladná, autobusová, lodná, preprava osôb na letiská, repriácia osôb, pohrebná služba, zdravotná služba - transport pacientov, orgánov a krvi).",
+      "MinistryPcr72Hours": "Výnimky udeľované Ministerstvami.",
+      "MinistryWithoutTest": "Výnimky udeľované Ministerstvami.",
+      "Politician": "Vykonávam politickú funkciu (oficiálne návštevy, delegácie, poslanci EP, zastupiteľské úrady).",
+      "Sport": "Som hráč športového tímu, člen realizačného výboru alebo rozhodca."
+    },
+    "pcr72Hours": {
+      "legend": "Výnimky s negatívnym výsledkom PCR testu nie starším ako 72-hodín"
+    },
+    "start": {
+      "hasException": {
+        "ag7Days": "Mám výnimku, ktorá vyžaduje negatívny výsledok <strong>antigénového testu nie starší ako 7 dní.</strong>",
+        "hint": "Po zakliknutí niektorej z ďalších možností uvidíte detailný prehľad výnimiek. Ak označíte nesprávnu možnosť, neobávajte sa. Budete sa môcť vrátiť o krok späť.",
+        "label": "Mám výnimku z absolvovania domácej izolácie",
+        "pcr72Hours": "Mám výnimku, ktorá vyžaduje negatívny výsledok <strong>PCR testu nie starší ako 72-hodín.</strong>",
+        "pcr7Days": "Mám výnimku, ktorá vyžaduje negatívny výsledok <strong>PCR testu nie starší ako 7 dní.</strong>",
+        "pcr7DaysHint": "Obsahuje aj výnimku pre <strong>pendlerov</strong>.",
+        "withoutTest": "Mám výnimku, ktorá <strong>nevyžaduje negatívny výsledok testu.</strong>"
+      },
+      "noException": "<strong>Nemám žiadnu výnimku</strong>  z absolvovania domácej izolácie.",
+      "noExceptionLabel": "Nemám výnimku z absolvovania domácej izolácie",
+      "warning": "Upozornenie",
+      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='#' target='_blank'>Prehľad výnimiek</a>"
+    },
+    "withoutTest": {
+      "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu"
+    }
+  },
   "global": {
     "confirmationLegend": "Potvrdenia",
     "correctnessStatement": {
