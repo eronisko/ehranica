@@ -1,0 +1,14 @@
+{
+  "confirmationLegend": "Potvrdenia",
+  "correctnessStatement": {
+    "text": "Potvrdzujem a prehlasujem, že všetky uvedené údaje sú pravdivé"
+  },
+  "dataConsent": {
+    "linkText": "Poučenie o ochrane osobných údajov",
+    "text": "Oboznámil(a) som sa s Poučením o ochrane osobných údajov"
+  },
+  "navigation": {
+    "back": "Späť",
+    "sendRegistration": "Odoslať registráciu"
+  }
+}

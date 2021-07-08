@@ -1,0 +1,17 @@
+{
+  "ageDependent": {
+    "detailsBody": "",
+    "detailsHeading": "",
+    "legend": "",
+    "noAdultIsolationNo": "",
+    "noAdultIsolationYes": "",
+    "noAdultLegend": "",
+    "vacinatedFully": "",
+    "vacinatedNo": "",
+    "vacinatedPartially": ""
+  },
+  "home": {
+    "exceptionNone": "",
+    "exceptionNotSelected": ""
+  }
+}

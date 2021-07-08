@@ -2,38 +2,34 @@ import React from "react";
 import Button from "components/Button";
 import * as Yup from "yup";
 import Fieldset from "components/Fieldset";
-import { __ } from "@wordpress/i18n";
 import CheckboxField from "components/CheckboxField";
 import { withWizard } from "react-albus";
+import { useTranslation } from "react-i18next";
+import { __ } from "@wordpress/i18n";
 
 function Consents({ wizard }) {
+  const {t, i18n} = useTranslation('global');
   return (
     <>
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
-        {__("Späť")}
+        {t("navigation.back")}
       </a>
-      <Fieldset legend={__("Potvrdenia", "ehranica")}>
+      <Fieldset legend={t("confirmationLegend")}>
         <CheckboxField
           name="personalDataConsent"
           hint={
             <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
-              {__("Poučenie o ochrane osobných údajov", "ehranica")}
+              {t("dataConsent.linkText")}
             </a>
           }
         >
-          {__(
-            "Oboznámil(a) som sa s Poučením o ochrane osobných údajov",
-            "ehranica"
-          )}
+          {t("dataConsent.text")}
         </CheckboxField>
         <CheckboxField name="correctnessStatement">
-          {__(
-            "Potvrdzujem a prehlasujem, že všetky uvedené údaje sú pravdivé",
-            "ehranica"
-          )}
+          {t("correctnessStatement.text")}
         </CheckboxField>
       </Fieldset>
-      <Button label={__("Odoslať registráciu")} />{" "}
+      <Button label={t("navigation.sendRegistration")} />{" "} 
     </>
   );
 }

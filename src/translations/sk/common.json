@@ -1,0 +1,17 @@
+{
+  "ageDependent": {
+    "detailsBody": "<p>a) osoba najmenej 14 dní ale nie viac než 12 mesiacov po aplikácii druhej dávky očkovacej látky proti ochoreniu COVID-19 s dvojdávkovou schémou,</p><p>b) osoba najmenej 21 dní ale nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou,</p><p>c) sú najmenej 14 dní a nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19,</p>",
+    "detailsHeading": "Kto je plne zaočkovaná osoba?",
+    "legend": "Očkovanie proti COVID-19",
+    "noAdultIsolationNo": "Nikto v spoločnej domácnosti nie je v povinnej domácej izolácii.",
+    "noAdultIsolationYes": "Aspoň 1 osoba v spoločnej domácnosti je v povinnej domácej izolácii.",
+    "noAdultLegend": "Domáca izolácia členov spoločnej domácnosti",
+    "vacinatedFully": "Som plne zaočkovaná osoba a mám o tom doklad.",
+    "vacinatedNo": "Nie som zaočkovaná osoba.",
+    "vacinatedPartially": "Som zaočkovaná osoba aspoň 1 dávkou a mám o tom doklad."
+  },
+  "home": {
+    "exceptionNone": "ziadna",
+    "exceptionNotSelected": "nezvolena"
+  }
+}

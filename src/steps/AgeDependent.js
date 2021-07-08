@@ -1,6 +1,5 @@
 import React from "react";
 import { withWizard } from "react-albus";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../components/Fieldset";
 import ErrorMessage from "../components/ErrorMessage";
 import RadioInputField from "../components/RadioInputField";
@@ -10,7 +9,11 @@ import Button from "../components/Button";
 import { Field, useFormikContext } from "formik";
 import { age } from "helpers/Helpers";
 
+import {useTranslation} from "react-i18next";
+import {__} from "@wordpress/i18n";
+
 function AgeDependent({ wizard }) {
+  const {t, i18n} = useTranslation('common');
   const { values } = useFormikContext();
   const isAdult = values.isAdult;
   const isButtonDisabled =
@@ -43,21 +46,18 @@ function AgeDependent({ wizard }) {
       <Field type="hidden" name="isAdult" />
 
       {values.isAdult && (
-        <Fieldset legend={__("Očkovanie proti COVID-19", "ehranica")}>
+        <Fieldset legend={t("ageDependent.legend")}>
           <div className="govuk-form-group govuk-!-margin-bottom-1">
             <details className="govuk-details" data-module="govuk-details">
               <summary className="govuk-details__summary">
                 <span className="govuk-details__summary-text">
-                  {__("Kto je plne zaočkovaná osoba?", "ehranica")}
+                  {t("ageDependent.detailsHeading")}
                 </span>
               </summary>
               <div
                 className="govuk-details__text"
                 dangerouslySetInnerHTML={{
-                  __html: __(
-                    "<p>a) osoba najmenej 14 dní ale nie viac než 12 mesiacov po aplikácii druhej dávky očkovacej látky proti ochoreniu COVID-19 s dvojdávkovou schémou,</p><p>b) osoba najmenej 21 dní ale nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou,</p><p>c) sú najmenej 14 dní a nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19,</p>",
-                    "ehranica"
-                  ),
+                  __html: t("ageDependent.detailsBody"),
                 }}
               />
             </details>
@@ -65,19 +65,13 @@ function AgeDependent({ wizard }) {
             <ErrorMessage name="isVaccinated" />
             <div className="govuk-radios">
               <RadioInputField name="isVaccinated" value="fully">
-                {__(
-                  "Som plne zaočkovaná osoba a mám o tom doklad.",
-                  "ehranica"
-                )}
+                {t("ageDependent.vacinatedFully")}
               </RadioInputField>
               <RadioInputField name="isVaccinated" value="partially">
-                {__(
-                  "Som zaočkovaná osoba aspoň 1 dávkou a mám o tom doklad.",
-                  "ehranica"
-                )}
+                {t("ageDependent.vacinatedPartially")}
               </RadioInputField>
               <RadioInputField name="isVaccinated" value="no">
-                {__("Nie som zaočkovaná osoba.", "ehranica")}
+                {t("ageDependent.vacinatedNo")}
               </RadioInputField>
             </div>
           </div>
@@ -86,22 +80,16 @@ function AgeDependent({ wizard }) {
 
       {!values.isAdult && (
         <Fieldset
-          legend={__("Domáca izolácia členov spoločnej domácnosti", "ehranica")}
+          legend={t("ageDependent.noAdultLegend")}
         >
           <div className="govuk-form-group govuk-!-margin-bottom-1">
             <ErrorMessage name="hasHouseholdMemberInIsolation" />
             <div className="govuk-radios">
               <RadioInputField name="hasHouseholdMemberInIsolation" value="yes">
-                {__(
-                  "Aspoň 1 osoba v spoločnej domácnosti je v povinnej domácej izolácii.",
-                  "ehranica"
-                )}
+                {t("ageDependent.noAdultIsolationYes")}
               </RadioInputField>
               <RadioInputField name="hasHouseholdMemberInIsolation" value="no">
-                {__(
-                  "Nikto v spoločnej domácnosti nie je v povinnej domácej izolácii.",
-                  "ehranica"
-                )}
+                {t("ageDependent.noAdultIsolationNo")}
               </RadioInputField>
             </div>
           </div>
@@ -125,11 +113,11 @@ step.initialValues = {
 step.validationSchema = Yup.object({
   isVaccinated: Yup.string().when(["isAdult"], {
     is: true,
-    then: Yup.string().required(__("Vyberte si jednu z možností.")),
+    then: Yup.string().required(__("Vyberte si jednu z možností.")/*__("Vyberte si jednu z možností.")*/),
   }),
   hasHouseholdMemberInIsolation: Yup.string().when(["isAdult"], {
     is: false,
-    then: Yup.string().required(__("Vyberte si jednu z možností.")),
+    then: Yup.string().required(__("Vyberte si jednu z možností.")),/*t("ageDependent.chooseOne")*/
   }),
 });
 

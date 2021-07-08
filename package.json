@@ -40,6 +40,7 @@
     "formik": "^2.2.9",
     "fs-extra": "^9.0.1",
     "html-webpack-plugin": "4.5.0",
+    "i18next": "^20.3.2",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.6.0",
     "jest-circus": "26.6.0",
@@ -61,6 +62,7 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.2",
+    "react-i18next": "^11.11.1",
     "react-refresh": "^0.8.3",
     "react-router-dom": "^5.2.0",
     "react-uuid": "^1.0.2",
@@ -103,6 +105,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-i18next-extract": "^0.8.3",
     "prettier": "^2.3.2"
   },
   "jest": {
@@ -162,6 +165,15 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      ["i18next-extract", 
+        {
+          "locales": ["sk", "en"],
+          "defaultNS": "ehranica",
+          "outputPath": "src/translations/{{locale}}/{{ns}}.json"
+        }
+      ]
     ]
   }
 }

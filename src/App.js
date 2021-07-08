@@ -2,7 +2,7 @@ import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Formik, Form } from "formik";
-import { __ } from "@wordpress/i18n";
+import {useTranslation} from "react-i18next";
 
 import StartStep from "steps/Start";
 import AgeDependentStep from "steps/AgeDependent";
@@ -72,6 +72,7 @@ let initialValues = {
 };
 
 function App() {
+  const {t, i18n} = useTranslation('common');
   return (
     <Router>
       <Route>
@@ -98,9 +99,9 @@ function App() {
                     ID vynimky:{" "}
                     {values.exceptionId
                       ? values.exceptionId < 0
-                        ? "ziadna"
+                        ? t("home.exceptionNone")
                         : values.exceptionId
-                      : "nezvolena"}
+                      : t("home.exceptionNotSelected")}
                   </div>
                   <Steps>
                     <Step id="StartStep" render={() => <StartStep />} />
