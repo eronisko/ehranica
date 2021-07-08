@@ -45,6 +45,7 @@ function AutocompleteField(props) {
         <label className="govuk-label" htmlFor={id.current}>
           <strong>{label}</strong>
         </label>
+        <span className="govuk-hint govuk-input__hint">{props.hint}</span>
         <ErrorMessage name={props.name} />
         <Autocomplete
           ref={element}

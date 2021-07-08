@@ -17,15 +17,6 @@ import {
 } from "validations/Validations";
 import { __ } from "@wordpress/i18n";
 
-function getCountryFieldLabel(index) {
-  if (index === 0) return __("Z ktorej krajiny ste prišli?", "ehranica");
-  if (index === 1)
-    return __(
-      "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
-      "ehranica"
-    );
-}
-
 function Start() {
   const { values } = useFormikContext();
 
@@ -53,6 +44,7 @@ function Start() {
                   key={`originCountries.${index}-${values.originCountries[index]}`}
                   name={`originCountries.${index}`}
                   label={getCountryFieldLabel(index)}
+                  hint={getCountryFieldHint(index)}
                   controls={
                     index > 0 && (
                       <Link
@@ -152,6 +144,23 @@ function Start() {
       <Button />
     </div>
   );
+}
+
+function getCountryFieldLabel(index) {
+  if (index === 0) return __("Z ktorej krajiny ste prišli?", "ehranica");
+  if (index === 1)
+    return __(
+      "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
+      "ehranica"
+    );
+}
+
+function getCountryFieldHint(index) {
+  if (index === 0)
+    return __(
+      "Krajina príchodu už nie je rozhodujúca, no pre ochranu zdravia ju musíme sledovať.",
+      "ehranica"
+    );
 }
 
 const today = new Date();

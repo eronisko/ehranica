@@ -41,6 +41,7 @@ function CountryField(props) {
       }}
       controls={props.controls}
       defaultValue={defaultValue}
+      hint={props.hint}
     />
   );
 }
