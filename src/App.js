@@ -48,6 +48,10 @@ function onSubmit(values, wizard) {
   if (step.id === "Consents") {
     push("StepFinal");
   }
+  
+  if (step.id === "StepFinal") {
+    push("StartStep");
+  }
 }
 
 // Partial validation schemas for each step
