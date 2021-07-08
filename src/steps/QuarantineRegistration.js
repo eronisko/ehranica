@@ -16,6 +16,7 @@ function QuarantineRegistration({ wizard }) {
   const { values } = useFormikContext();
   return (
     <>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
         {__("Späť")}
       </a>
@@ -51,7 +52,6 @@ function QuarantineRegistration({ wizard }) {
           </div>
         </FormGroup>
       </Fieldset>
-
       <Fieldset legend={__("Adresa absolvovania domácej izolácie", "ehranica")}>
         <InputField
           name="quarantineAddress.city"
@@ -70,7 +70,6 @@ function QuarantineRegistration({ wizard }) {
           label={__("PSČ", "ehranica")}
         />
       </Fieldset>
-
       <Fieldset legend={__("Adresa trvalého bydliska", "ehranica")}>
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <ErrorMessage name="permanentAddressSameAsQuarantineAddress" />
@@ -96,7 +95,6 @@ function QuarantineRegistration({ wizard }) {
           </div>
         </div>
       </Fieldset>
-
       {values["permanentAddressSameAsQuarantineAddress"] === "different" && (
         <Fieldset legend={__("Adresa trvalého bydliska", "ehranica")}>
           <InputField
@@ -117,7 +115,6 @@ function QuarantineRegistration({ wizard }) {
           />
         </Fieldset>
       )}
-
       <Fieldset legend={__("Dodatočné údaje", "ehranica")}>
         <p className="govuk-hint">
           {__(
@@ -146,7 +143,6 @@ function QuarantineRegistration({ wizard }) {
           )}
         />
       </Fieldset>
-
       <Fieldset legend={__("Potvrdenia", "ehranica")}>
         <CheckboxField
           name="personalDataConsent"
@@ -168,7 +164,6 @@ function QuarantineRegistration({ wizard }) {
           )}
         </CheckboxField>
       </Fieldset>
-
       <Button label={__("Odoslať registráciu")} />
     </>
   );
