@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { __ } from "@wordpress/i18n";
+import { useTranslation } from "react-i18next";
 
 function Button({ label, disabled, display, onClick }) {
+  const {t} = useTranslation('common');
   disabled = disabled || false;
   return (
     <button
@@ -18,7 +19,7 @@ function Button({ label, disabled, display, onClick }) {
       // onClick={onClick}
       data-module="govuk-button"
     >
-      <span>{label || __("Pokračovať", "ehranica")}</span>
+      <span>{label || t("component.button.continue")}</span>
       {display !== "secondary" && <svg
         className="govuk-button__start-icon"
         xmlns="http://www.w3.org/2000/svg"

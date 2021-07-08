@@ -10,6 +10,35 @@
     "vacinatedNo": "Nie som zaočkovaná osoba.",
     "vacinatedPartially": "Som zaočkovaná osoba aspoň 1 dávkou a mám o tom doklad."
   },
+  "component": {
+    "button": {
+      "continue": "Pokračovať"
+    },
+    "cityField": {
+      "notInList": "Mesto/obec nie je v zozname"
+    },
+    "countryField": {
+      "notInList": "Krajina nie je v zozname"
+    },
+    "date": {
+      "day": "Deň",
+      "hint": "Mesiac zadávajte ako číslo od 1 do 12.",
+      "month": "Mesiac",
+      "year": "Rok"
+    },
+    "result": {
+      "additionalInfo": "Ďaľšie inštrukcie Vám prídu v najbližších dňoch v SMS správe alebo emailom.V prípade že prichádzate z <a href=''>týchto</a> krajín letecky, musíte mať negatívny 72-hodín starý PCR test.",
+      "backKorona": "Späť na korona.gov.sk",
+      "insetContent": "Ak cestujete na Slovensko letecky, musíte taktiež vyplniť formulár na stránke <a href='https://www.mindop.sk/covid-19' target='_blank' class='govuk-link'>mindop.sk/covid-19</a>.",
+      "nextActions": "Ďaľšie akcie",
+      "ratingLink": "Ohodnoťte službu e-Hranica.",
+      "registerNextPerson": "Zaregistrovať ďalšiu osobu",
+      "warningText": "V prípade že prichádzate z <a href=''>týchto</a> krajín letecky, musíte mať negatívny 72-hodín starý PCR test."
+    },
+    "warningText": {
+      "warning": "Varovanie"
+    }
+  },
   "global": {
     "confirmationLegend": "Potvrdenia",
     "correctnessStatement": {

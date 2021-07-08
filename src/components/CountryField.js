@@ -1,11 +1,12 @@
 import React, { useMemo } from "react";
 import AutocompleteField from "./AutocompleteField";
-import { __ } from "@wordpress/i18n";
 import { countries as countriesData } from "autocomplete/countries";
 import replaceDiacritics from "autocomplete/replaceDiacritics";
 import { useField } from "formik";
+import { useTranslation } from "react-i18next";
 
 function CountryField(props) {
+  const {t} = useTranslation('common');
   const locale = "sk"; // TODO -- get this externally
   const [field] = useField(props.name);
   const countries = useMemo(() => getCountriesSortedByLabel(locale), [locale]);
@@ -30,7 +31,7 @@ function CountryField(props) {
       name={props.name}
       label={props.label}
       source={suggest}
-      tNoResults={() => __("Krajina nie je v zozname", "ehranica")}
+      tNoResults={() => t("component.countryField.notInList")}
       getFormValue={(country) => (country ? country.id : country)}
       templates={{
         inputValue: (country) => (country ? country.label[locale] : ""),

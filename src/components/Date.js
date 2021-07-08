@@ -1,8 +1,9 @@
 import React from "react";
 import {ErrorMessage, Field, useFormikContext} from "formik";
-import { __ } from "@wordpress/i18n";
+import { useTranslation } from "react-i18next";
 
 function Date(props) {
+    const {t} = useTranslation('common');
     const { errors, touched } = useFormikContext();
 
     function errorClassName(name, className) {
@@ -14,7 +15,7 @@ function Date(props) {
         {props.label && <label className="govuk-label" htmlFor={props.name + '-day'} >
               <strong>{props.label}</strong>
           </label>}
-          <span className="govuk-hint">{__('Mesiac zadávajte ako číslo od 1 do 12.', 'ehranica')}</span>
+          <span className="govuk-hint">{t("component.date.hint")}</span>
           <ErrorMessage name={props.name}>
               {(msg) => <span className="govuk-error-message">{msg}</span>}
           </ErrorMessage>
@@ -22,7 +23,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'day'}>
-                          {__('Deň', 'ehranica')}
+                          {t("component.date.day")}
                       </label>
                       <Field
                           name={props.name + '.day'}
@@ -41,7 +42,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'month'}>
-                          {__('Mesiac', 'ehranica')}
+                          {t("component.date.month")}
                       </label>
                       <Field
                           name={props.name + '.month'}
@@ -60,7 +61,7 @@ function Date(props) {
               <div className="govuk-date-input__item">
                   <div className="govuk-form-group">
                       <label className="govuk-label govuk-date-input__label" htmlFor={props.name + 'year'}>
-                          {__('Rok', 'ehranica')}
+                          {t("component.date.year")}
                       </label>
                       <Field
                           name={props.name + '.year'}

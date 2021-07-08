@@ -4,9 +4,11 @@ import { __ } from "@wordpress/i18n";
 import { municipalitiesAndCounties } from "autocomplete/municipalitiesAndCounties";
 import replaceDiacritics from "autocomplete/replaceDiacritics";
 import { useField } from "formik";
+import { useTranslation } from "react-i18next";
 
 function CityField(props) {
   // eslint-disable-next-line no-unused-vars
+  const {t} = useTranslation('common');
   const [_, __, { setValue, setTouched }] = useField(props.countyFieldName);
 
   return (
@@ -14,7 +16,7 @@ function CityField(props) {
       name={props.municipalityFieldName}
       label={props.label}
       source={suggest}
-      tNoResults={() => __("Mesto/obec nie je v zozname", "ehranica")}
+      tNoResults={() => t("component.cityField.notInList")}
       getFormValue={(city) => (city ? city.municipality : city)}
       templates={{
         inputValue: (city) => (city ? city.label : ""),

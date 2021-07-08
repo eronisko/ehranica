@@ -10,6 +10,35 @@
     "vacinatedNo": "",
     "vacinatedPartially": ""
   },
+  "component": {
+    "button": {
+      "continue": ""
+    },
+    "cityField": {
+      "notInList": ""
+    },
+    "countryField": {
+      "notInList": ""
+    },
+    "date": {
+      "day": "",
+      "hint": "",
+      "month": "",
+      "year": ""
+    },
+    "result": {
+      "additionalInfo": "",
+      "backKorona": "",
+      "insetContent": "",
+      "nextActions": "",
+      "ratingLink": "",
+      "registerNextPerson": "",
+      "warningText": ""
+    },
+    "warningText": {
+      "warning": ""
+    }
+  },
   "global": {
     "confirmationLegend": "",
     "correctnessStatement": {
