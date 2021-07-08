@@ -7,7 +7,7 @@ import Result from "../components/Result";
 
 const SITE_KEY = "6LeFQ7IZAAAAABuiRASOsOQv4HFxAhGhwQiljFM0";
 
-function StepFinal({ wizard }) {
+function StepFinal({ isTest, wizard }) {
   const { t, i18n } = useTranslation("common");
   const { values } = useFormikContext();
   const [state, setState] = useState({
@@ -115,7 +115,7 @@ function StepFinal({ wizard }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        isTest: true,
+        isTest: isTest,
         token: token,
         people: people,
       }),

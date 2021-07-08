@@ -28,7 +28,7 @@ i18next.init({
 ReactDOM.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>
-      <App />
+      <App isTest={window.IS_TEST || false} />
     </I18nextProvider>
   </React.StrictMode>,
   document.getElementById("ehranica-app")
