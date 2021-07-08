@@ -27,6 +27,7 @@ function AutocompleteField(props) {
 
     if (value) {
       setValue(props.getFormValue ? props.getFormValue(value) : value);
+      props.onFieldValueChange && props.onFieldValueChange(value);
       return;
     }
 
@@ -37,6 +38,7 @@ function AutocompleteField(props) {
 
     // Otherwise, set to an empty value
     setValue("");
+    props.onFieldValueChange && props.onFieldValueChange("");
   }
 
   return (
@@ -77,6 +79,7 @@ function AutocompleteField(props) {
 AutocompleteField.propTypes = {
   source: PropTypes.func.isRequired,
   getFormValue: PropTypes.func,
+  onFieldValueChange: PropTypes.func,
 };
 
 export default AutocompleteField;

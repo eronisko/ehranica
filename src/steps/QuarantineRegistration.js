@@ -3,6 +3,7 @@ import Button from "components/Button";
 import InputField from "components/InputField";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
+import CityField, { Cities } from "components/CityField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
 import { __ } from "@wordpress/i18n";
@@ -57,8 +58,9 @@ function QuarantineRegistration({ wizard }) {
         </FormGroup>
       </Fieldset>
       <Fieldset legend={__("Adresa absolvovania domácej izolácie", "ehranica")}>
-        <InputField
-          name="quarantineAddress.city"
+        <CityField
+          municipalityFieldName="quarantineAddress.city"
+          countyFieldName="quarantineAddress.county"
           label={__("Mesto/Obec", "ehranica")}
         />
         <InputField
@@ -203,7 +205,9 @@ step.initialValues = {
 Yup.addMethod(Yup.string, "validZip", validZip);
 
 const addressSchema = Yup.object({
-  city: Yup.string().required(__("Vyberte mesto/obec zo zoznamu.", "ehranica")),
+  city: Yup.string()
+    .oneOf(Cities.map((c) => c.municipality))
+    .required(__("Vyberte mesto/obec zo zoznamu.", "ehranica")),
   street: Yup.string().required(__("Zadajte ulicu.", "ehranica")),
   houseNumber: Yup.string().required(__("Zadajte číslo domu.", "ehranica")),
   zip: Yup.string()
