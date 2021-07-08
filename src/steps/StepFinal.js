@@ -30,8 +30,7 @@ function StepFinal({ wizard }) {
     permanentAddress = quarantineAddress;
   }
 
-  // TODO: Remove hardcoded values
-  values.originCountry = "DE";
+  const originCountries = [...values.originCountries];
 
   let personData = {
     vPhoneNumber: values.phoneNumber,
@@ -42,7 +41,8 @@ function StepFinal({ wizard }) {
     vPersonalNumber: values.idType === "slovak" ? values.idSlovak : null,
     nHealtInsuranceCompany: values.insuranceCompany,
     exception_type: values.exceptionId > 0 ? values.exceptionId : null,
-    vHas_come_from_country: values.originCountry,
+    vHas_come_from_country: originCountries.shift(),
+    vOther_countries_visited: originCountries,
 
     vPermanentAddressCountry: "SK",
     vPermanentAddressCity: permanentAddress.city,
@@ -64,7 +64,6 @@ function StepFinal({ wizard }) {
     vGp_name: values.additionalInfo.doctorsFullName,
     vOtherSymptoms: values.additionalInfo.note,
 
-    vOther_countries_visited: [],
     vSex: "X",
   };
 
