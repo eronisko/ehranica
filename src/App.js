@@ -1,5 +1,6 @@
 import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Formik, Form } from "formik";
 import { __ } from "@wordpress/i18n";
 
@@ -77,66 +78,70 @@ function App() {
       id="main-content"
       role="main"
     >
-      <div className="govuk-width-container">
-        <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
-          {__("Registrácia pri príchode zo zahraničia", "ehranica")}
-        </h1>
-        <Wizard
-          render={(wizard) => (
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchemas[wizard.step.id]}
-              onSubmit={(values) => onSubmit(values, wizard)}
-            >
-              {({ values }) => (
-                <Form>
-                  <div
-                    style={{
-                      position: "fixed",
-                      fontSize: "20px",
-                      backgroundColor: "yellow",
-                      zIndex: 1000,
-                      top: 0,
-                      right: 0,
-                      padding: "5px",
-                    }}
-                  >
-                    ID vynimky:{" "}
-                    {values.exceptionId
-                      ? values.exceptionId < 0
-                        ? "ziadna"
-                        : values.exceptionId
-                      : "nezvolena"}
-                  </div>
-                  {values.originCountry}
-                  <Steps>
-                    <Step id="StartStep" render={() => <StartStep />} />
-                    <Step
-                      id="AgeDependentStep"
-                      render={() => <AgeDependentStep />}
-                    />
-                    <Step id="ExceptionStep" render={() => <ExceptionStep />} />
-                    <Step
-                      id="YoungerThan12Step"
-                      render={() => <YoungerThan12Step />}
-                    />
-                    <Step
-                      id="QuarantineRegistration"
-                      render={() => <QuarantineRegistrationStep />}
-                    />
-                    <Step id="Consents" render={() => <ConsentsStep />} />
-                    <Step
-                      id="ThankYouTemporary"
-                      render={() => <ThankYouTemporaryStep />}
-                    />
-                    <Step id="StepFinal" render={() => <StepFinalStep />} />
-                  </Steps>
-                </Form>
+      <Router>
+        <div className="govuk-width-container">
+          <h1 className="govuk-heading-xl govuk-!-margin-bottom-6">
+            {__("Registrácia pri príchode zo zahraničia", "ehranica")}
+          </h1>
+          <Route exact path="/ehranica/">
+            <Wizard
+              render={(wizard) => (
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={validationSchemas[wizard.step.id]}
+                  onSubmit={(values) => onSubmit(values, wizard)}
+                >
+                  {({ values }) => (
+                    <Form>
+                      <div
+                        style={{
+                          position: "fixed",
+                          fontSize: "20px",
+                          backgroundColor: "yellow",
+                          zIndex: 1000,
+                          top: 0,
+                          right: 0,
+                          padding: "5px",
+                        }}
+                      >
+                        ID vynimky:{" "}
+                        {values.exceptionId
+                          ? values.exceptionId < 0
+                            ? "ziadna"
+                            : values.exceptionId
+                          : "nezvolena"}
+                      </div>
+                      {values.originCountry}
+                      <Steps>
+                        <Step id="StartStep" render={() => <StartStep />} />
+                        <Step
+                          id="AgeDependentStep"
+                          render={() => <AgeDependentStep />}
+                        />
+                        <Step id="ExceptionStep" render={() => <ExceptionStep />} />
+                        <Step
+                          id="YoungerThan12Step"
+                          render={() => <YoungerThan12Step />}
+                        />
+                        <Step
+                          id="QuarantineRegistration"
+                          render={() => <QuarantineRegistrationStep />}
+                        />
+                        <Step id="Consents" render={() => <ConsentsStep />} />
+                        <Step
+                          id="ThankYouTemporary"
+                          render={() => <ThankYouTemporaryStep />}
+                        />
+                        <Step id="StepFinal" render={() => <StepFinalStep />} />
+                      </Steps>
+                    </Form>
+                  )}
+                </Formik>
               )}
-            </Formik>
-          )}
-        />
-      </div>
+            />
+          </Route>
+        </div>
+      </Router>
     </main>
   );
 }
