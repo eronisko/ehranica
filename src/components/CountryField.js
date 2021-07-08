@@ -3,10 +3,18 @@ import AutocompleteField from "./AutocompleteField";
 import { __ } from "@wordpress/i18n";
 import { countries as countriesData } from "autocomplete/countries";
 import replaceDiacritics from "autocomplete/replaceDiacritics";
+import { useField } from "formik";
 
 function CountryField(props) {
   const locale = "sk"; // TODO -- get this externally
+  const [field] = useField(props.name);
   const countries = useMemo(() => getCountriesSortedByLabel(locale), [locale]);
+  const defaultValue = useMemo(() => {
+    if (field.value) {
+      const country = Countries.find((c) => c.id === field.value);
+      if (country) return country.label[locale];
+    }
+  }, [field.value]);
 
   function suggest(query, populateResults) {
     const queryNormalized = replaceDiacritics(query.toLowerCase());
@@ -26,8 +34,13 @@ function CountryField(props) {
       getFormValue={(country) => (country ? country.id : country)}
       templates={{
         inputValue: (country) => (country ? country.label[locale] : ""),
-        suggestion: (country) => country.label[locale],
+        suggestion: (country) => {
+          if (typeof country === "string") return country;
+          return country.label[locale];
+        },
       }}
+      controls={props.controls}
+      defaultValue={defaultValue}
     />
   );
 }

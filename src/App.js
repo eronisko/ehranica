@@ -102,7 +102,6 @@ function App() {
                         : values.exceptionId
                       : "nezvolena"}
                   </div>
-                  {values.originCountry}
                   <Steps>
                     <Step id="StartStep" render={() => <StartStep />} />
                     <Step

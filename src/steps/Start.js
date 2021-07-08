@@ -7,6 +7,8 @@ import RadioInputField from "components/RadioInputField";
 import CountryField, { Countries } from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
+import Link from "components/Link";
+import { FieldArray, useFormikContext } from "formik";
 import {
   validDate,
   allowedPhoneNumber,
@@ -14,9 +16,17 @@ import {
   birthNumberToDate,
 } from "validations/Validations";
 import { __ } from "@wordpress/i18n";
-import { useFormikContext } from "formik";
 
-function Start({ next }) {
+function getCountryFieldLabel(index) {
+  if (index === 0) return __("Z ktorej krajiny ste prišli?", "ehranica");
+  if (index === 1)
+    return __(
+      "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
+      "ehranica"
+    );
+}
+
+function Start() {
   const { values } = useFormikContext();
 
   if (values.idType === "slovak") {
@@ -35,10 +45,38 @@ function Start({ next }) {
         legend={__("Zadajte krajinu a dátum príchodu na Slovensko", "ehranica")}
       >
         <DateField name="arrivalDate" />
-        {/*<CountryField*/}
-        {/*  name="originCountry"*/}
-        {/*  label="Z ktorej krajiny prichádzate?"*/}
-        {/*/>*/}
+        <FieldArray name="originCountries">
+          {({ remove, push }) => (
+            <>
+              {values.originCountries.map((country, index) => (
+                <CountryField
+                  key={`originCountries.${index}-${values.originCountries[index]}`}
+                  name={`originCountries.${index}`}
+                  label={getCountryFieldLabel(index)}
+                  controls={
+                    index > 0 && (
+                      <Link
+                        onClick={() => remove(index)}
+                        style={{
+                          alignSelf: "flex-end",
+                          display: "inline-block",
+                          marginLeft: "2ex",
+                          marginBottom: ".5ex",
+                        }}
+                      >
+                        {__("Zrušiť", "ehranica")}
+                      </Link>
+                    )
+                  }
+                />
+              ))}
+              <Link onClick={() => push("")}>
+                {__("Pridať ďalšiu navštívenú krajinu", "ehranica")}
+              </Link>
+            </>
+          )}
+        </FieldArray>
+        <div className="govuk-!-margin-bottom-3"></div>
       </Fieldset>
 
       <Fieldset legend={__("Osobné údaje", "ehranica")}>
@@ -121,6 +159,7 @@ const today = new Date();
 Start.initialValues = {
   firstName: "",
   lastName: "",
+  originCountries: [""],
   arrivalDate: {
     day: today.getDate(),
     month: today.getMonth() + 1,
@@ -134,7 +173,6 @@ Start.initialValues = {
   idType: "slovak",
   idSlovak: "",
   idForeign: "",
-  // originCountry: "",
   email: "",
   phoneNumber: "",
   phoneNumberVerification: "",
@@ -146,9 +184,11 @@ Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
   firstName: Yup.string().required(__("Zadajte meno.", "ehranica")),
-  // originCountry: Yup.string()
-  //   .oneOf(Countries.map((c) => c.id))
-  //   .required(__("Vyberte krajinu zo zoznamu.", "ehranica")),
+  originCountries: Yup.array().of(
+    Yup.string()
+      .oneOf(Countries.map((c) => c.id))
+      .required(__("Vyberte krajinu zo zoznamu.", "ehranica"))
+  ),
   lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
   arrivalDate: Yup.object().validDate(
     __("Zadajte správny deň a mesiac príchodu.", "ehranica")
