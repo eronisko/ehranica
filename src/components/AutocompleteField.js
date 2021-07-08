@@ -1,59 +1,60 @@
-import React from "react";
+import React, { useRef } from "react";
+import uuid from "react-uuid";
+import cn from "classnames";
 import Autocomplete from "accessible-autocomplete/react";
 import ErrorMessage from "components/ErrorMessage";
+import PropTypes from "prop-types";
 import { useField } from "formik";
-import cn from "classnames";
 
 import "accessible-autocomplete/src/autocomplete.css";
 
 function AutocompleteField(props) {
-  const { label, options } = props;
+  const id = useRef(uuid());
+  const element = useRef();
   // eslint-disable-next-line no-unused-vars
   const [_field, meta, helpers] = useField(props.name);
-
-  const { value } = meta;
-  const { setValue } = helpers;
-
-  const hasError = meta.error && meta.touched;
-
-  const id = props.name;
-
-  function suggest(query, populateResults) {
-    const filteredResults = options.filter((result) =>
-      result.toLowerCase().startsWith(query.toLowerCase())
-    );
-    populateResults(filteredResults);
-  }
-
-  function onConfirm(value) {
-    props.onConfirm(value);
-    setValue(value);
-  }
-
-  function onNotFound() {
-    return "not found";
-  }
+  const { label } = props;
+  const { setValue, setTouched } = helpers;
 
   const groupClassName = cn("govuk-form-group govuk-!-margin-bottom-3", {
-    "govuk-form-group--error": hasError,
+    "govuk-form-group--error": meta.error && meta.touched,
   });
+
+  function onConfirm(value) {
+    const state = element.current.state;
+
+    setTouched();
+
+    if (value) {
+      setValue(props.getFormValue ? props.getFormValue(value) : value);
+      return;
+    }
+
+    if (state.validChoiceMade) {
+      // no op
+      return;
+    }
+
+    // Otherwise, set to an empty value
+    setValue("");
+  }
 
   return (
     <div className={groupClassName} style={{ maxWidth: "41ex" }}>
-      <label className="govuk-label" htmlFor={id}>
+      <label className="govuk-label" htmlFor={id.current}>
         <strong>{label}</strong>
       </label>
       <ErrorMessage name={props.name} />
       <Autocomplete
-        id={id}
+        ref={element}
+        id={id.current}
+        name={props.name}
+        showAllValues
+        autoselect
         source={props.source}
         templates={props.templates}
-        showAllValues
         onConfirm={onConfirm}
         tNoResults={props.tNoResults}
-        // confirmOnBlur={false}
-        // autoselect={true}
-        value={value}
         dropdownArrow={(config) => (
           <svg
             className={config.className}
@@ -67,5 +68,10 @@ function AutocompleteField(props) {
     </div>
   );
 }
+
+AutocompleteField.propTypes = {
+  source: PropTypes.func.isRequired,
+  getFormValue: PropTypes.func,
+};
 
 export default AutocompleteField;

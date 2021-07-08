@@ -4,7 +4,7 @@ import InputField from "components/InputField";
 import DateField from "components/Date";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
-import CountryField from "components/CountryField";
+import CountryField, { Countries } from "components/CountryField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
 import {
@@ -122,7 +122,7 @@ Start.initialValues = {
   idType: "slovak",
   idSlovak: "",
   idForeign: "",
-  // originCountry: "",
+  originCountry: "",
   email: "",
   phoneNumber: "",
   phoneNumberVerification: "",
@@ -134,6 +134,9 @@ Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
   firstName: Yup.string().required(__("Zadajte meno.", "ehranica")),
+  originCountry: Yup.string()
+    .oneOf(Countries.map((c) => c.id))
+    .required(__("Vyberte krajinu zo zoznamu.", "ehranica")),
   lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
   arrivalDate: Yup.object().validDate(
     __("Zadajte správny deň a mesiac príchodu.", "ehranica")

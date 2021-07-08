@@ -1,58 +1,42 @@
-import React from "react";
+import React, { useMemo } from "react";
 import AutocompleteField from "./AutocompleteField";
 import { __ } from "@wordpress/i18n";
 import { countries as countriesData } from "autocomplete/countries";
 import replaceDiacritics from "autocomplete/replaceDiacritics";
 
 function CountryField(props) {
-  function onConfirm(value) {
-    console.log("CountryField.onConfirm", value);
+  const locale = "sk"; // TODO -- get this externally
+  const countries = useMemo(() => getCountriesSortedByLabel(locale), [locale]);
+
+  function suggest(query, populateResults) {
+    const queryNormalized = replaceDiacritics(query.toLowerCase());
+
+    const filteredResults = countries.filter((result) =>
+      result.searchToken.includes(queryNormalized)
+    );
+    populateResults(filteredResults);
   }
 
   return (
     <AutocompleteField
       name={props.name}
-      onConfirm={onConfirm}
       label={props.label}
-      options={countries}
-      tNoResults={() => __("Krajina nie je v zozname", "ehranica")}
-      templates={{
-        inputValue: (country) => (country ? country.label.sk : ""),
-        suggestion: (country) => country.label.sk, //TODO
-      }}
       source={suggest}
+      tNoResults={() => __("Krajina nie je v zozname", "ehranica")}
+      getFormValue={(country) => (country ? country.id : country)}
+      templates={{
+        inputValue: (country) => (country ? country.label[locale] : ""),
+        suggestion: (country) => country.label[locale],
+      }}
     />
   );
 }
 
-function suggest(query, populateResults) {
-  const queryNormalized = replaceDiacritics(query.toLowerCase());
+function getCountriesSortedByLabel(locale) {
+  return Countries.slice().sort((a, b) => {
+    const labelA = a.label[locale];
+    const labelB = b.label[locale];
 
-  const filteredResults = countries.filter((result) =>
-    result.searchToken.includes(queryNormalized)
-  );
-  populateResults(filteredResults);
-}
-
-const countries = countriesData
-  .map((country) => ({
-    id: country[0],
-    aliases: [country[1], country[2], country[3], country[4]],
-    label: {
-      sk: country[2],
-      en: country[4],
-    },
-    searchToken: replaceDiacritics(
-      [country[1], country[2], country[3], country[4]].join(" ")
-    )
-      .toLowerCase()
-      .replace(/[ -.]+/g, " "),
-  }))
-
-  // Sort by (localized) label
-  .sort((a, b) => {
-    const labelA = a.label.sk; //TODO
-    const labelB = b.label.sk; //TODO
     if (labelA < labelB) {
       return -1;
     }
@@ -63,5 +47,20 @@ const countries = countriesData
 
     return 0;
   });
+}
+
+export const Countries = countriesData.map((country) => ({
+  id: country[0],
+  aliases: [country[1], country[2], country[3], country[4]],
+  label: {
+    sk: country[2],
+    en: country[4],
+  },
+  searchToken: replaceDiacritics(
+    [country[1], country[2], country[3], country[4]].join(" ")
+  )
+    .toLowerCase()
+    .replace(/[ -.]+/g, " "),
+}));
 
 export default CountryField;
