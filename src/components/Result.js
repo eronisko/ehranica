@@ -5,7 +5,7 @@ import InsetText from "./InsetText";
 import WarningText from "./WarningText";
 
 function Result(props) {
-  const {t} = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -14,24 +14,23 @@ function Result(props) {
         heading={props.title}
         body={props.body}
       />
-      <InsetText
-        content={t("component.result.insetContent")}
+      <InsetText content={t("component.result.insetContent")} />
+      <WarningText content={t("component.result.warningText")} />
+      <p
+        className="govuk-body"
+        dangerouslySetInnerHTML={{
+          __html: t("component.result.additionalInfo"),
+        }}
       />
-      <WarningText
-        content={t("component.result.warningText")}
-      />
-      <p className="govuk-body">
-        {t("component.result.additionalInfo")}
-      </p>
-      <p className="govuk-body">
-        <a
-          className="govuk-link"
-          href="#"
-          title={t("component.result.ratingLink")}
-        >
-          {t("component.result.ratingLink")}
-        </a>
-      </p>
+      {/*<p className="govuk-body">*/}
+      {/*  <a*/}
+      {/*    className="govuk-link"*/}
+      {/*    href="#"*/}
+      {/*    title={t("component.result.ratingLink")}*/}
+      {/*  >*/}
+      {/*    {t("component.result.ratingLink")}*/}
+      {/*  </a>*/}
+      {/*</p>*/}
       <h2 className="govuk-heading-m">{t("component.result.nextActions")}</h2>
       <div className="govuk-button-group">
         <a

@@ -8,7 +8,7 @@ import Result from "../components/Result";
 const SITE_KEY = "6LeFQ7IZAAAAABuiRASOsOQv4HFxAhGhwQiljFM0";
 
 function StepFinal({ wizard }) {
-  const {t} = useTranslation('common');
+  const { t, i18n } = useTranslation("common");
   const { values } = useFormikContext();
   const [state, setState] = useState({
     loading: true,
@@ -38,6 +38,7 @@ function StepFinal({ wizard }) {
     exception_type: values.exceptionId > 0 ? values.exceptionId : null,
     vHas_come_from_country: originCountries.shift(),
     vOther_countries_visited: originCountries,
+    notification_language: (i18n.language || "sk").toUpperCase(),
 
     vPermanentAddressCountry: "SK",
     vPermanentAddressCity: permanentAddress.city,
@@ -151,9 +152,7 @@ function StepFinal({ wizard }) {
     <div>
       {state.loading && (
         <div>
-          <p className="govuk-body">
-            {t("stepFinal.loading")}
-          </p>
+          <p className="govuk-body">{t("stepFinal.loading")}</p>
         </div>
       )}
       {!state.loading && (

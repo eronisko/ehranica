@@ -32,7 +32,11 @@ function onSubmit(values, wizard) {
     if (values.exceptionId > 0) {
       push("Consents");
     } else {
-      push("ExceptionStep");
+      if (values.isAdult) {
+        push("ExceptionStep");
+      } else {
+        push("QuarantineRegistration");
+      }
     }
   }
 
@@ -84,24 +88,24 @@ function App() {
             >
               {({ values }) => (
                 <Form>
-                  <div
-                    style={{
-                      position: "fixed",
-                      fontSize: "20px",
-                      backgroundColor: "yellow",
-                      zIndex: 1000,
-                      top: 0,
-                      right: 0,
-                      padding: "5px",
-                    }}
-                  >
-                    ID vynimky:{" "}
-                    {values.exceptionId
-                      ? values.exceptionId < 0
-                        ? t("home.exceptionNone")
-                        : values.exceptionId
-                      : t("home.exceptionNotSelected")}
-                  </div>
+                  {/*<div*/}
+                  {/*  style={{*/}
+                  {/*    position: "fixed",*/}
+                  {/*    fontSize: "20px",*/}
+                  {/*    backgroundColor: "yellow",*/}
+                  {/*    zIndex: 1000,*/}
+                  {/*    top: 0,*/}
+                  {/*    right: 0,*/}
+                  {/*    padding: "5px",*/}
+                  {/*  }}*/}
+                  {/*>*/}
+                  {/*  ID vynimky:{" "}*/}
+                  {/*  {values.exceptionId*/}
+                  {/*    ? values.exceptionId < 0*/}
+                  {/*      ? t("home.exceptionNone")*/}
+                  {/*      : values.exceptionId*/}
+                  {/*    : t("home.exceptionNotSelected")}*/}
+                  {/*</div>*/}
                   <Steps>
                     <Step id="StartStep" render={() => <StartStep />} />
                     <Step

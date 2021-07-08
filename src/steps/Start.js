@@ -19,7 +19,7 @@ import { useTranslation } from "react-i18next";
 import { __ } from "@wordpress/i18n";
 
 function Start() {
-  const {t} = useTranslation('common');
+  const { t } = useTranslation("common");
   const { values } = useFormikContext();
 
   if (values.idType === "slovak") {
@@ -34,9 +34,7 @@ function Start() {
 
   return (
     <div>
-      <Fieldset
-        legend={t("startStep.legend")}
-      >
+      <Fieldset legend={t("startStep.legend")}>
         <DateField name="arrivalDate" />
         <FieldArray name="originCountries">
           {({ remove, push }) => (
@@ -70,12 +68,18 @@ function Start() {
             </>
           )}
         </FieldArray>
-        <div className="govuk-!-margin-bottom-3"></div>
+        <div className="govuk-!-margin-bottom-3" />
       </Fieldset>
 
       <Fieldset legend={t("startStep.personalInfo.legend")}>
-        <InputField name="firstName" label={t("startStep.personalInfo.firstName")} />
-        <InputField name="lastName" label={t("startStep.personalInfo.lastName")} />
+        <InputField
+          name="firstName"
+          label={t("startStep.personalInfo.firstName")}
+        />
+        <InputField
+          name="lastName"
+          label={t("startStep.personalInfo.lastName")}
+        />
       </Fieldset>
 
       <Fieldset legend={t("startStep.idNumber.legend")}>
@@ -183,7 +187,7 @@ Start.validationSchema = Yup.object({
   originCountries: Yup.array().of(
     Yup.string()
       .oneOf(Countries.map((c) => c.id))
-      .required(__("Vyberte krajinu zo zoznamu.", "ehranica"))
+      .required("form.errors.wrongCountry")
   ),
   lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
   arrivalDate: Yup.object().validDate(

@@ -15,7 +15,7 @@
       "continue": "Pokračovať"
     },
     "cityField": {
-      "notInList": "Mesto/obec nie je v zozname"
+      "notInList": "Mesto/obec nie je v zozname"
     },
     "countryField": {
       "notInList": "Krajina nie je v zozname"
@@ -27,13 +27,14 @@
       "year": "Rok"
     },
     "result": {
-      "additionalInfo": "Ďaľšie inštrukcie Vám prídu v najbližších dňoch v SMS správe alebo emailom.V prípade že prichádzate z <a href=''>týchto</a> krajín letecky, musíte mať negatívny 72-hodín starý PCR test.",
+      "additionalInfo": "Ďaľšie inštrukcie Vám prídu v najbližších dňoch v SMS správe alebo emailom.",
       "backKorona": "Späť na korona.gov.sk",
-      "insetContent": "Ak cestujete na Slovensko letecky, musíte taktiež vyplniť formulár na stránke <a href='https://www.mindop.sk/covid-19' target='_blank' class='govuk-link'>mindop.sk/covid-19</a>.",
+      "insetContent": "Ak cestujete na Slovensko letecky, musíte taktiež vyplniť formulár na stránke <a href='https://www.mindop.sk/covid' target='_blank' class='govuk-link'>mindop.sk/covid</a>.",
       "nextActions": "Ďaľšie akcie",
       "ratingLink": "Ohodnoťte službu e-Hranica.",
+      "ratingLinks": "",
       "registerNextPerson": "Zaregistrovať ďalšiu osobu",
-      "warningText": "V prípade že prichádzate z <a href=''>týchto</a> krajín letecky, musíte mať negatívny 72-hodín starý PCR test."
+      "warningText": "V prípade že prichádzate z <a href='https://korona.gov.sk/cestovanie-do-sr/#krajiny-nie-je-nutny-negat-72h-PCR-test' target='_blank'>týchto</a> krajín letecky, nemusíte mať negatívny 72 hodín starý PCR test."
     },
     "warningText": {
       "warning": "Varovanie"
@@ -93,7 +94,7 @@
       "noException": "<strong>Nemám žiadnu výnimku</strong>  z absolvovania domácej izolácie.",
       "noExceptionLabel": "Nemám výnimku z absolvovania domácej izolácie",
       "warning": "Upozornenie",
-      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='#' target='_blank'>Prehľad výnimiek</a>"
+      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='https://korona.gov.sk/cestovanie-do-sr/#vynimky-pre-nezaockovanych' target='_blank'>Prehľad výnimiek</a>"
     },
     "withoutTest": {
       "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu",
