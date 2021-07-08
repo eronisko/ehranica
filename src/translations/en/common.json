@@ -15,6 +15,7 @@
       "continue": ""
     },
     "cityField": {
+      "county": "",
       "notInList": ""
     },
     "countryField": {
@@ -150,16 +151,26 @@
       "required": {
         "arrivalDate": "",
         "birthDate": "",
+        "chooseOne": "",
+        "city": "",
+        "correctnessStatement": "",
+        "dataConsent": "",
         "email": "",
         "emailCorrect": "",
         "firstName": "",
         "foreignId": "",
+        "houseNumber": "",
+        "household": "",
+        "insuranceCompany": "",
         "lastName": "",
         "phoneNumber": "",
         "phoneNumberDiffer": "",
         "phoneNumberVerification": "",
         "slovakId": "",
-        "wrongCountry": ""
+        "street": "",
+        "wrongCountry": "",
+        "zip": "",
+        "zipCount": ""
       }
     }
   },

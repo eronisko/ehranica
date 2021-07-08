@@ -6,9 +6,7 @@ import RadioInputField from "../components/RadioInputField";
 import * as Yup from "yup";
 import Button from "../components/Button";
 import { Field, useFormikContext } from "formik";
-
 import { useTranslation } from "react-i18next";
-import { __ } from "@wordpress/i18n";
 
 function AgeDependent({ wizard }) {
   const { t, i18n } = useTranslation("common");
@@ -109,15 +107,11 @@ step.initialValues = {
 step.validationSchema = Yup.object({
   isVaccinated: Yup.string().when(["isAdult"], {
     is: true,
-    then: Yup.string().required(
-      __("Vyberte si jednu z možností.") /*__("Vyberte si jednu z možností.")*/
-    ),
+    then: Yup.string().required("required.chooseOne"),
   }),
   hasHouseholdMemberInIsolation: Yup.string().when(["isAdult"], {
     is: false,
-    then: Yup.string().required(
-      __("Vyberte si jednu z možností.")
-    ) /*t("ageDependent.chooseOne")*/,
+    then: Yup.string().required("required.chooseOne"),
   }),
 });
 

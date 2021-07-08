@@ -5,7 +5,6 @@ import Fieldset from "components/Fieldset";
 import CheckboxField from "components/CheckboxField";
 import { withWizard } from "react-albus";
 import { useTranslation } from "react-i18next";
-import { __ } from "@wordpress/i18n";
 
 function Consents({ wizard }) {
   const {t, i18n} = useTranslation('common');
@@ -44,11 +43,11 @@ step.initialValues = {
 step.validationSchema = Yup.object({
   personalDataConsent: Yup.bool().oneOf(
     [true],
-    __("Prosím, akceptujte súhlas so spracovaním osobných údajov.", "ehranica")
+    "required.dataConsent"
   ),
   correctnessStatement: Yup.bool().oneOf(
     [true],
-    __("Prosím, potvrďte správnosť zadaných údajov.", "ehranica")
+    "required.correctnessStatement"
   ),
 });
 

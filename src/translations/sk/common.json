@@ -15,6 +15,7 @@
       "continue": "Pokračovať"
     },
     "cityField": {
+      "county": "okres",
       "notInList": "Mesto/obec nie je v zozname"
     },
     "countryField": {
@@ -150,16 +151,26 @@
       "required": {
         "arrivalDate": "Zadajte správny deň a mesiac príchodu.",
         "birthDate": "Zadajte správny deň, mesiac a rok narodenia.",
+        "chooseOne": "Vyberte si jednu z možností.",
+        "city": "Vyberte mesto/obec zo zoznamu.",
+        "correctnessStatement": "Prosím, potvrďte správnosť zadaných údajov.",
+        "dataConsent": "Prosím, akceptujte súhlas so spracovaním osobných údajov.",
         "email": "Zadajte emailovú adresu.",
         "emailCorrect": "Zadajte správnu emailovú adresu.",
         "firstName": "Zadajte meno.",
         "foreignId": "Zadajte správne ID pridelené inou krajinou.",
+        "houseNumber": "Zadajte číslo domu.",
+        "household": "Zadajte celé kladné číslo.",
+        "insuranceCompany": "Zvoľte spôsob poistenia.",
         "lastName": "Zadajte priezvisko.",
         "phoneNumber": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
         "phoneNumberDiffer": "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
         "phoneNumberVerification": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
         "slovakId": "Zadajte správne rodné číslo alebo BIČ.",
-        "wrongCountry": "Vyberte krajinu zo zoznamu."
+        "street": "Zadajte ulicu.",
+        "wrongCountry": "Vyberte krajinu zo zoznamu.",
+        "zip": "Zadajte PSČ.",
+        "zipCount": "PSČ musí obsahovať presne 5 cifier."
       }
     }
   },

@@ -17,7 +17,6 @@ import {
 } from "validations/Validations";
 import i18next from "i18next";
 import { useTranslation } from "react-i18next";
-import { __ } from "@wordpress/i18n";
 
 function Start() {
   const { t } = useTranslation("common");
