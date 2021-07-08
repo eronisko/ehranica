@@ -40,6 +40,9 @@ function QuarantineRegistration({ wizard }) {
             <RadioInputField name="insuranceCompany" value="vszp">
               {__("Všeobecná zdravotná poisťovňa", "ehranica")}
             </RadioInputField>
+            <RadioInputField name="insuranceCompany" value="dovera">
+              {__("Dôvera zdravotná poisťovňa", "ehranica")}
+            </RadioInputField>
             <RadioInputField name="insuranceCompany" value="union">
               {__("Union zdravotná poisťovňa", "ehranica")}
             </RadioInputField>
