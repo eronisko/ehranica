@@ -8,28 +8,28 @@ import { useTranslation } from "react-i18next";
 import { __ } from "@wordpress/i18n";
 
 function Consents({ wizard }) {
-  const {t, i18n} = useTranslation('global');
+  const {t, i18n} = useTranslation('common');
   return (
     <>
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
-        {t("navigation.back")}
+        {t("global.navigation.back")}
       </a>
-      <Fieldset legend={t("confirmationLegend")}>
+      <Fieldset legend={t("global.confirmationLegend")}>
         <CheckboxField
           name="personalDataConsent"
           hint={
             <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
-              {t("dataConsent.linkText")}
+              {t("global.dataConsent.linkText")}
             </a>
           }
         >
-          {t("dataConsent.text")}
+          {t("global.dataConsent.text")}
         </CheckboxField>
         <CheckboxField name="correctnessStatement">
-          {t("correctnessStatement.text")}
+          {t("global.correctnessStatement.text")}
         </CheckboxField>
       </Fieldset>
-      <Button label={t("navigation.sendRegistration")} />{" "} 
+      <Button label={t("global.navigation.sendRegistration")} />{" "} 
     </>
   );
 }
