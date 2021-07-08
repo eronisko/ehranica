@@ -37,19 +37,19 @@ function QuarantineRegistration({ wizard }) {
       >
         <FormGroup name="insuranceCompany">
           <div className="govuk-radios">
-            <RadioInputField name="insuranceCompany" value="vszp">
+            <RadioInputField name="insuranceCompany" value="25">
               {__("Všeobecná zdravotná poisťovňa", "ehranica")}
             </RadioInputField>
-            <RadioInputField name="insuranceCompany" value="dovera">
+            <RadioInputField name="insuranceCompany" value="24">
               {__("Dôvera zdravotná poisťovňa", "ehranica")}
             </RadioInputField>
-            <RadioInputField name="insuranceCompany" value="union">
+            <RadioInputField name="insuranceCompany" value="27">
               {__("Union zdravotná poisťovňa", "ehranica")}
             </RadioInputField>
-            <RadioInputField name="insuranceCompany" value="other_eu_country">
+            <RadioInputField name="insuranceCompany" value="98">
               {__("Poistenie v inej krajine EÚ", "ehranica")}
             </RadioInputField>
-            <RadioInputField name="insuranceCompany" value="none">
+            <RadioInputField name="insuranceCompany" value="99">
               {__("Bez poistenia v EÚ", "ehranica")}
             </RadioInputField>
           </div>
