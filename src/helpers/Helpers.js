@@ -1,5 +1,4 @@
 import moment from "moment";
-import { __ } from "@wordpress/i18n";
 
 export function formatDate(date) {
   return moment({

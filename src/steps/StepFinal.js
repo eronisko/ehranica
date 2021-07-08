@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { withWizard } from "react-albus";
-import { __ } from "@wordpress/i18n";
+import { useTranslation } from "react-i18next";
 import { useFormikContext } from "formik";
 import { formatDate } from "helpers/Helpers";
 import Result from "../components/Result";
@@ -8,6 +8,7 @@ import Result from "../components/Result";
 const SITE_KEY = "6LeFQ7IZAAAAABuiRASOsOQv4HFxAhGhwQiljFM0";
 
 function StepFinal({ wizard }) {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
   const [state, setState] = useState({
     loading: true,
@@ -128,17 +129,11 @@ function StepFinal({ wizard }) {
           if (data.payload && data.payload.vEET_user_text) {
             message = data.payload.vEET_user_text;
           } else {
-            message = __(
-              "Ďakujeme, že ste sa zaregistrovali do eHranice.",
-              "ehranica"
-            );
+            message = t("stepFinal.thanksMessage");
           }
         } else {
           isError = true;
-          message = __(
-            "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo +421 2 32 35 30 30.",
-            "ehranica"
-          );
+          message = t("stepFinal.thanksMessageError");
         }
 
         setState({
@@ -157,10 +152,7 @@ function StepFinal({ wizard }) {
       {state.loading && (
         <div>
           <p className="govuk-body">
-            {__(
-              "Vašu registráciu spracovávame, vydržte ešte chvíľu a nezatvárajte stránku.",
-              "ehranica"
-            )}
+            {t("stepFinal.loading")}
           </p>
         </div>
       )}
@@ -169,8 +161,8 @@ function StepFinal({ wizard }) {
           isError={state.isError}
           title={
             state.isError
-              ? __("Registrácia sa nepodarila", "ehranica")
-              : __("Registrácia dokončená", "ehranica")
+              ? t("stepFinal.registrationError")
+              : t("stepFinal.registrationSuccess")
           }
           body={state.message}
         />

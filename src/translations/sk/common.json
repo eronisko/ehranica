@@ -109,5 +109,16 @@
       "lastName": "Priezvisko",
       "legend": "Osobné údaje"
     }
+  },
+  "stepFinal": {
+    "loading": "Vašu registráciu spracovávame, vydržte ešte chvíľu a nezatvárajte stránku.",
+    "registrationError": "Registrácia sa nepodarila",
+    "registrationSuccess": "Registrácia dokončená",
+    "thanksMessage": "Ďakujeme, že ste sa zaregistrovali do eHranice.",
+    "thanksMessageError": "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo +421 2 32 35 30 30."
+  },
+  "youngerThan12": {
+    "body": "<p>Ďakujeme, že ste sa chceli zaregistrovať do eHranice. <strong>Deti do 12 rokov sa nemusia registrovať.</strong></p><p>Platí pre ne to isté, čo pre osoby žijúce s nimi v spoločnej domácnosti. Teda, ak má niektorý člen spoločnej domácnosti absolvovať povinnú karanténu, platí to aj pre dieťa. A naopak, ak sa na členov spoločnej domácnosti vzťahuje výnimka z karantény, výnimka platí aj pre dieťa.</p>",
+    "title": "Registrácia nie je potrebná"
   }
 }

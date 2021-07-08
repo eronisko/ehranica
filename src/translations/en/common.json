@@ -109,5 +109,16 @@
       "lastName": "",
       "legend": ""
     }
+  },
+  "stepFinal": {
+    "loading": "",
+    "registrationError": "",
+    "registrationSuccess": "",
+    "thanksMessage": "",
+    "thanksMessageError": ""
+  },
+  "youngerThan12": {
+    "body": "",
+    "title": ""
   }
 }
