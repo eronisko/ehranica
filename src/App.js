@@ -2,7 +2,7 @@ import "./App.css";
 import { Wizard, Steps, Step } from "react-albus";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Formik, Form } from "formik";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 import StartStep from "steps/Start";
 import AgeDependentStep from "steps/AgeDependent";
@@ -11,7 +11,6 @@ import YoungerThan12Step from "steps/YoungerThan12";
 import { age } from "helpers/Helpers";
 import QuarantineRegistrationStep from "steps/QuarantineRegistration";
 import ConsentsStep from "steps/Consents";
-import ThankYouTemporaryStep from "steps/ThankYouTemporary";
 
 import StepFinalStep from "steps/StepFinal";
 
@@ -72,7 +71,7 @@ let initialValues = {
 };
 
 function App() {
-  const {t, i18n} = useTranslation('common');
+  const { t, i18n } = useTranslation("common");
   return (
     <Router>
       <Route>
@@ -119,10 +118,6 @@ function App() {
                       render={() => <QuarantineRegistrationStep />}
                     />
                     <Step id="Consents" render={() => <ConsentsStep />} />
-                    <Step
-                      id="ThankYouTemporary"
-                      render={() => <ThankYouTemporaryStep />}
-                    />
                     <Step id="StepFinal" render={() => <StepFinalStep />} />
                   </Steps>
                 </Form>

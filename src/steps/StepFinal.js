@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { withWizard } from "react-albus";
 import { __ } from "@wordpress/i18n";
-import Panel from "../components/Panel";
-import InsetText from "../components/InsetText";
-import ErrorMessage from "../components/ErrorMessage";
-import RadioInputField from "../components/RadioInputField";
-import InputField from "../components/InputField";
 import { useFormikContext } from "formik";
-import * as Yup from "yup";
-import Button from "../components/Button";
-import WarningText from "../components/WarningText";
 import { formatDate } from "helpers/Helpers";
+import Result from "../components/Result";
 
 const SITE_KEY = "6LeFQ7IZAAAAABuiRASOsOQv4HFxAhGhwQiljFM0";
 
@@ -18,7 +11,8 @@ function StepFinal({ wizard }) {
   const { values } = useFormikContext();
   const [state, setState] = useState({
     loading: true,
-    thankYouMessage: null,
+    isError: null,
+    message: null,
   });
 
   let people = [];
@@ -126,20 +120,31 @@ function StepFinal({ wizard }) {
     })
       .then((response) => response.json())
       .then((data) => {
-        let thankYouMessage = null;
+        let message = null;
+        let isError = null;
 
-        if (data.payload && data.payload.vEET_user_text) {
-          thankYouMessage = data.payload.vEET_user_text;
+        if (data.payload && data.payload.vCovid19Pass) {
+          isError = false;
+          if (data.payload && data.payload.vEET_user_text) {
+            message = data.payload.vEET_user_text;
+          } else {
+            message = __(
+              "Ďakujeme, že ste sa zaregistrovali do eHranice.",
+              "ehranica"
+            );
+          }
         } else {
-          thankYouMessage = __(
-            "Ďakujeme, že ste sa zaregistrovali do eHranice.",
+          isError = true;
+          message = __(
+            "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo +421 2 32 35 30 30.",
             "ehranica"
           );
         }
 
         setState({
           loading: false,
-          thankYouMessage: thankYouMessage,
+          isError: isError,
+          message: message,
         });
       })
       .catch((error) => {
@@ -149,59 +154,26 @@ function StepFinal({ wizard }) {
 
   return (
     <div>
-      {state.loading && <div>Registrácia sa odosiela. Prosím, čakajte...</div>}
-      {!state.loading && (
+      {state.loading && (
         <div>
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-          <Panel
-            heading={__("Registrácia dokončená", "ehranica")}
-            body={state.thankYouMessage}
-          />
-          <InsetText
-            content={__(
-              'Ak cestujete na Slovensko letecky, musíte taktiež vyplniť formulár na stránke <a href="https://www.mindop.sk/covid-19" target="_blank" class="govuk-link">mindop.sk/covid-19</a>.',
-              "ehranica"
-            )}
-          />
-          <WarningText
-            content={__(
-              'V prípade že prichádzate z <a href="">týchto</a> krajín letecky, musíte mať negatívny 72-hodín starý PCR test.',
-              "ehranica"
-            )}
-          />
           <p className="govuk-body">
             {__(
-              "Ďaľšie inštrukcie Vám prídu v najbližších dňoch v SMS správe alebo emailom.",
+              "Vašu registráciu spracovávame, vydržte ešte chvíľu a nezatvárajte stránku.",
               "ehranica"
             )}
           </p>
-          <p className="govuk-body">
-            <a
-              className="govuk-link"
-              href="#"
-              title={__("Ohodnoťte službu e-Hranica.", "ehranica")}
-            >
-              {__("Ohodnoťte službu e-Hranica.", "ehranica")}
-            </a>
-          </p>
-          <h2 className="govuk-heading-m">{__("Ďaľšie akcie", "ehranica")}</h2>
-          <div className="govuk-button-group">
-            <a
-              href="."
-              className="govuk-button govuk-button--secondary"
-              data-module="govuk-button"
-            >
-              {__("Zaregistrovať ďalšiu osobu", "ehranica")}
-            </a>
-            <a
-              href="https://korona.gov.sk"
-              className="govuk-button govuk-button--secondary govuk-!-margin-left-5"
-              data-module="govuk-button"
-            >
-              {__("Späť na korona.gov.sk", "ehranica")}
-            </a>
-          </div>
         </div>
+      )}
+      {!state.loading && (
+        <Result
+          isError={state.isError}
+          title={
+            state.isError
+              ? __("Registrácia sa nepodarila", "ehranica")
+              : __("Registrácia dokončená", "ehranica")
+          }
+          body={state.message}
+        />
       )}
     </div>
   );
