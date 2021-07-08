@@ -15,9 +15,11 @@ import {
   slovakId,
   birthNumberToDate,
 } from "validations/Validations";
+import { useTranslation } from "react-i18next";
 import { __ } from "@wordpress/i18n";
 
 function Start() {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
 
   if (values.idType === "slovak") {
@@ -33,7 +35,7 @@ function Start() {
   return (
     <div>
       <Fieldset
-        legend={__("Zadajte krajinu a dátum príchodu na Slovensko", "ehranica")}
+        legend={t("startStep.legend")}
       >
         <DateField name="arrivalDate" />
         <FieldArray name="originCountries">
@@ -56,14 +58,14 @@ function Start() {
                           marginBottom: ".5ex",
                         }}
                       >
-                        {__("Zrušiť", "ehranica")}
+                        {t("startStep.cancel")}
                       </Link>
                     )
                   }
                 />
               ))}
               <Link onClick={() => push("")}>
-                {__("Pridať ďalšiu navštívenú krajinu", "ehranica")}
+                {t("startStep.addAnotherCountry")}
               </Link>
             </>
           )}
@@ -71,12 +73,12 @@ function Start() {
         <div className="govuk-!-margin-bottom-3"></div>
       </Fieldset>
 
-      <Fieldset legend={__("Osobné údaje", "ehranica")}>
-        <InputField name="firstName" label={__("Meno", "ehranica")} />
-        <InputField name="lastName" label={__("Priezvisko", "ehranica")} />
+      <Fieldset legend={t("startStep.personalInfo.legend")}>
+        <InputField name="firstName" label={t("startStep.personalInfo.firstName")} />
+        <InputField name="lastName" label={t("startStep.personalInfo.lastName")} />
       </Fieldset>
 
-      <Fieldset legend={__("Identifikačné číslo", "ehranica")}>
+      <Fieldset legend={t("startStep.idNumber.legend")}>
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <ErrorMessage name="idType" />
           <div className="govuk-radios">
@@ -85,7 +87,7 @@ function Start() {
               value="slovak"
               conditionalRender={<InputField name="idSlovak" />}
             >
-              {__("Slovenské rodné číslo alebo BIČ", "ehranica")}
+              {t("startStep.idNumber.icoBic")}
             </RadioInputField>
             <RadioInputField
               name="idType"
@@ -93,51 +95,36 @@ function Start() {
               conditionalRender={
                 <InputField
                   name="idForeign"
-                  hint={__(
-                    "Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ.",
-                    "ehranica"
-                  )}
+                  hint={t("startStep.idNumber.icoBicHelper")}
                 />
               }
             >
-              {__("ID pridelené inou krajinou", "ehranica")}
+              {t("startStep.idNumber.byCountry")}
             </RadioInputField>
           </div>
         </div>
       </Fieldset>
 
-      <Fieldset legend={__("Dátum narodenia", "ehranica")}>
+      <Fieldset legend={t("startStep.birthDateLegend")}>
         <DateField name="birthDate" />
       </Fieldset>
 
-      <Fieldset legend={__("Emailová adresa a telefónne číslo", "ehranica")}>
+      <Fieldset legend={t("startStep.emailMobile.legend")}>
         <InputField
           type="email"
           name="email"
-          label={__("Emailová adresa", "ehranica")}
-          hint={__(
-            "Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko.",
-            "ehranica"
-          )}
+          label={t("startStep.emailMobile.email")}
+          hint={t("startStep.emailMobile.emailHint")}
         />
         <InputField
           name="phoneNumber"
-          label={__(
-            "Telefónne číslo (s ktorým ste pricestovali zo zahraničia)",
-            "ehranica"
-          )}
-          hint={__(
-            "Zadajte aj s medzinárodnou predvoľbou, napríklad +421 pre slovenské čísla.",
-            "ehranica"
-          )}
+          label={t("startStep.emailMobile.phone")}
+          hint={t("startStep.emailMobile.phoneHint")}
         />
         <InputField
           name="phoneNumberVerification"
-          label={__("Zadajte telefónne číslo ešte raz", "ehranica")}
-          hint={__(
-            "Pozorne si skontrolujte, či ste vo Vašom telefónnom čísle omylom nezamenili niektorú číslicu.",
-            "ehranica"
-          )}
+          label={t("startStep.emailMobile.phoneVerify")}
+          hint={t("startStep.emailMobile.phoneVerifyHint")}
         />
       </Fieldset>
 

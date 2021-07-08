@@ -13,70 +13,66 @@ import FormGroup from "components/FormGroup";
 import { useFormikContext } from "formik";
 import { withWizard } from "react-albus";
 import { validZip } from "../validations/Validations";
+import { useTranslation } from "react-i18next";
 
 function QuarantineRegistration({ wizard }) {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
   return (
     <>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
-        {__("Späť")}
+        {t("global.navigation.back")}
       </a>
       <p className="govuk-body">
-        {__(
-          "Dokončite registráciu do ehranice. Po vstupe na Slovensko je nutné ostať v domácej izolácii.",
-          "ehranica"
-        )}
+        {t("quarantineRegistration.intro1")}
         <br />
-        {__(
-          "Domáca izolácia skončí po negatívnom PCR teste, na ktorý budete objednaný. ",
-          "ehranica"
-        )}
+        {t("quarantineRegistration.intro2")}
       </p>
       <Fieldset
-        legend={__("Zdravotná poisťovňa", "ehranica")}
+        legend={t("quarantineRegistration.insuranceCompanyLegend")} 
         name="insuranceCompany"
       >
         <FormGroup name="insuranceCompany">
           <div className="govuk-radios">
             <RadioInputField name="insuranceCompany" value="25">
-              {__("Všeobecná zdravotná poisťovňa", "ehranica")}
+              {t("quarantineRegistration.insuranceCompany.25")}
             </RadioInputField>
             <RadioInputField name="insuranceCompany" value="24">
-              {__("Dôvera zdravotná poisťovňa", "ehranica")}
+              {t("quarantineRegistration.insuranceCompany.24")}
             </RadioInputField>
             <RadioInputField name="insuranceCompany" value="27">
-              {__("Union zdravotná poisťovňa", "ehranica")}
+              {t("quarantineRegistration.insuranceCompany.27")}
             </RadioInputField>
             <RadioInputField name="insuranceCompany" value="98">
-              {__("Poistenie v inej krajine EÚ", "ehranica")}
+              {t("quarantineRegistration.insuranceCompany.98")}
             </RadioInputField>
             <RadioInputField name="insuranceCompany" value="99">
-              {__("Bez poistenia v EÚ", "ehranica")}
+              {t("quarantineRegistration.insuranceCompany.99")}
             </RadioInputField>
           </div>
         </FormGroup>
       </Fieldset>
-      <Fieldset legend={__("Adresa absolvovania domácej izolácie", "ehranica")}>
+      <Fieldset legend={t("quarantineRegistration.addressLegend")}>
         <CityField
           municipalityFieldName="quarantineAddress.city"
           countyFieldName="quarantineAddress.county"
-          label={__("Mesto/Obec", "ehranica")}
+          label={t("quarantineRegistration.addressCity")}
         />
         <InputField
           name="quarantineAddress.street"
-          label={__("Ulica", "ehranica")}
+          label={t("quarantineRegistration.addressStreet")}
         />
         <InputField
           name="quarantineAddress.houseNumber"
-          label={__("Orientačné číslo (číslo domu)", "ehranica")}
+          label={t("quarantineRegistration.addressNumber")}
         />
         <InputField
           name="quarantineAddress.zip"
-          label={__("PSČ", "ehranica")}
+          label={t("quarantineRegistration.addressZip")}
         />
       </Fieldset>
-      <Fieldset legend={__("Adresa trvalého bydliska", "ehranica")}>
+      <Fieldset legend={t("quarantineRegistration.addressPermanentLegend")}>
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <ErrorMessage name="permanentAddressSameAsQuarantineAddress" />
           <div className="govuk-radios">
@@ -84,94 +80,79 @@ function QuarantineRegistration({ wizard }) {
               name="permanentAddressSameAsQuarantineAddress"
               value="same"
             >
-              {__("Rovnaká ako adresa domácej izolácie", "ehranica")}
+              {t("quarantineRegistration.addressPermanentSame")}
             </RadioInputField>
             <RadioInputField
               name="permanentAddressSameAsQuarantineAddress"
               value="different"
             >
-              {__("Iná ako adresa domácej izolácie", "ehranica")}
+              {t("quarantineRegistration.addressPermanentDifferent")}
             </RadioInputField>
             <RadioInputField
               name="permanentAddressSameAsQuarantineAddress"
               value="no_permanent_address"
             >
-              {__("Bez trvalého bydliska na Slovensku", "ehranica")}
+              {t("quarantineRegistration.addressPermanentNo")}
             </RadioInputField>
           </div>
         </div>
       </Fieldset>
       {values["permanentAddressSameAsQuarantineAddress"] === "different" && (
-        <Fieldset legend={__("Adresa trvalého bydliska", "ehranica")}>
+        <Fieldset legend={t("quarantineRegistration.addressPermanentLegend")}>
           <InputField
             name="permanentAddress.city"
-            label={__("Mesto/Obec", "ehranica")}
+            label={t("quarantineRegistration.addressCity")}
           />
           <InputField
             name="permanentAddress.street"
-            label={__("Ulica", "ehranica")}
+            label={t("quarantineRegistration.addressStreet")}
           />
           <InputField
             name="permanentAddress.houseNumber"
-            label={__("Orientačné číslo (číslo domu)", "ehranica")}
+            label={t("quarantineRegistration.addressNumber")}
           />
           <InputField
             name="permanentAddress.zip"
-            label={__("PSČ", "ehranica")}
+            label={t("quarantineRegistration.addressZip")}
           />
         </Fieldset>
       )}
-      <Fieldset legend={__("Dodatočné údaje", "ehranica")}>
+      <Fieldset legend={t("quarantineRegistration.additionalInfoLegend")}>
         <p className="govuk-hint">
-          {__(
-            "V prípade pozitívneho testu, v záujme ochrany Vás a Vašich blízkych, budú od Vás hygienici vyžadovať dodatočné informácie. Pomôžete nám, ak ich dobrovoľne zadáte už teraz.",
-            "ehranica"
-          )}
+          {t("quarantineRegistration.additionalInfoHelper")}
         </p>
         <InputField
           name="additionalInfo.numberOfPersonsInSameHousehold"
           type="number"
-          label={__(
-            "Počet osôb žijúcich alebo zdržiavajúcich sa v mieste izolácie",
-            "ehranica"
-          )}
+          label={t("quarantineRegistration.additionalInfoPersonsInHousehold")}
         />
         <InputField
           name="additionalInfo.doctorsFullName"
-          label={__("Meno a priezvisko všeobecného lekára", "ehranica")}
+          label={t("quarantineRegistration.additionalInfoDoctorsName")}
         />
         <TextareaField
           name="additionalInfo.note"
           as="textarea"
-          label={__("Poznámka", "ehranica")}
-          hint={__(
-            "Do poznámky môžete uviesť upresňujúce informácie.",
-            "ehranica"
-          )}
+          label={t("quarantineRegistration.additionalInfoNote")}
+          hint={t("quarantineRegistration.additionalInfoNoteHint")}
         />
       </Fieldset>
-      <Fieldset legend={__("Potvrdenia", "ehranica")}>
+      <Fieldset legend={t("global.confirmationLegend")}>
         <CheckboxField
           name="personalDataConsent"
           hint={
             <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
-              {__("Poučenie o ochrane osobných údajov", "ehranica")}
+              {t("global.dataConsent.linkText")}
             </a>
           }
         >
-          {__(
-            "Oboznámil(a) som sa s Poučením o ochrane osobných údajov",
-            "ehranica"
-          )}
+          {t("global.dataConsent.text")}
         </CheckboxField>
         <CheckboxField name="correctnessStatement">
-          {__(
-            "Potvrdzujem a prehlasujem, že všetky uvedené údaje sú pravdivé",
-            "ehranica"
-          )}
+          {t("global.correctnessStatement.text")}
         </CheckboxField>
       </Fieldset>
-      <Button label={__("Odoslať registráciu")} />
+      <Button label={t("global.navigation.sendRegistration")} />
     </>
   );
 }

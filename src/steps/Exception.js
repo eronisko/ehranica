@@ -4,8 +4,10 @@ import * as Yup from "yup";
 import Button from "../components/Button";
 import Start from "exceptions/Start";
 import { isInteger, isNaN, useFormikContext } from "formik";
+import { useTranslation } from "react-i18next";
 
 function Exception({ wizard }) {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
 
   function exceptionId(groupName) {
@@ -33,7 +35,7 @@ function Exception({ wizard }) {
     <div>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
-        Späť
+        {t("global.navigation.back")}
       </a>
       <Start />
       <Button disabled={null === values.exceptionId} />

@@ -10,8 +10,75 @@
     "vacinatedNo": "Nie som zaočkovaná osoba.",
     "vacinatedPartially": "Som zaočkovaná osoba aspoň 1 dávkou a mám o tom doklad."
   },
+  "global": {
+    "confirmationLegend": "Potvrdenia",
+    "correctnessStatement": {
+      "text": "Potvrdzujem a prehlasujem, že všetky uvedené údaje sú pravdivé"
+    },
+    "dataConsent": {
+      "linkText": "Poučenie o ochrane osobných údajov",
+      "text": "Oboznámil(a) som sa s Poučením o ochrane osobných údajov"
+    },
+    "navigation": {
+      "back": "Späť",
+      "sendRegistration": "Odoslať registráciu"
+    }
+  },
   "home": {
     "exceptionNone": "ziadna",
     "exceptionNotSelected": "nezvolena"
+  },
+  "quarantineRegistration": {
+    "additionalInfoDoctorsName": "Meno a priezvisko všeobecného lekára",
+    "additionalInfoHelper": "V prípade pozitívneho testu, v záujme ochrany Vás a Vašich blízkych, budú od Vás hygienici vyžadovať dodatočné informácie. Pomôžete nám, ak ich dobrovoľne zadáte už teraz.",
+    "additionalInfoLegend": "Dodatočné údaje",
+    "additionalInfoNote": "Poznámka",
+    "additionalInfoNoteHint": "Do poznámky môžete uviesť upresňujúce informácie.",
+    "additionalInfoPersonsInHousehold": "Počet osôb žijúcich alebo zdržiavajúcich sa v mieste izolácie",
+    "addressCity": "Mesto/Obec",
+    "addressLegend": "Adresa absolvovania domácej izolácie",
+    "addressNumber": "Orientačné číslo (číslo domu)",
+    "addressPermanentDifferent": "Iná ako adresa domácej izolácie",
+    "addressPermanentLegend": "Adresa trvalého bydliska",
+    "addressPermanentNo": "Bez trvalého bydliska na Slovensku",
+    "addressPermanentSame": "Rovnaká ako adresa domácej izolácie",
+    "addressStreet": "Ulica",
+    "addressZip": "PSČ",
+    "insuranceCompany": {
+      "24": "Dôvera zdravotná poisťovňa",
+      "25": "Všeobecná zdravotná poisťovňa",
+      "27": "Union zdravotná poisťovňa",
+      "98": "Poistenie v inej krajine EÚ",
+      "99": "Bez poistenia v EÚ"
+    },
+    "insuranceCompanyLegend": "Zdravotná poisťovňa",
+    "intro1": "Dokončite registráciu do ehranice. Po vstupe na Slovensko je nutné ostať v domácej izolácii.",
+    "intro2": "Domáca izolácia skončí po negatívnom PCR teste, na ktorý budete objednaný."
+  },
+  "startStep": {
+    "addAnotherCountry": "Pridať ďalšiu navštívenú krajinu",
+    "birthDateLegend": "Dátum narodenia",
+    "cancel": "Zrušiť",
+    "emailMobile": {
+      "email": "Emailová adresa",
+      "emailHint": "Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko.",
+      "legend": "Emailová adresa a telefónne číslo",
+      "phone": "Telefónne číslo (s ktorým ste pricestovali zo zahraničia)",
+      "phoneHint": "Zadajte aj s medzinárodnou predvoľbou, napríklad +421 pre slovenské čísla.",
+      "phoneVerify": "Zadajte telefónne číslo ešte raz",
+      "phoneVerifyHint": "Pozorne si skontrolujte, či ste vo Vašom telefónnom čísle omylom nezamenili niektorú číslicu."
+    },
+    "idNumber": {
+      "byCountry": "ID pridelené inou krajinou",
+      "icoBic": "Slovenské rodné číslo alebo BIČ",
+      "icoBicHelper": "Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ.",
+      "legend": "Identifikačné číslo"
+    },
+    "legend": "Zadajte krajinu a dátum príchodu na Slovensko",
+    "personalInfo": {
+      "firstName": "Meno",
+      "lastName": "Priezvisko",
+      "legend": "Osobné údaje"
+    }
   }
 }

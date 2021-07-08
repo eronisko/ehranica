@@ -38,7 +38,7 @@ function AgeDependent({ wizard }) {
     <div>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
-        Späť
+        {t("global.navigation.back")}
       </a>
       <Field type="hidden" name="age" />
       <Field type="hidden" name="isAdult" />

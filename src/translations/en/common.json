@@ -10,8 +10,75 @@
     "vacinatedNo": "",
     "vacinatedPartially": ""
   },
+  "global": {
+    "confirmationLegend": "",
+    "correctnessStatement": {
+      "text": ""
+    },
+    "dataConsent": {
+      "linkText": "",
+      "text": ""
+    },
+    "navigation": {
+      "back": "",
+      "sendRegistration": ""
+    }
+  },
   "home": {
     "exceptionNone": "",
     "exceptionNotSelected": ""
+  },
+  "quarantineRegistration": {
+    "additionalInfoDoctorsName": "",
+    "additionalInfoHelper": "",
+    "additionalInfoLegend": "",
+    "additionalInfoNote": "",
+    "additionalInfoNoteHint": "",
+    "additionalInfoPersonsInHousehold": "",
+    "addressCity": "",
+    "addressLegend": "",
+    "addressNumber": "",
+    "addressPermanentDifferent": "",
+    "addressPermanentLegend": "",
+    "addressPermanentNo": "",
+    "addressPermanentSame": "",
+    "addressStreet": "",
+    "addressZip": "",
+    "insuranceCompany": {
+      "24": "",
+      "25": "",
+      "27": "",
+      "98": "",
+      "99": ""
+    },
+    "insuranceCompanyLegend": "",
+    "intro1": "",
+    "intro2": ""
+  },
+  "startStep": {
+    "addAnotherCountry": "",
+    "birthDateLegend": "",
+    "cancel": "",
+    "emailMobile": {
+      "email": "",
+      "emailHint": "",
+      "legend": "",
+      "phone": "",
+      "phoneHint": "",
+      "phoneVerify": "",
+      "phoneVerifyHint": ""
+    },
+    "idNumber": {
+      "byCountry": "",
+      "icoBic": "",
+      "icoBicHelper": "",
+      "legend": ""
+    },
+    "legend": "",
+    "personalInfo": {
+      "firstName": "",
+      "lastName": "",
+      "legend": ""
+    }
   }
 }
