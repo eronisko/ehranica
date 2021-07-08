@@ -48,7 +48,7 @@ function AutocompleteField(props) {
       <Autocomplete
         ref={element}
         id={id.current}
-        name={props.name}
+        name={id.current} // Disables autocomplete: https://github.com/alphagov/accessible-autocomplete/issues/325#issuecomment-788793902
         showAllValues
         autoselect
         source={props.source}
