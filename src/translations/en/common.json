@@ -145,6 +145,24 @@
       "legendMinistry": ""
     }
   },
+  "form": {
+    "errors": {
+      "required": {
+        "arrivalDate": "",
+        "birthDate": "",
+        "email": "",
+        "emailCorrect": "",
+        "firstName": "",
+        "foreignId": "",
+        "lastName": "",
+        "phoneNumber": "",
+        "phoneNumberDiffer": "",
+        "phoneNumberVerification": "",
+        "slovakId": "",
+        "wrongCountry": ""
+      }
+    }
+  },
   "global": {
     "confirmationLegend": "",
     "correctnessStatement": {
@@ -204,6 +222,9 @@
     "addAnotherCountry": "",
     "birthDateLegend": "",
     "cancel": "",
+    "countryLegend": "",
+    "countryLegendHint": "",
+    "countryLegendNext": "",
     "emailMobile": {
       "email": "",
       "emailHint": "",

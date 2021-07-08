@@ -15,6 +15,7 @@ import {
   slovakId,
   birthNumberToDate,
 } from "validations/Validations";
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 import { __ } from "@wordpress/i18n";
 
@@ -138,20 +139,14 @@ function Start() {
 }
 
 function getCountryFieldLabel(index) {
-  if (index === 0) return __("Z ktorej krajiny ste prišli?", "ehranica");
+  if (index === 0) return i18next.t("common:startStep.countryLegend");
   if (index === 1)
-    return __(
-      "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
-      "ehranica"
-    );
+    return i18next.t("common:startStep.countryLegendNext")
 }
 
 function getCountryFieldHint(index) {
   if (index === 0)
-    return __(
-      "Krajina príchodu už nie je rozhodujúca, no pre ochranu zdravia ju musíme sledovať.",
-      "ehranica"
-    );
+    return i18next.t("common:startStep.countryLegendHint")
 }
 
 const today = new Date();
@@ -183,55 +178,34 @@ Yup.addMethod(Yup.string, "allowedPhoneNumber", allowedPhoneNumber);
 Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
 Start.validationSchema = Yup.object({
-  firstName: Yup.string().required(__("Zadajte meno.", "ehranica")),
+  firstName: Yup.string().required("required.firstName"),
   originCountries: Yup.array().of(
     Yup.string()
       .oneOf(Countries.map((c) => c.id))
-      .required("form.errors.wrongCountry")
+      .required("required.wrongCountry")
   ),
-  lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
-  arrivalDate: Yup.object().validDate(
-    __("Zadajte správny deň a mesiac príchodu.", "ehranica")
-  ),
-  birthDate: Yup.object().validDate(
-    __("Zadajte správny deň, mesiac a rok narodenia.", "ehranica")
-  ),
+  lastName: Yup.string().required("required.lastName"),
+  arrivalDate: Yup.object().validDate("required.arrivalDate"),
+  birthDate: Yup.object().validDate("required.birthDate"),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
     is: "slovak",
-    then: Yup.string().validSlovakId(
-      __("Zadajte správne rodné číslo alebo BIČ.", "ehranica")
-    ),
+    then: Yup.string().validSlovakId("required.slovakId"),
   }),
   idForeign: Yup.string().when(["idType"], {
     is: "foreign",
-    then: Yup.string().required(
-      __("Zadajte správne ID pridelené inou krajinou.", "ehranica")
-    ),
+    then: Yup.string().required("required.foreignId"),
   }),
   // originCountry: Yup.string().required(),
   email: Yup.string()
-    .required(__("Zadajte emailovú adresu.", "ehranica"))
-    .email(__("Zadajte správnu emailovú adresu.", "ehranica")),
-  phoneNumber: Yup.string().allowedPhoneNumber(
-    __(
-      "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
-      "ehranica"
-    )
-  ),
+    .required("required.email")
+    .email("required.emailCorrect"),
+  phoneNumber: Yup.string().allowedPhoneNumber("required.phoneNumber"),
   phoneNumberVerification: Yup.string()
-    .allowedPhoneNumber(
-      __(
-        "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
-        "ehranica"
-      )
-    )
+    .allowedPhoneNumber("required.phoneNumberVerification")
     .oneOf(
       [Yup.ref("phoneNumber"), null],
-      __(
-        "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
-        "ehranica"
-      )
+      "required.phoneNumberDiffer"
     ),
 });
 

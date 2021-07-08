@@ -145,6 +145,24 @@
       "legendMinistry": "Výnimky údeľované Ministerstvami"
     }
   },
+  "form": {
+    "errors": {
+      "required": {
+        "arrivalDate": "Zadajte správny deň a mesiac príchodu.",
+        "birthDate": "Zadajte správny deň, mesiac a rok narodenia.",
+        "email": "Zadajte emailovú adresu.",
+        "emailCorrect": "Zadajte správnu emailovú adresu.",
+        "firstName": "Zadajte meno.",
+        "foreignId": "Zadajte správne ID pridelené inou krajinou.",
+        "lastName": "Zadajte priezvisko.",
+        "phoneNumber": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
+        "phoneNumberDiffer": "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
+        "phoneNumberVerification": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
+        "slovakId": "Zadajte správne rodné číslo alebo BIČ.",
+        "wrongCountry": "Vyberte krajinu zo zoznamu."
+      }
+    }
+  },
   "global": {
     "confirmationLegend": "Potvrdenia",
     "correctnessStatement": {
@@ -204,6 +222,9 @@
     "addAnotherCountry": "Pridať ďalšiu navštívenú krajinu",
     "birthDateLegend": "Dátum narodenia",
     "cancel": "Zrušiť",
+    "countryLegend": "Z ktorej krajiny ste prišli?",
+    "countryLegendHint": "Krajina príchodu už nie je rozhodujúca, no pre ochranu zdravia ju musíme sledovať.",
+    "countryLegendNext": "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
     "emailMobile": {
       "email": "Emailová adresa",
       "emailHint": "Zadajte email, na ktorý Vám odošleme potvrdenie o registrácii. Potvrdením sa preukážete na hraniciach pri príchode na Slovensko.",
