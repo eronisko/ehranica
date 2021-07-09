@@ -13,9 +13,15 @@ import QuarantineRegistrationStep from "steps/QuarantineRegistration";
 import ConsentsStep from "steps/Consents";
 
 import StepFinalStep from "steps/StepFinal";
+import ExplanationStep from "steps/Explanation";
+import "styles/app.css";
 
 function onSubmit(values, wizard) {
   const { step, push } = wizard;
+
+  if (step.id === "ExplanationStep") {
+    push("StartStep");
+  }
 
   values.age = age(values.birthDate, values.arrivalDate);
   values.isAdult = values.age >= 18;
@@ -77,7 +83,7 @@ let initialValues = {
 function App({ isTest }) {
   const { t, i18n } = useTranslation("common");
   return (
-    <div>
+    <div className="app-holder">
       {isTest && (
         <div>
           Testovací mód
@@ -116,6 +122,10 @@ function App({ isTest }) {
                     {/*    : t("home.exceptionNotSelected")}*/}
                     {/*</div>*/}
                     <Steps>
+                      {/*<Step*/}
+                      {/*  id="ExplanationStep"*/}
+                      {/*  render={() => <ExplanationStep />}*/}
+                      {/*/>*/}
                       <Step id="StartStep" render={() => <StartStep />} />
                       <Step
                         id="AgeDependentStep"
