@@ -9,7 +9,7 @@ function CountryField(props) {
   const { t } = useTranslation("common");
   const locale = props.locale || "sk";
   const [field] = useField(props.name);
-  const countries = useMemo(() => getCountriesSortedByLabel(locale), [locale]);
+  const countries = useMemo(() => getCountriesSorted(locale), [locale]);
   const defaultValue = useMemo(() => {
     if (field.value) {
       const country = Countries.find((c) => c.id === field.value);
@@ -47,10 +47,10 @@ function CountryField(props) {
   );
 }
 
-function getCountriesSortedByLabel(locale) {
+function getCountriesSorted(locale) {
   return Countries.slice().sort((a, b) => {
-    const labelA = a.label[locale];
-    const labelB = b.label[locale];
+    const labelA = a.sortKeys[locale];
+    const labelB = b.sortKeys[locale];
 
     if (labelA < labelB) {
       return -1;
@@ -70,6 +70,10 @@ export const Countries = countriesData.map((country) => ({
   label: {
     sk: country[2],
     en: country[4],
+  },
+  sortKeys: {
+    sk: replaceDiacritics(country[2]),
+    en: replaceDiacritics(country[4]),
   },
   searchToken: replaceDiacritics(
     [country[1], country[2], country[3], country[4]].join(" ")
