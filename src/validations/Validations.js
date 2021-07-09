@@ -1,3 +1,5 @@
+import moment from "moment";
+
 function hasValidSlovakIdDateParts(rc) {
   return validSlovakIdDateParts(rc).length === 3;
 }
@@ -109,6 +111,42 @@ export function allowedPhoneNumber(errorMessage) {
       (value && /^(\+|00)\d{8}\d*$/.test(value.replace(/[ \-\(\)]/g, ""))) ||
       createError({ path, message: errorMessage })
     );
+  });
+}
+
+export function validArrivalDate(errorMessage) {
+  return this.test(`test-valid-arrival-date`, errorMessage, function (value) {
+    const { path, createError } = this;
+
+    const day = parseInt(value.day);
+    const month = parseInt(value.month);
+    const year = parseInt(value.year);
+
+    let hasError =
+      isNaN(day) ||
+      day < 1 ||
+      day > 31 ||
+      isNaN(month) ||
+      month < 1 ||
+      month > 12 ||
+      isNaN(year) ||
+      year < 1900 ||
+      year > 2030;
+
+    if (!hasError) {
+      const now = moment();
+      const arrivalDate = moment({
+        year: year,
+        month: month - 1,
+        day: day,
+      });
+
+      const diff = Math.round(arrivalDate.diff(now, "days", true) || 100);
+
+      hasError |= diff < -14 || diff > 30;
+    }
+
+    return !hasError || createError({ path, message: errorMessage });
   });
 }
 

@@ -14,6 +14,7 @@ import {
   allowedPhoneNumber,
   slovakId,
   birthNumberToDate,
+  validArrivalDate,
 } from "validations/Validations";
 import { useTranslation } from "react-i18next";
 import { __ } from "@wordpress/i18n";
@@ -179,6 +180,7 @@ Start.initialValues = {
 };
 
 Yup.addMethod(Yup.object, "validDate", validDate);
+Yup.addMethod(Yup.object, "validArrivalDate", validArrivalDate);
 Yup.addMethod(Yup.string, "allowedPhoneNumber", allowedPhoneNumber);
 Yup.addMethod(Yup.string, "validSlovakId", slovakId);
 
@@ -190,9 +192,11 @@ Start.validationSchema = Yup.object({
       .required("form.errors.wrongCountry")
   ),
   lastName: Yup.string().required(__("Zadajte priezvisko.", "ehranica")),
-  arrivalDate: Yup.object().validDate(
-    __("Zadajte správny deň a mesiac príchodu.", "ehranica")
-  ),
+  arrivalDate: Yup.object()
+    .validDate(__("Zadajte správny deň a mesiac príchodu.", "ehranica"))
+    .validArrivalDate(
+      "Dátum príchodu musí byť v rozsahu -14 a +30 dní od aktuálneho dátumu."
+    ),
   birthDate: Yup.object().validDate(
     __("Zadajte správny deň, mesiac a rok narodenia.", "ehranica")
   ),

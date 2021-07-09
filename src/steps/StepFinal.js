@@ -26,9 +26,10 @@ function StepFinal({ isTest, wizard }) {
   }
 
   const originCountries = [...values.originCountries];
+  const phoneNumber = values.phoneNumber;
 
   let personData = {
-    vPhoneNumber: values.phoneNumber,
+    vPhoneNumber: phoneNumber.replace(/[ \-\(\)]/g, ""),
     vEmail: values.email,
     vSurname: values.lastName,
     vGivenNames: values.firstName,
