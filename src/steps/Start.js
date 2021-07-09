@@ -20,7 +20,7 @@ import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 function Start() {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
   const { values } = useFormikContext();
 
   if (values.idType === "slovak") {
@@ -46,6 +46,7 @@ function Start() {
                   name={`originCountries.${index}`}
                   label={getCountryFieldLabel(index)}
                   hint={getCountryFieldHint(index)}
+                  locale={i18n.language || "sk"}
                   controls={
                     index > 0 && (
                       <Link
