@@ -17,13 +17,11 @@ i18next.init({
     sk: {
       common: common_sk,
     },
-    // en: {
-    //   common: common_en,
-    // },
+    en: {
+      common: common_en,
+    },
   },
 });
-
-// i18n.changeLanguage('en')
 
 ReactDOM.render(
   <React.StrictMode>
