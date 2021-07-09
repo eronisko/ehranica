@@ -7,7 +7,13 @@ import { withWizard } from "react-albus";
 import { useTranslation } from "react-i18next";
 
 function Consents({ wizard }) {
-  const {t, i18n} = useTranslation('common');
+  const { t, i18n } = useTranslation("common");
+
+  const consentLink =
+    i18n.language === "en"
+      ? "/en/information-on-personal-data-protection/"
+      : "/poucenie-o-ochrane-osobnych-udajov/";
+
   return (
     <>
       <a className="govuk-back-link" href="#" onClick={wizard.previous}>
@@ -17,7 +23,7 @@ function Consents({ wizard }) {
         <CheckboxField
           name="personalDataConsent"
           hint={
-            <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
+            <a href={consentLink} target="_blank">
               {t("global.dataConsent.linkText")}
             </a>
           }
@@ -28,7 +34,7 @@ function Consents({ wizard }) {
           {t("global.correctnessStatement.text")}
         </CheckboxField>
       </Fieldset>
-      <Button label={t("global.navigation.sendRegistration")} />{" "} 
+      <Button label={t("global.navigation.sendRegistration")} />{" "}
     </>
   );
 }
@@ -41,10 +47,7 @@ step.initialValues = {
 };
 
 step.validationSchema = Yup.object({
-  personalDataConsent: Yup.bool().oneOf(
-    [true],
-    "required.dataConsent"
-  ),
+  personalDataConsent: Yup.bool().oneOf([true], "required.dataConsent"),
   correctnessStatement: Yup.bool().oneOf(
     [true],
     "required.correctnessStatement"

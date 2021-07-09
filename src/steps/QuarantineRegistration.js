@@ -15,8 +15,14 @@ import { validZip } from "../validations/Validations";
 import { useTranslation } from "react-i18next";
 
 function QuarantineRegistration({ wizard }) {
-  const { t } = useTranslation("common");
+  const { t, i18n } = useTranslation("common");
   const { values } = useFormikContext();
+
+  const consentLink =
+    i18n.language === "en"
+      ? "/en/information-on-personal-data-protection/"
+      : "/poucenie-o-ochrane-osobnych-udajov/";
+
   return (
     <>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -141,7 +147,7 @@ function QuarantineRegistration({ wizard }) {
         <CheckboxField
           name="personalDataConsent"
           hint={
-            <a href="/poucenie-o-ochrane-osobnych-udajov/" target="_blank">
+            <a href={consentLink} target="_blank">
               {t("global.dataConsent.linkText")}
             </a>
           }
@@ -188,12 +194,10 @@ Yup.addMethod(Yup.string, "validZip", validZip);
 const addressSchema = Yup.object({
   city: Yup.string()
     .oneOf(Cities.map((c) => c.municipality))
-    .required("required.city"), 
-  street: Yup.string().required("required.street"), 
-  houseNumber: Yup.string().required("required.houseNumber"), 
-  zip: Yup.string()
-    .required("required.zip") 
-    .validZip("required.zipCount"), 
+    .required("required.city"),
+  street: Yup.string().required("required.street"),
+  houseNumber: Yup.string().required("required.houseNumber"),
+  zip: Yup.string().required("required.zip").validZip("required.zipCount"),
 });
 
 step.validationSchema = Yup.object({
@@ -213,10 +217,7 @@ step.validationSchema = Yup.object({
   ),
 
   insuranceCompany: Yup.string().required("required.insuranceCompany"),
-  personalDataConsent: Yup.bool().oneOf(
-    [true],
-    "required.dataConsent"
-  ),
+  personalDataConsent: Yup.bool().oneOf([true], "required.dataConsent"),
   correctnessStatement: Yup.bool().oneOf(
     [true],
     "required.correctnessStatement"

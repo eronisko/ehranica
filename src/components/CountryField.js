@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 function CountryField(props) {
   const { t } = useTranslation("common");
   const locale = props.locale || "sk";
-  console.log("country", locale);
   const [field] = useField(props.name);
   const countries = useMemo(() => getCountriesSortedByLabel(locale), [locale]);
   const defaultValue = useMemo(() => {
