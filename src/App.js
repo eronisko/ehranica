@@ -103,24 +103,36 @@ function App({ isTest }) {
               >
                 {({ values }) => (
                   <Form>
-                    {/*<div*/}
-                    {/*  style={{*/}
-                    {/*    position: "fixed",*/}
-                    {/*    fontSize: "20px",*/}
-                    {/*    backgroundColor: "yellow",*/}
-                    {/*    zIndex: 1000,*/}
-                    {/*    top: 0,*/}
-                    {/*    right: 0,*/}
-                    {/*    padding: "5px",*/}
-                    {/*  }}*/}
-                    {/*>*/}
-                    {/*  ID vynimky:{" "}*/}
-                    {/*  {values.exceptionId*/}
-                    {/*    ? values.exceptionId < 0*/}
-                    {/*      ? t("home.exceptionNone")*/}
-                    {/*      : values.exceptionId*/}
-                    {/*    : t("home.exceptionNotSelected")}*/}
-                    {/*</div>*/}
+                    {isTest && (
+                      <div
+                        style={{
+                          position: "fixed",
+                          fontSize: "20px",
+                          backgroundColor: "yellow",
+                          zIndex: 1000,
+                          top: 0,
+                          right: 0,
+                          padding: "5px",
+                        }}
+                      >
+                        ID vynimky:{" "}
+                        {values.exceptionId
+                          ? values.exceptionId < 0
+                            ? t("home.exceptionNone")
+                            : values.exceptionId
+                          : t("home.exceptionNotSelected")}
+                        <div
+                          style={{
+                            fontSize: "12px",
+                            lineHeight: "14px",
+                            textAlign: "center",
+                          }}
+                        >
+                          Toto sa zobrazuje len
+                          <br />v testovacom mode. ;)
+                        </div>
+                      </div>
+                    )}
                     <Steps>
                       {/*<Step*/}
                       {/*  id="ExplanationStep"*/}
