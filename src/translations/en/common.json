@@ -150,6 +150,7 @@
     "errors": {
       "required": {
         "arrivalDate": "",
+        "arrivalDateInterval": "",
         "birthDate": "",
         "chooseOne": "",
         "city": "",

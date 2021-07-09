@@ -140,13 +140,11 @@ function Start() {
 
 function getCountryFieldLabel(index) {
   if (index === 0) return i18next.t("common:startStep.countryLegend");
-  if (index === 1)
-    return i18next.t("common:startStep.countryLegendNext")
+  if (index === 1) return i18next.t("common:startStep.countryLegendNext");
 }
 
 function getCountryFieldHint(index) {
-  if (index === 0)
-    return i18next.t("common:startStep.countryLegendHint")
+  if (index === 0) return i18next.t("common:startStep.countryLegendHint");
 }
 
 const today = new Date();
@@ -186,7 +184,9 @@ Start.validationSchema = Yup.object({
       .required("required.wrongCountry")
   ),
   lastName: Yup.string().required("required.lastName"),
-  arrivalDate: Yup.object().validDate("required.arrivalDate"),
+  arrivalDate: Yup.object()
+    .validDate("required.arrivalDate")
+    .validArrivalDate("required.arrivalDateInterval"),
   birthDate: Yup.object().validDate("required.birthDate"),
   idType: Yup.string().oneOf(["slovak", "foreign"]).required(),
   idSlovak: Yup.string().when(["idType"], {
@@ -198,16 +198,11 @@ Start.validationSchema = Yup.object({
     then: Yup.string().required("required.foreignId"),
   }),
   // originCountry: Yup.string().required(),
-  email: Yup.string()
-    .required("required.email")
-    .email("required.emailCorrect"),
+  email: Yup.string().required("required.email").email("required.emailCorrect"),
   phoneNumber: Yup.string().allowedPhoneNumber("required.phoneNumber"),
   phoneNumberVerification: Yup.string()
     .allowedPhoneNumber("required.phoneNumberVerification")
-    .oneOf(
-      [Yup.ref("phoneNumber"), null],
-      "required.phoneNumberDiffer"
-    ),
+    .oneOf([Yup.ref("phoneNumber"), null], "required.phoneNumberDiffer"),
 });
 
 export default Start;
