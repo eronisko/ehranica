@@ -16,8 +16,11 @@ import StepFinalStep from "steps/StepFinal";
 import ExplanationStep from "steps/Explanation";
 import "styles/app.css";
 
-function onSubmit(values, wizard) {
+function onSubmit(values, wizard, setTouched) {
   const { step, push } = wizard;
+
+  // Un-touch fields to re-set validations for the next step
+  setTouched({});
 
   if (step.id === "ExplanationStep") {
     push("StartStep");
@@ -99,7 +102,9 @@ function App({ isTest }) {
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchemas[wizard.step.id]}
-                onSubmit={(values) => onSubmit(values, wizard)}
+                onSubmit={(values, { setTouched }) =>
+                  onSubmit(values, wizard, setTouched)
+                }
               >
                 {({ values }) => (
                   <Form>
