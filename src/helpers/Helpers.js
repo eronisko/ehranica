@@ -21,5 +21,5 @@ export function age(birthDate, onDate) {
     day: parseInt(onDate.day),
   });
 
-  return Math.round(on.diff(dateOfBirth, "years", true) || 100);
+  return Math.floor(on.diff(dateOfBirth, "years", true) || 100);
 }
