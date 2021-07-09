@@ -34,13 +34,12 @@
         id="main-content"
         role="main">
     <div class="govuk-width-container">
-
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-            Registrácia pri príchode zo zahraničia
-        </h1>
-
         <script>var IS_TEST=true;</script>
         <script>var LOCALE=(new URL(window.location)).searchParams.get("locale") || 'sk';</script>
+
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            <script>document.write(LOCALE === 'sk' ? 'Registrácia pri príchode zo zahraničia' : 'Registration at arrival from abroad');</script>
+        </h1>
         <div id="ehranica-app"></div>
     </div>
 </main>
