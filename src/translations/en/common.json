@@ -149,7 +149,7 @@
   "form": {
     "errors": {
       "required": {
-        "arrivalDate": "Enter the correct day and month of arrival.",
+        "arrivalDate": "Enter the correct day, month and year of arrival.",
         "arrivalDateInterval": "Arrival date must be between -14 and +30 days from the current date.",
         "birthDate": "Enter the correct day, month and year of birth.",
         "chooseOne": "Choose one of the options.",

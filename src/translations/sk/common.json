@@ -149,7 +149,7 @@
   "form": {
     "errors": {
       "required": {
-        "arrivalDate": "Zadajte správny deň a mesiac príchodu.",
+        "arrivalDate": "Zadajte správny deň, mesiac a rok príchodu.",
         "arrivalDateInterval": "Dátum príchodu musí byť v rozsahu -14 a +30 dní od aktuálneho dátumu.",
         "birthDate": "Zadajte správny deň, mesiac a rok narodenia.",
         "chooseOne": "Vyberte si jednu z možností.",
