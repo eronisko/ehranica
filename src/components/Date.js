@@ -17,7 +17,7 @@ function Date(props) {
           </label>}
           <span className="govuk-hint">{t("component.date.hint")}</span>
           <ErrorMessage name={props.name}>
-              {(msg) => <span className="govuk-error-message">{msg}</span>}
+              {(msg) => <span className="govuk-error-message">{t(`form.errors.${msg}`)}</span>}
           </ErrorMessage>
           <div className="govuk-date-input">
               <div className="govuk-date-input__item">

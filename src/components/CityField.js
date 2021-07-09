@@ -1,9 +1,9 @@
 import React from "react";
 import AutocompleteField from "./AutocompleteField";
-import { __ } from "@wordpress/i18n";
 import { municipalitiesAndCounties } from "autocomplete/municipalitiesAndCounties";
 import replaceDiacritics from "autocomplete/replaceDiacritics";
 import { useField } from "formik";
+import i18next from "i18next";
 import { useTranslation } from "react-i18next";
 
 function CityField(props) {
@@ -62,7 +62,7 @@ export const Cities = municipalitiesAndCounties
     county,
     label:
       municipalityNameCounts[municipality] > 1
-        ? `${municipality} (${__("okres", "ehranica")} ${county})`
+        ? `${municipality} (${i18next.t("common:component.cityField.county")} ${county})`
         : municipality,
     searchToken: replaceDiacritics(municipality.toLowerCase()),
   }))

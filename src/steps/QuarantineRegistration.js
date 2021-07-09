@@ -6,7 +6,6 @@ import RadioInputField from "components/RadioInputField";
 import CityField, { Cities } from "components/CityField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
-import { __ } from "@wordpress/i18n";
 import CheckboxField from "components/CheckboxField";
 import TextareaField from "components/TextareaField";
 import FormGroup from "components/FormGroup";
@@ -189,19 +188,19 @@ Yup.addMethod(Yup.string, "validZip", validZip);
 const addressSchema = Yup.object({
   city: Yup.string()
     .oneOf(Cities.map((c) => c.municipality))
-    .required(__("Vyberte mesto/obec zo zoznamu.", "ehranica")),
-  street: Yup.string().required(__("Zadajte ulicu.", "ehranica")),
-  houseNumber: Yup.string().required(__("Zadajte číslo domu.", "ehranica")),
+    .required("required.city"), 
+  street: Yup.string().required("required.street"), 
+  houseNumber: Yup.string().required("required.houseNumber"), 
   zip: Yup.string()
-    .required(__("Zadajte PSČ.", "ehranica"))
-    .validZip("PSČ musí obsahovať presne 5 cifier."),
+    .required("required.zip") 
+    .validZip("required.zipCount"), 
 });
 
 step.validationSchema = Yup.object({
   additionalInfo: Yup.object({
     numberOfPersonsInSameHousehold: Yup.number()
-      .moreThan(-1, __("Zadajte celé kladné číslo."))
-      .integer(__("Zadajte celé kladné číslo.")),
+      .moreThan(-1, "required.household")
+      .integer("required.household"),
   }),
   quarantineAddress: addressSchema.required(),
 
@@ -213,16 +212,14 @@ step.validationSchema = Yup.object({
     }
   ),
 
-  insuranceCompany: Yup.string().required(
-    __("Zvoľte spôsob poistenia.", "ehranica")
-  ),
+  insuranceCompany: Yup.string().required("required.insuranceCompany"),
   personalDataConsent: Yup.bool().oneOf(
     [true],
-    __("Prosím, akceptujte súhlas so spracovaním osobných údajov.", "ehranica")
+    "required.dataConsent"
   ),
   correctnessStatement: Yup.bool().oneOf(
     [true],
-    __("Prosím, potvrďte správnosť zadaných údajov.", "ehranica")
+    "required.correctnessStatement"
   ),
 });
 

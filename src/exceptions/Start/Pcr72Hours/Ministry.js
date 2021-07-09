@@ -1,44 +1,38 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../../components/Fieldset";
 import RadioInputField from "../../../components/RadioInputField";
 import Accordion from "../../../components/Accordion";
+import { useTranslation } from "react-i18next";
 
 function Ministry() {
+  const {t} = useTranslation('common');
+
   return (
     <div>
-      <Fieldset legend={__("Výnimky udeľované Ministerstvami", "ehranica")}>
+      <Fieldset legend={t("exceptions.pcr72Hours.legendMinistry")}>
         <Accordion.Group>
-          <Accordion.Section title={__("Ministerstvo hospodárstva SR")}>
+          <Accordion.Section title={t("ministry.ministryOfEconomy")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="42"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú zamestnancami prevádzkovateľov prvkov kritickej infraštruktúry v sektore energetika a priemysel, ako aj zamestnancami ich subdodávateľov, na žiadosť príslušného prevádzkovateľa prvkov kritickej infraštruktúry, ktorí nepretržitým spôsobom zabezpečujú strategicky a životne dôležité funkcie chodu Slovenskej republiky.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.42")
                   }}
                 />
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="43"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú expertami/špecialistami/technikmi pre odstránenie krízových situácií v sektore priemysel.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.43")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
           <Accordion.Section
-            title={__(
-              "Ministerstvo zahraničných vecí a európskych záležitostí SR"
-            )}
+            title={t("ministry.ministryOfForeign")}
           >
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
@@ -46,17 +40,14 @@ function Ministry() {
                   name="exceptionMinistryPcr72Hours"
                   value="39"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Som zamestnanec medzinárodných organizácií, medzinárodných finančných inštitúcií a inštitúcií Európskej únie, ktorí majú na území Slovenskej republiky miesto výkonu práce alebo ich rodinný príslušník.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.39")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
           <Accordion.Section
-            title={__("Ministerstvo školstva, vedy, výskumu a športu SR")}
+            title={t("ministry.ministryOfEducation")}
           >
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
@@ -64,37 +55,28 @@ function Ministry() {
                   name="exceptionMinistryPcr72Hours"
                   value="34"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Som reprezentant Slovenska alebo člen realizačných tímov podľa dekrétu Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky, vrátane držiteľov dekrétu kandidáta Hier XXXII. olympiády Tokio 2020, Hier XXIV zimných olympijských hier Peking 2022, alebo XVI. paralympijských hrách Tokio 2020, ktorí vstupujú na územie SR pri návrate z medzinárodného športového podujatia alebo sústredenia za účelom ich prípravy na medzinárodné podujatia a mám o tom potvrdenie.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.34")
                   }}
                 />
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="51"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru a vstupujem na Slovnesko za účelom účasti na medzinárodnom športovom podujatí, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujaties dĺžkou trvania do 48 hodín a mám o tom potvrdenie.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.51")
                   }}
                 />
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="52"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru podujatia, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujatie s dĺžkou trvania nad 4 dni a mám o tom potvrdenie.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.52")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
           <Accordion.Section
-            title={__("Ministerstvo pôdohospodárstva a rozvoja vidieka SR")}
+            title={t("ministry.ministryOfAgriculture")}
           >
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
@@ -102,78 +84,60 @@ function Ministry() {
                   name="exceptionMinistryPcr72Hours"
                   value="45"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby dôležité z hľadiska udržania prevádzkyschopnosti prevádzok vykonávajúcich činnosť v sektoroch poľnohospodárstva, potravinárstva, lesného hospodárstva a pre osoby zabezpečujúce veterinárnu starostlivosť pre hospodárske zvieratá.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.45")
                   }}
                 />
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="46"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú vlastníkmi alebo držiteľmi zvierat za účelom zabezpečenia špecializovaného diagnostického veterinárneho vyšetrenia, chirurgického zákroku alebo liečby zvierat, ktorú poskytujú špecializované veterinárne pracoviská v iných členských štátoch Európskej únie.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.46")
                   }}
                 />
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="47"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby zabezpečujúce servis a údržbu poľnohospodárskej a lesnej techniky, posádky poľnohospodárskej a lesnej techniky a ich sprievod.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.47")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
-          <Accordion.Section title={__("Ministerstvo zdravotníctva SR")}>
+          <Accordion.Section title={t("ministry.ministryOfHealth")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="48"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom servisných, inštalačných a revíznych služieb zdravotníckej techniky, zabezpečenia školenia zdravotníckych zamestnancov, monitorov klinických štúdií, osoby zabezpečujúce plynulý chod zdravotníckej infraštruktúry.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.48")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
-          <Accordion.Section title={__("Ministerstvo dopravy a výstavby SR")}>
+          <Accordion.Section title={t("ministry.ministryOfTransport")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="44"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré zamestnancami prevádzkovateľov prvkov kritickej infraštruktúry v sektore elektronických komunikácií.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.44")
                   }}
                 />
               </div>
             </div>
           </Accordion.Section>
-          <Accordion.Section title={__("Ministerstvo vnútra SR")}>
+          <Accordion.Section title={t("ministry.ministryOfInterior")}>
             <div className="govuk-form-group govuk-!-margin-bottom-1">
               <div className="govuk-radios">
                 <RadioInputField
                   name="exceptionMinistryPcr72Hours"
                   value="50"
                   dangerouslySetInnerHTML={{
-                    __html: __(
-                      "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú na územie Slovenskej republiky na základe žiadosti súdu alebo orgánov činných v trestnom konaní.",
-                      "ehranica"
-                    ),
+                    __html: t("exceptions.list.50")
                   }}
                 />
               </div>

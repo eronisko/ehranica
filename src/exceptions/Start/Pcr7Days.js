@@ -1,5 +1,4 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../components/Fieldset";
 import RadioInputField from "../../components/RadioInputField";
 import { useFormikContext } from "formik";
@@ -8,17 +7,16 @@ import PermanentResidencyInNeighbour from "./Pcr7Days/PermanentResidencyInNeighb
 import PermanentResidencyInUkraine from "./Pcr7Days/PermanentResidencyInUkraine";
 import PermanentResidencyInSlovakiaPendler from "./Pcr7Days/Pendler/PermanentResidencyInSlovakia";
 import PermanentResidencyInEu from "./Pcr7Days/Pendler/PermanentResidencyInEu";
+import { useTranslation } from "react-i18next";
 
 function Pcr7Days() {
+  const {t} = useTranslation('common');
   const { values } = useFormikContext();
 
   return (
     <div>
       <Fieldset
-        legend={__(
-          "Výnimky s negatívnym PCR testom nie starším ako 7 dní",
-          "ehranica"
-        )}
+        legend={t("exceptions.pcr7Days.legend")}
       >
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <div className="govuk-radios">
@@ -26,10 +24,7 @@ function Pcr7Days() {
               name="exceptionPcr7Days"
               value="Pendler"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Za posledných 14 dní som bol/a iba v iných  štátoch štátoch EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine - <strong>pendleri</strong>",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.Pendler")
               }}
               conditionalRender={
                 <div>
@@ -37,30 +32,21 @@ function Pcr7Days() {
                     name="exceptionPendler"
                     value="PermanentResidencyInSlovakiaPendler"
                     dangerouslySetInnerHTML={{
-                      __html: __(
-                        "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku alebo v Rakúsku.",
-                        "ehranica"
-                      ),
+                      __html: t("exceptions.list.PermanentResidencyInSlovakiaPendler")
                     }}
                   />
                   <RadioInputField
                     name="exceptionPendler"
                     value="PermanentResidencyInEuPendler"
                     dangerouslySetInnerHTML={{
-                      __html: __(
-                        "Mám trvalý pobyt alebo prechodný pobyt v iných  štátoch EÚ, Islandu, Nórskka, Lichtenštajnska, Švajčiarska alebo na Ukrajine prihraničných oblastiach Ukrajiny do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
-                        "ehranica"
-                      ),
+                      __html: t("exceptions.list.PermanentResidencyInEuPendler")
                     }}
                   />
                   <RadioInputField
                     name="exceptionPendler"
                     value="20"
                     dangerouslySetInnerHTML={{
-                      __html: __(
-                        "Som občanom Slovenska a mám trvalý alebo prechodný pobyt v prihraničných oblastiach susedného štátu do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
-                        "ehranica"
-                      ),
+                      __html: t("exceptions.list.20")
                     }}
                   />
                 </div>
@@ -70,30 +56,21 @@ function Pcr7Days() {
               name="exceptionPcr7Days"
               value="PermanentResidencyInSlovakiaPcr7Days"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám trvalý alebo prechodný pobyt v Slovenskej republike.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.PermanentResidencyInSlovakiaPcr7Days")
               }}
             />
             <RadioInputField
               name="exceptionPcr7Days"
               value="PermanentResidencyInNeighbourPcr7Days"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám trvalý alebo prechodný pobyt v Česku, Poľsku, Maďarsku alebo v Rakúsku.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.PermanentResidencyInNeighbourPcr7Days")
               }}
             />
             <RadioInputField
               name="exceptionPcr7Days"
               value="PermanentResidencyInUkraine"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám trvalý alebo prechodný pobyt na Ukrajine.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.PermanentResidencyInUkraine")
               }}
             />
           </div>

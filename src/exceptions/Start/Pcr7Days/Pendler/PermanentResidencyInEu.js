@@ -1,13 +1,15 @@
 import React from "react";
-import { __ } from "@wordpress/i18n";
 import Fieldset from "../../../../components/Fieldset";
 import RadioInputField from "../../../../components/RadioInputField";
+import { useTranslation } from "react-i18next";
 
 function PermanentResidencyInEu() {
+  const {t} = useTranslation('common');
+
   return (
     <div>
       <Fieldset
-        legend={__("Dodatočné podmienky na vstup na Slovensko", "ehranica")}
+        legend={t("exceptions.pcr7Days.legendPendlerPermanentEu")}
       >
         <div className="govuk-form-group govuk-!-margin-bottom-1">
           <div className="govuk-radios">
@@ -15,10 +17,7 @@ function PermanentResidencyInEu() {
               name="exceptionPermanentResidencyInEuPendler"
               value="19"
               dangerouslySetInnerHTML={{
-                __html: __(
-                  "Mám potvrdenie o tom, že mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území Slovenskej republiky a zároveň mám potvrdenie o tom, že som držiteľ/ka potvrdenia od zamestnávateľa o takomto výkone práce alebo potvrdenia o takomto výkone práce, podľa prílohy č. 3.",
-                  "ehranica"
-                ),
+                __html: t("exceptions.list.19")
               }}
             />
           </div>

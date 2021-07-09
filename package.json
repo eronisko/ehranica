@@ -12,7 +12,6 @@
     "@testing-library/user-event": "^12.1.10",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "@wordpress/i18n": "^4.1.1",
     "accessible-autocomplete": "^2.0.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
@@ -167,9 +166,13 @@
       "react-app"
     ],
     "plugins": [
-      ["i18next-extract", 
+      [
+        "i18next-extract",
         {
-          "locales": ["sk", "en"],
+          "locales": [
+            "sk",
+            "en"
+          ],
           "defaultNS": "ehranica",
           "outputPath": "src/translations/{{locale}}/{{ns}}.json"
         }

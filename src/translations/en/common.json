@@ -15,6 +15,7 @@
       "continue": ""
     },
     "cityField": {
+      "county": "",
       "notInList": ""
     },
     "countryField": {
@@ -41,21 +42,88 @@
     }
   },
   "exceptions": {
+    "ag7Days": {
+      "legend": "",
+      "legendPermanentNeighbour": "",
+      "legendPermanentSlovakia": ""
+    },
     "list": {
+      "10": "",
       "11": "",
       "12": "",
+      "13": "",
+      "13hint": "",
+      "14": "",
+      "15": "",
+      "16": "",
       "17": "",
+      "18": "",
+      "19": "",
+      "20": "",
+      "21": "",
+      "22": "",
+      "23": "",
+      "24": "",
+      "25": "",
+      "26": "",
+      "27": "",
+      "28": "",
+      "29": "",
+      "30": "",
+      "31": "",
+      "32": "",
+      "33": "",
+      "34": "",
+      "35": "",
       "36": "",
+      "37": "",
+      "38": "",
+      "39": "",
+      "40": "",
+      "41": "",
+      "42": "",
+      "43": "",
+      "44": "",
+      "45": "",
+      "46": "",
+      "47": "",
+      "48": "",
       "49": "",
+      "5": "",
+      "50": "",
+      "51": "",
+      "52": "",
+      "8": "",
+      "9": "",
       "Culture": "",
       "Driver": "",
       "MinistryPcr72Hours": "",
       "MinistryWithoutTest": "",
+      "Pendler": "",
+      "PermanentResidencyInEuPendler": "",
+      "PermanentResidencyInNeighbourAg7Days": "",
+      "PermanentResidencyInNeighbourPcr7Days": "",
+      "PermanentResidencyInSlovakiaAg7Days": "",
+      "PermanentResidencyInSlovakiaPcr7Days": "",
+      "PermanentResidencyInSlovakiaPendler": "",
+      "PermanentResidencyInUkraine": "",
       "Politician": "",
       "Sport": ""
     },
     "pcr72Hours": {
-      "legend": ""
+      "legend": "",
+      "legendCulture": "",
+      "legendMinistry": "",
+      "legendPolitician": "",
+      "legendSport": ""
+    },
+    "pcr7Days": {
+      "legend": "",
+      "legendPendlerPermanentEu": "",
+      "legendPendlerPermanentSlovakia": "",
+      "legendPermanentNeighbour": "",
+      "legendPermanentSlovakia": "",
+      "legendPermanentUkraine": ""
     },
     "start": {
       "hasException": {
@@ -73,7 +141,37 @@
       "warningBody": ""
     },
     "withoutTest": {
-      "legend": ""
+      "legend": "",
+      "legendDriver": "",
+      "legendMinistry": ""
+    }
+  },
+  "form": {
+    "errors": {
+      "required": {
+        "arrivalDate": "",
+        "birthDate": "",
+        "chooseOne": "",
+        "city": "",
+        "correctnessStatement": "",
+        "dataConsent": "",
+        "email": "",
+        "emailCorrect": "",
+        "firstName": "",
+        "foreignId": "",
+        "houseNumber": "",
+        "household": "",
+        "insuranceCompany": "",
+        "lastName": "",
+        "phoneNumber": "",
+        "phoneNumberDiffer": "",
+        "phoneNumberVerification": "",
+        "slovakId": "",
+        "street": "",
+        "wrongCountry": "",
+        "zip": "",
+        "zipCount": ""
+      }
     }
   },
   "global": {
@@ -93,6 +191,16 @@
   "home": {
     "exceptionNone": "",
     "exceptionNotSelected": ""
+  },
+  "ministry": {
+    "ministryOfAgriculture": "",
+    "ministryOfDefence": "",
+    "ministryOfEconomy": "",
+    "ministryOfEducation": "",
+    "ministryOfForeign": "",
+    "ministryOfHealth": "",
+    "ministryOfInterior": "",
+    "ministryOfTransport": ""
   },
   "quarantineRegistration": {
     "additionalInfoDoctorsName": "",
@@ -125,6 +233,9 @@
     "addAnotherCountry": "",
     "birthDateLegend": "",
     "cancel": "",
+    "countryLegend": "",
+    "countryLegendHint": "",
+    "countryLegendNext": "",
     "emailMobile": {
       "email": "",
       "emailHint": "",
