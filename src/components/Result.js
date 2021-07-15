@@ -22,15 +22,15 @@ function Result(props) {
           __html: t("component.result.additionalInfo"),
         }}
       />
-      {/*<p className="govuk-body">*/}
-      {/*  <a*/}
-      {/*    className="govuk-link"*/}
-      {/*    href="#"*/}
-      {/*    title={t("component.result.ratingLink")}*/}
-      {/*  >*/}
-      {/*    {t("component.result.ratingLink")}*/}
-      {/*  </a>*/}
-      {/*</p>*/}
+      <p className="govuk-body">
+        <a
+          className="govuk-link"
+          href="https://korona.gov.sk/ehranica/prieskum-spokojnosti/"
+          title={t("component.result.ratingLink")}
+        >
+          {t("component.result.ratingLink")}
+        </a>
+      </p>
       <h2 className="govuk-heading-m">{t("component.result.nextActions")}</h2>
       <div className="govuk-button-group">
         <a
