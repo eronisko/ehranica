@@ -38,10 +38,10 @@ function onSubmit(values, wizard, setTouched) {
   }
 
   if (step.id === "AgeDependentStep") {
-    if (values.exceptionId > 0) {
+    if (values.exceptionId > 0 && values.exceptionId != 3) {
       push("Consents");
     } else {
-      if (values.isAdult) {
+      if (values.isAdult && values.exceptionId != 3) {
         push("ExceptionStep");
       } else {
         push("QuarantineRegistration");
@@ -50,7 +50,7 @@ function onSubmit(values, wizard, setTouched) {
   }
 
   if (step.id === "ExceptionStep") {
-    if (values.exceptionId > 0) {
+    if (values.exceptionId > 0 && values.exceptionId != 3) {
       push("Consents");
     } else {
       push("QuarantineRegistration");

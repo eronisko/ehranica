@@ -7,8 +7,8 @@
     "noAdultIsolationYes": "Aspoň 1 osoba v spoločnej domácnosti je v povinnej domácej izolácii.",
     "noAdultLegend": "Domáca izolácia členov spoločnej domácnosti",
     "vacinatedFully": "Som plne zaočkovaná osoba a mám o tom doklad.",
-    "vacinatedNo": "Nie som zaočkovaná osoba.",
-    "vacinatedPartially": "Som zaočkovaná osoba aspoň 1 dávkou a mám o tom doklad."
+    "vacinatedNo": "Nie som zaočkovaná osoba alebo nespĺňam podmienky plne zaočkovanej osoby.",
+    "vacinatedPartially": "Som osoba s aplikovanou dávkou vakcíny do 9.7.2021 a vstupujem na Slovensko do 2.8.2021 do 6:00 hod. a nespĺňam podmienky plne zaočkovanej osoby."
   },
   "component": {
     "button": {
