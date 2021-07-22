@@ -45,7 +45,7 @@ function Start() {
                   key={`originCountries.${index}-${values.originCountries[index]}`}
                   name={`originCountries.${index}`}
                   label={getCountryFieldLabel(index)}
-                  hint={getCountryFieldHint(index)}
+                  // hint={getCountryFieldHint(index)}
                   locale={i18n.language || "sk"}
                   controls={
                     index > 0 && (

@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useFormikContext } from "formik";
 import { formatDate } from "helpers/Helpers";
 import Result from "../components/Result";
+import i18next from "i18next";
 
 const SITE_KEY = "6LeFQ7IZAAAAABuiRASOsOQv4HFxAhGhwQiljFM0";
 
@@ -136,6 +137,17 @@ function StepFinal({ isTest, wizard }) {
         } else {
           isError = true;
           message = t("stepFinal.thanksMessageError");
+
+          if (data.errors && data.errors.length) {
+            data.errors.forEach(error => {
+              message += "<br/><br/>";
+              if (i18next.language == "en") {
+                message += error.description_en;
+              } else {
+                message += error.description;
+              }
+            });
+          }
         }
 
         setState({

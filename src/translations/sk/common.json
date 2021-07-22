@@ -234,7 +234,7 @@
     "addAnotherCountry": "Pridať ďalšiu navštívenú krajinu",
     "birthDateLegend": "Dátum narodenia",
     "cancel": "Zrušiť",
-    "countryLegend": "Z ktorej krajiny ste prišli?",
+    "countryLegend": "Z ktorej krajiny prichádzate?",
     "countryLegendHint": "Krajina príchodu už nie je rozhodujúca, no pre ochranu zdravia ju musíme sledovať.",
     "countryLegendNext": "Ktoré ďalšie krajiny ste navštívili za posledných 14 dní?",
     "emailMobile": {
@@ -264,7 +264,7 @@
     "registrationError": "Registrácia sa nepodarila",
     "registrationSuccess": "Registrácia dokončená",
     "thanksMessage": "Ďakujeme, že ste sa zaregistrovali do eHranice.",
-    "thanksMessageError": "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo +421 2 32 35 30 30."
+    "thanksMessageError": "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo <a href='https://www.npz.sk/sites/npz/NzpBasePages/kontaktny-formular.aspx' target='_blank'>+421 2 32 35 30 30</a>."
   },
   "youngerThan12": {
     "body": "<p>Ďakujeme, že ste sa chceli zaregistrovať do eHranice. <strong>Deti do 12 rokov sa nemusia registrovať.</strong></p><p>Platí pre ne to isté, čo pre osoby žijúce s nimi v spoločnej domácnosti. Teda, ak má niektorý člen spoločnej domácnosti absolvovať povinnú karanténu, platí to aj pre dieťa. A naopak, ak sa na členov spoločnej domácnosti vzťahuje výnimka z karantény, výnimka platí aj pre dieťa.</p>",

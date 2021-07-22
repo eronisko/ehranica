@@ -264,7 +264,7 @@
     "registrationError": "Registration failed",
     "registrationSuccess": "Registration completed",
     "thanksMessage": "Thank you for registering to eHranica (eBorder).",
-    "thanksMessageError": "Thank you for trying to sign up for eHranica (eBorder). We are unable to process your registration. <br> Call +421 2 32 35 30 30."
+    "thanksMessageError": "Thank you for trying to sign up for eHranica (eBorder). We are unable to process your registration. <br> Call <a href='https://www.npz.sk/sites/npzf/NzpBasePages/contact-form.aspx' target='_blank'>+421 2 32 35 30 30</a>."
   },
   "youngerThan12": {
     "body": "<p>Thank you for registering for eHranica(eBorder). <strong>Children under the age of 12 do not need to register. </strong></p><p>The same applies for them as for persons living in the same household. Thus, if a member of the household has to undergo a compulsory quarantine, this also applies to the child. Conversely, if members of a joint household are exempted from quarantine, the child is also exempted. </p>",
