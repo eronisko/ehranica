@@ -124,11 +124,13 @@ function Start() {
         />
         <InputField
           name="phoneNumber"
+          type="tel"
           label={t("startStep.emailMobile.phone")}
           hint={t("startStep.emailMobile.phoneHint")}
         />
         <InputField
           name="phoneNumberVerification"
+          type="tel"
           label={t("startStep.emailMobile.phoneVerify")}
           hint={t("startStep.emailMobile.phoneVerifyHint")}
         />

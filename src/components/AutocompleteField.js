@@ -59,6 +59,7 @@ function AutocompleteField(props) {
           templates={props.templates}
           onConfirm={onConfirm}
           tNoResults={props.tNoResults}
+          tAssistiveHint={props.tAssistiveHint}
           dropdownArrow={(config) => (
             <svg
               className={config.className}

@@ -1,6 +1,6 @@
 {
   "ageDependent": {
-    "detailsBody": "<p>a) osoba najmenej 14 dní ale nie viac než 12 mesiacov po aplikácii druhej dávky očkovacej látky proti ochoreniu COVID-19 s dvojdávkovou schémou,</p><p>b) osoba najmenej 21 dní ale nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou,</p><p>c) osoba najmenej 14 dní a nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19.</p>",
+    "detailsBody": "<ol class='govuk-list govuk-list--alpha'><li>osoba najmenej 14 dní ale nie viac než 12 mesiacov po aplikácii druhej dávky očkovacej látky proti ochoreniu COVID-19 s dvojdávkovou schémou,</li><li>osoba najmenej 21 dní ale nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19 s jednodávkovou schémou,</li><li>osoba najmenej 14 dní a nie viac než 12 mesiacov po aplikácii prvej dávky očkovacej látky proti ochoreniu COVID-19, ak bola prvá dávka očkovania proti ochoreniu COVID-19 podaná v intervale do 180 dní od prekonania ochorenia COVID-19.</li></ol>",
     "detailsHeading": "Kto je plne zaočkovaná osoba?",
     "legend": "Očkovanie proti COVID-19",
     "noAdultIsolationNo": "Nikto v spoločnej domácnosti nie je v povinnej domácej izolácii.",
@@ -19,6 +19,7 @@
       "notInList": "Mesto/obec nie je v zozname"
     },
     "countryField": {
+      "assistiveHint": "Keď sú k dispozícii výsledky automatického dopĺňania, použitím šípok nahor/nadol si vyberte položku a výber potvrďte stlačením klávesy enter. Používatelia dotykových zariadení preskúmajú možnosti dotykom alebo gestami prsta.",
       "notInList": "Krajina nie je v zozname"
     },
     "date": {
@@ -35,7 +36,7 @@
       "ratingLink": "Ohodnoťte službu e-Hranica.",
       "ratingLinks": "",
       "registerNextPerson": "Zaregistrovať ďalšiu osobu",
-      "warningText": "V prípade že prichádzate z <a href='https://korona.gov.sk/cestovanie-do-sr/#krajiny-nie-je-nutny-negat-72h-PCR-test' target='_blank'>týchto</a> krajín letecky, nemusíte mať negatívny 72 hodín starý PCR test."
+      "warningText": "V prípade že prichádzate z <a href='https://korona.gov.sk/cestovanie-do-sr/#krajiny-nie-je-nutny-negat-72h-PCR-test' class='govuk-link' target='_blank'>týchto</a> krajín letecky, nemusíte mať negatívny 72 hodín starý PCR test."
     },
     "warningText": {
       "warning": "Varovanie"
@@ -52,13 +53,13 @@
       "11": "Som držiteľ diplomatického alebo služobného pasu vstupujúci na územie Slovenskej republiky.",
       "12": "Na základe právoplatného súdneho rozhodnutia vo veci vykonávania striedavej starostlivosti rodičov o maloleté dieťa, alebo práva styku s maloletým dieťaťom. Musíte sa preukázať pravoplatným súdnym rozhodnutím súdu alebo rodičovskou dohodou a informovať Centrum pre medzinárodnoprávnu ochranu detí a mládeže na Ministerstve  práce, sociálnych vecí a rodiny SR.",
       "13": "Osoby zabezpečujúce prepravu iných osôb z a na medzinárodné letiská na území Česka, Poľska, Maďarska alebo Rakúska.",
-      "13hint": "<strong>Osoby zabezpečujúce prepravu sú povinné</strong> sa najneskôr pred prechodom štátnej hranice zo Slovenskej republiky zaregistrovať na webe <a href='https://naletisko.mzv.sk/' target='_blank'>naletisko.mzv.sk</a> a preukázať sa na požiadanie príslušníkom Policajného zboru vytlačeným alebo elektronickým potvrdením o splnení tejto povinnosti a letenkou prepravovanej osoby alebo jej elektronickou kópiou. Osoby zabezpečujúce prepravu sú povinné vykonať cestu výhradne cez územie členských štátov Európskej únie, a to bez zastavenia, okrem zastavenia na nevyhnutné tankovanie pohonných hmôt a nástup prepravovanej osoby.",
+      "13hint": "<strong>Osoby zabezpečujúce prepravu sú povinné</strong> sa najneskôr pred prechodom štátnej hranice zo Slovenskej republiky zaregistrovať na webe <a href='https://naletisko.mzv.sk/' class='govuk-link' target='_blank'>naletisko.mzv.sk</a> a preukázať sa na požiadanie príslušníkom Policajného zboru vytlačeným alebo elektronickým potvrdením o splnení tejto povinnosti a letenkou prepravovanej osoby alebo jej elektronickou kópiou. Osoby zabezpečujúce prepravu sú povinné vykonať cestu výhradne cez územie členských štátov Európskej únie, a to bez zastavenia, okrem zastavenia na nevyhnutné tankovanie pohonných hmôt a nástup prepravovanej osoby.",
       "14": "Mám výnimku po odsúhlasení Ministerstvom pre členov zahraničných záchranných tímov alebo expertov podieľajúcich sa na základe žiadosti štátnych orgánov Slovenskej republiky, alebo iného štátu na humanitárnej pomoci počas krízovej situácie alebo na záchranných prácach pri mimoriadnych udalostiach na území Slovenskej republiky alebo iného štátu.",
       "15": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce prevoz špeciálnej výjazdovej hasičskej a záchranárskej techniky nevyhnutne potrebnej pre zabezpečenie zásahovej činnosti hasičských jednotiek na vykonanie servisných úkonov a odborných prehliadok.",
       "16": "Mám výnimku po odsúhlasení Ministerstvom pre osoby vykonávajúce hasebné práce a záchranné práce pri mimoriadnych udalostiach v prihraničnej oblasti na základe žiadosti operačného strediska susednej krajiny.",
       "17": "Prekračujem hranicu Slovenskej republiky z dôvodu návštevy zastupiteľského úradu cudzej krajiny akreditovaného pre Slovenskú republiku, ktorý sa nachádza na území Českej republiky, Maďarska alebo Rakúskej republiky, na dobu kratšiu než 12 hodín a zároveň mám trvalý alebo prechodný pobyt na území Slovenskej republiky a viem sa preukázať o návšteve zastupiteľského úradu.",
-      "18": "Mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine a zároveň mám potvrdenie od zamestnávateľa o takomto výkone práce alebo potvrdenie o takomto výkone práce podľa prílohy č. 3 vyhlášky, pričom vstupujem na a opúšťam územie susedných štátov výhradne za účelom potreby výkonu práce.",
-      "19": "Mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území Slovenskej republiky a zároveň mám potvrdenie o tom, že som držiteľ/ka potvrdenia od zamestnávateľa o takomto výkone práce alebo potvrdenia o takomto výkone práce, podľa <a href='https://korona.gov.sk/wp-content/uploads/2021/07/vyhlaska_226-priloha3.pdf' target='_blank'>prílohy č. 3</a>.",
+      "18": "Mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území EÚ, Islandu, Nórska, Lichtenštajnska, Švajčiarska alebo na Ukrajine a zároveň mám <a href='https://korona.gov.sk/wp-content/uploads/2021/07/vyhlaska_226-priloha3.pdf' class='govuk-link' target='_blank'>potvrdenie od zamestnávateľa o takomto výkone práce alebo potvrdenie o takomto výkone práce (PDF, 243 kB)</a> podľa vyhlášky, pričom vstupujem na a opúšťam územie susedných štátov výhradne za účelom potreby výkonu práce.",
+      "19": "Mám uzatvorený pracovnoprávny vzťah, obdobný pracovný vzťah alebo miesto výkonu práce na území Slovenskej republiky a zároveň mám <a href='https://korona.gov.sk/wp-content/uploads/2021/07/vyhlaska_226-priloha3.pdf' class='govuk-link' target='_blank'>potvrdenie o tom, že som držiteľ/ka potvrdenia od zamestnávateľa o takomto výkone práce alebo potvrdenia o takomto výkone práce (PDF, 243 kB)</a> podľa vyhlášky.",
       "20": "Som občanom Slovenska a mám trvalý alebo prechodný pobyt v prihraničných oblastiach susedného štátu do 100 km od otvoreného hraničného priechodu na územie Slovenskej republiky.",
       "21": "V dobe prekročenia hranice Slovenska aktívne navštevujem, študujem alebo sa uchádzam o navštevovanie alebo štúdium na materskej, základnej, strednej škole alebo vysokej škole v Česku, Poľsku, Maďarsku, Ukrajine alebo Rakúsku a mám potvrdenie vydané školou <strong>alebo som sprievodná osoba</strong> (maximálne 1 osoba) žiaka alebo študenta a mám o tom doklad.",
       "22": "V dobe prekročenia hranice Slovenska na území Slovenska aktívne navštevujú, študujú alebo sa uchádzajú o navštevovanie alebo štúdium na materskej, základnej, strednej škole alebo vysokej škole a o prezenčnej forme štúdia potvrdenie vydané školou <strong>alebo som sprievodná osoba</strong> žiaka alebo študenta a mám o tom doklad.",
@@ -88,12 +89,12 @@
       "46": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré sú vlastníkmi alebo držiteľmi zvierat za účelom zabezpečenia špecializovaného diagnostického veterinárneho vyšetrenia, chirurgického zákroku alebo liečby zvierat, ktorú poskytujú špecializované veterinárne pracoviská v iných členských štátoch Európskej únie.",
       "47": "Mám výnimku odsúhlasenú Ministerstvom pre osoby zabezpečujúce servis a údržbu poľnohospodárskej a lesnej techniky, posádky poľnohospodárskej a lesnej techniky a ich sprievod.",
       "48": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom servisných, inštalačných a revíznych služieb zdravotníckej techniky, zabezpečenia školenia zdravotníckych zamestnancov, monitorov klinických štúdií, osoby zabezpečujúce plynulý chod zdravotníckej infraštruktúry.",
-      "49": "Mám trvalé kontraindikácie očkovania na základe potvrdenia od lekára podľa <a href='https://korona.gov.sk/wp-content/uploads/2021/07/vyhlaska_226-priloha4.pdf' target='_blank'>Prílohy č. 4.</a>",
+      "49": "Mám trvalé kontraindikácie očkovania na základe <a href='https://korona.gov.sk/wp-content/uploads/2021/07/vyhlaska_226-priloha4.pdf' class='govuk-link' target='_blank'>potvrdenia od lekára o kontraindikácii očkovania proti ochoreniu COVID-19 (PDF, 300kB)</a>.",
       "5": "Som vodič alebo posádka osobnej dopravy, leteckej dopravy alebo autobusovej dopravy, ktorí vykonávajú prepravu repatriovaných osôb na územie Slovenskej republiky.",
       "50": "Mám výnimku odsúhlasenú Ministerstvom pre osoby, ktoré vstupujú na územie Slovenskej republiky na základe žiadosti súdu alebo orgánov činných v trestnom konaní.",
       "51": "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru a vstupujem na Slovnesko za účelom účasti na medzinárodnom športovom podujatí, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujaties dĺžkou trvania do 48 hodín a mám o tom potvrdenie.",
       "52": "Som športovec, člen realizačného tímu, rozhodca alebo člen organizačného výboru podujatia, ktoré bolo ohlásené príslušnému regionálnemu úradu verejného zdravotníctva na základe podporného stanoviska Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky ako jednorazové hromadné podujatie s dĺžkou trvania nad 4 dni a mám o tom potvrdenie.",
-      "8": "Mám výnimku po odsúhlasení Ministerstvom na osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom zabezpečenia akútnej a neodkladnej diagnostiky a liečby, protokolárnej prevencie a liečby a pokračujúcej liečby zdravotných stavov svojich, alebo osôb im blízkym. Osoby, ktoré za týmto účelom vstupujú alebo opúšťajú územie Slovenskej republiky na obdobie kratšie než 12 hodín môže prejsť štátnu hranicu aj bez potvrdenia vystaveného Ministerstvom zdravotníctva Slovenskej republiky ak sa preukážu v ten deň vystaveným lekárskym pozvaním na ošetrenie alebo pri návrate potvrdením o ošetrení. V prípade potreby pobytu presahujúceho 12 hodín je potrebné požiadať o posúdenie žiadosti prostredníctvom webovej stránky Ministerstva zdravotníctva Slovenskej republiky <a href='https://cestujem.standardnepostupy.sk' target='_blank'>cestujem.standardnepostupy.sk</a>.",
+      "8": "Mám výnimku po odsúhlasení Ministerstvom na osoby, ktoré vstupujú alebo opúšťajú územie Slovenskej republiky za účelom zabezpečenia akútnej a neodkladnej diagnostiky a liečby, protokolárnej prevencie a liečby a pokračujúcej liečby zdravotných stavov svojich, alebo osôb im blízkym. Osoby, ktoré za týmto účelom vstupujú alebo opúšťajú územie Slovenskej republiky na obdobie kratšie než 12 hodín môže prejsť štátnu hranicu aj bez potvrdenia vystaveného Ministerstvom zdravotníctva Slovenskej republiky ak sa preukážu v ten deň vystaveným lekárskym pozvaním na ošetrenie alebo pri návrate potvrdením o ošetrení. V prípade potreby pobytu presahujúceho 12 hodín je potrebné požiadať o posúdenie žiadosti prostredníctvom webovej stránky Ministerstva zdravotníctva Slovenskej republiky <a href='https://cestujem.standardnepostupy.sk' class='govuk-link' target='_blank'>cestujem.standardnepostupy.sk</a>.",
       "9": "Mám výnimku po odsúhlasení Ministerstvom vnútra Slovenskej republiky na vstup príslušníkov policajných zborov alebo tranzit príslušníkov policajných zborov prechádzajúcich územím Slovenskej republiky na plnenie úloh vyplývajúcich z členstva v EÚ.",
       "Culture": "Pracujem v kultúre alebo výskume (redaktori, herci, reštaurátori a podobne).",
       "Driver": "Som vodič alebo člen posádky (dopravy - železničná, osobná, letecká, nákladná, autobusová, lodná, preprava osôb na letiská, repriácia osôb, pohrebná služba, zdravotná služba - transport pacientov, orgánov a krvi).",
@@ -138,7 +139,7 @@
       "noException": "<strong>Nemám žiadnu výnimku</strong> z absolvovania domácej izolácie.",
       "noExceptionLabel": "Nemám výnimku z absolvovania domácej izolácie",
       "warning": "Upozornenie",
-      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='https://korona.gov.sk/cestovanie-do-sr/#vynimky-pre-nezaockovanych' target='_blank'>Prehľad výnimiek</a>"
+      "warningBody": "Podmienky pre vstup na Slovensko sú prísne. Pre vstup do krajiny nestačí negatívny test! Ak nespĺňate podmienky pre niektorú z výnimiek, vzťahuje sa na Vás povinná domáca izolácia alebo izolácia v karanténnom zariadení. <a href='https://korona.gov.sk/cestovanie-do-sr/#vynimky-pre-nezaockovanych' class='govuk-link' target='_blank'>Prehľad výnimiek</a>"
     },
     "withoutTest": {
       "legend": "Výnimky, ktoré nevyžadujú negatívny výsledok testu",
@@ -157,7 +158,7 @@
         "correctnessStatement": "Prosím, potvrďte správnosť zadaných údajov.",
         "dataConsent": "Prosím, akceptujte súhlas so spracovaním osobných údajov.",
         "email": "Zadajte emailovú adresu.",
-        "emailCorrect": "Zadajte správnu emailovú adresu.",
+        "emailCorrect": "Zadajte správnu emailovú adresu v tvare email@email.com.",
         "firstName": "Zadajte meno.",
         "foreignId": "Zadajte správne ID pridelené inou krajinou.",
         "houseNumber": "Zadajte číslo domu.",
@@ -167,7 +168,7 @@
         "phoneNumber": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
         "phoneNumberDiffer": "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
         "phoneNumberVerification": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
-        "slovakId": "Zadajte správne rodné číslo alebo BIČ.",
+        "slovakId": "Zadajte správne rodné číslo v tvare XXXXXXYYYY alebo BIČ.",
         "street": "Zadajte ulicu.",
         "wrongCountry": "Vyberte krajinu zo zoznamu.",
         "zip": "Zadajte PSČ.",
@@ -187,7 +188,8 @@
     "navigation": {
       "back": "Späť",
       "sendRegistration": "Odoslať registráciu"
-    }
+    },
+    "notRequiredField": "(nepovinný údaj)"
   },
   "home": {
     "exceptionNone": "ziadna",
@@ -264,7 +266,7 @@
     "registrationError": "Registrácia sa nepodarila",
     "registrationSuccess": "Registrácia dokončená",
     "thanksMessage": "Ďakujeme, že ste sa zaregistrovali do eHranice.",
-    "thanksMessageError": "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo <a href='https://www.npz.sk/sites/npz/NzpBasePages/kontaktny-formular.aspx' target='_blank'>+421 2 32 35 30 30</a>."
+    "thanksMessageError": "Ďakujeme, že ste sa chceli zaregistrovať do eHranice. Vašu registráciu nevieme spracovať.<br>Volajte na číslo <a href='https://www.npz.sk/sites/npz/NzpBasePages/kontaktny-formular.aspx' class='govuk-link' target='_blank'>+421 2 32 35 30 30</a>."
   },
   "youngerThan12": {
     "body": "<p>Ďakujeme, že ste sa chceli zaregistrovať do eHranice. <strong>Deti do 12 rokov sa nemusia registrovať.</strong></p><p>Platí pre ne to isté, čo pre osoby žijúce s nimi v spoločnej domácnosti. Teda, ak má niektorý člen spoločnej domácnosti absolvovať povinnú karanténu, platí to aj pre dieťa. A naopak, ak sa na členov spoločnej domácnosti vzťahuje výnimka z karantény, výnimka platí aj pre dieťa.</p>",

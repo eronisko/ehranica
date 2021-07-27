@@ -16,7 +16,7 @@ function InputField(props) {
   return (
     <div className={groupClassName}>
       <label className="govuk-label" htmlFor={props.name}>
-        <strong>{props.label}</strong>
+        <strong>{props.label}</strong> {props.labelHint}
       </label>
       <div className="govuk-hint">{props.hint}</div>
       <ErrorMessage name={props.name} />

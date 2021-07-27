@@ -32,6 +32,7 @@ function CountryField(props) {
       label={props.label}
       source={suggest}
       tNoResults={() => t("component.countryField.notInList")}
+      tAssistiveHint={() => t("component.countryField.assistiveHint")}
       getFormValue={(country) => (country ? country.id : country)}
       templates={{
         inputValue: (country) => (country ? country.label[locale] : ""),

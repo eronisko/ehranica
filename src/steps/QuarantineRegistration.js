@@ -131,15 +131,18 @@ function QuarantineRegistration({ wizard }) {
           name="additionalInfo.numberOfPersonsInSameHousehold"
           type="number"
           label={t("quarantineRegistration.additionalInfoPersonsInHousehold")}
+          hint={t("global.notRequiredField")}
         />
         <InputField
           name="additionalInfo.doctorsFullName"
           label={t("quarantineRegistration.additionalInfoDoctorsName")}
+          hint={t("global.notRequiredField")}
         />
         <TextareaField
           name="additionalInfo.note"
           as="textarea"
           label={t("quarantineRegistration.additionalInfoNote")}
+          labelHint={t("global.notRequiredField")}
           hint={t("quarantineRegistration.additionalInfoNoteHint")}
         />
       </Fieldset>

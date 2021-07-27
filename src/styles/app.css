@@ -12,3 +12,11 @@
     margin-left: 0 !important;
   }
 }
+
+.govuk-list--alpha li {
+  list-style-type: lower-alpha;
+}
+
+.govuk-details__text .govuk-list {
+  padding-left: 20px;
+}
