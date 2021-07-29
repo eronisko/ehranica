@@ -28,6 +28,11 @@
       "month": "Mesiac",
       "year": "Rok"
     },
+    "driveInField": {
+      "assistiveHint": "Keď sú k dispozícii výsledky automatického dopĺňania, použitím šípok nahor/nadol si vyberte položku a výber potvrďte stlačením klávesy enter. Používatelia dotykových zariadení preskúmajú možnosti dotykom alebo gestami prsta.",
+      "notInList": "Mesto nie je v zozname",
+      "notPreferredDrivein": "Nemám preferované miesto odberu"
+    },
     "result": {
       "additionalInfo": "Ďaľšie inštrukcie Vám prídu v najbližších dňoch v SMS správe alebo emailom.",
       "backKorona": "Späť na korona.gov.sk",
@@ -204,6 +209,10 @@
     "ministryOfHealth": "Ministerstvo zdravotníctva SR",
     "ministryOfInterior": "Ministerstvo vnútra SR",
     "ministryOfTransport": "Ministerstvo dopravy a výstavby SR"
+  },
+  "preferredDriveIn": {
+    "label": "Výber preferovaného miesta odberu",
+    "legend": "Výber preferovaného miesta odberu"
   },
   "quarantineRegistration": {
     "additionalInfoDoctorsName": "Meno a priezvisko všeobecného lekára",

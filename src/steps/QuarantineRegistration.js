@@ -4,6 +4,7 @@ import InputField from "components/InputField";
 import * as Yup from "yup";
 import RadioInputField from "components/RadioInputField";
 import CityField, { Cities } from "components/CityField";
+import DriveInField from "components/DriveInField";
 import ErrorMessage from "components/ErrorMessage";
 import Fieldset from "components/Fieldset";
 import CheckboxField from "components/CheckboxField";
@@ -123,6 +124,13 @@ function QuarantineRegistration({ wizard }) {
           />
         </Fieldset>
       )}
+      <Fieldset legend={t("preferredDriveIn.legend")}>
+        <DriveInField
+          name="driveIn.id"
+          label={t("preferredDriveIn.label")}
+          hint={t("global.notRequiredField")}
+        />
+      </Fieldset>
       <Fieldset legend={t("quarantineRegistration.additionalInfoLegend")}>
         <p className="govuk-hint">
           {t("quarantineRegistration.additionalInfoHelper")}

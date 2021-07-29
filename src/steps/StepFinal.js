@@ -63,6 +63,8 @@ function StepFinal({ isTest, wizard }) {
     vOtherSymptoms: values.additionalInfo.note,
 
     vSex: "X",
+
+    preferred_drivein_id: values.driveIn && values.driveIn.id ? values.driveIn.id : 0,
   };
 
   people.push(personData);

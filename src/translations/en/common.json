@@ -28,6 +28,11 @@
       "month": "Month",
       "year": "Year"
     },
+    "driveInField": {
+      "assistiveHint": "When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.",
+      "notInList": "Pickup point is not in the list",
+      "notPreferredDrivein": "I don't have a preferred pickup point"
+    },
     "result": {
       "additionalInfo": "Further instructions will be sent to you in the coming days in an SMS message or by email. ",
       "backKorona": "Back to korona.gov.sk",
@@ -204,6 +209,10 @@
     "ministryOfHealth": "Ministry of Health of Slovak Republic​",
     "ministryOfInterior": "Ministry of Interior of the Slovak Republic",
     "ministryOfTransport": "Ministry of Transport and Construction of the Slovak Republic"
+  },
+  "preferredDriveIn": {
+    "label": "Selection of the preferred pickup point",
+    "legend": "Selection of the preferred pickup point"
   },
   "quarantineRegistration": {
     "additionalInfoDoctorsName": "Name and surname of the general practitioner",
