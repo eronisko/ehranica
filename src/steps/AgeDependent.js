@@ -63,9 +63,9 @@ function AgeDependent({ wizard }) {
               <RadioInputField name="isVaccinated" value="fully">
                 {t("ageDependent.vacinatedFully")}
               </RadioInputField>
-              <RadioInputField name="isVaccinated" value="partially">
+              {/* <RadioInputField name="isVaccinated" value="partially">
                 {t("ageDependent.vacinatedPartially")}
-              </RadioInputField>
+              </RadioInputField> */}
               <RadioInputField name="isVaccinated" value="no">
                 {t("ageDependent.vacinatedNo")}
               </RadioInputField>
