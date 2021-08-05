@@ -7,7 +7,7 @@
     "noAdultIsolationYes": "At least 1 person in the shared household is in compulsory home isolation.",
     "noAdultLegend": "Domestic isolation of members of a shared household",
     "vacinatedFully": "I am a fully vaccinated person and I have proof of this.",
-    "vacinatedNo": "I am not a vaccinated person and I do not met the conditions as a fully vaccinated person.",
+    "vacinatedNo": "I am not a vaccinated person or I do not met the conditions as a fully vaccinated person.",
     "vacinatedPartially": "I am vaccinated person with a dose administered until 9.7.2021 and entering Slovakia until 2.8.2021 at 6:00 a.m. and I have a proof of this and I do not met the conditions as a fully vaccinated person."
   },
   "component": {
