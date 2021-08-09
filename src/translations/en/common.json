@@ -274,7 +274,7 @@
     "loading": "We are processing your registration, please wait a moment and do not close the page.",
     "registrationError": "Registration failed",
     "registrationSuccess": "Registration completed",
-    "thanksMessage": "Thank you for registering to eHranica (eBorder).",
+    "thanksMessage": "Thank you for signing up to eHranica (eBorder). You must pass a mandatory quarantine.<br/><br/>According to the decree, you have two options:<br/><br/>1) you will remain in home isolation for 14 days (the same isolation applies to the entire household in which you will spend the isolation and its occupants who are not fully vaccinated),<br/><br/>2) you will undergo an RT-PCR test. You do not need to make an appointment for testing. With this registration, you will be assigned an RT-PCR testing date automatically, but no sooner than the 5th day after you cross the border. We will inform you by SMS and e-mail about the appointment. Once you have received a negative test result, you can end the quarantine.",
     "thanksMessageError": "Thank you for trying to sign up for eHranica (eBorder). We are unable to process your registration. <br> Call <a href='https://www.npz.sk/sites/npzf/NzpBasePages/contact-form.aspx' class='govuk-link' target='_blank'>+421 2 32 35 30 30</a>."
   },
   "youngerThan12": {

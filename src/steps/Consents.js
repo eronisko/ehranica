@@ -23,7 +23,7 @@ function Consents({ wizard }) {
         <CheckboxField
           name="personalDataConsent"
           hint={
-            <a href={consentLink} class="govuk-link" target="_blank">
+            <a href={consentLink} className="govuk-link" target="_blank">
               {t("global.dataConsent.linkText")}
             </a>
           }

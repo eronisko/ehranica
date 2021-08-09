@@ -158,7 +158,7 @@ function QuarantineRegistration({ wizard }) {
         <CheckboxField
           name="personalDataConsent"
           hint={
-            <a href={consentLink} target="_blank">
+            <a href={consentLink} className="govuk-link" target="_blank">
               {t("global.dataConsent.linkText")}
             </a>
           }

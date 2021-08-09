@@ -27,7 +27,7 @@ function onSubmit(values, wizard, setTouched) {
   }
 
   values.age = age(values.birthDate, values.arrivalDate);
-  values.isAdult = values.age >= 18;
+  values.isAdult = values.age >= 12;
 
   if (step.id === "StartStep") {
     if (values.age < 12) {
