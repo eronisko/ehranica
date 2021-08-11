@@ -201,6 +201,7 @@ step.initialValues = {
   },
   personalDataConsent: false,
   correctnessStatement: false,
+  sequencingStatement: false,
 };
 
 Yup.addMethod(Yup.string, "validZip", validZip);
