@@ -173,6 +173,7 @@
         "phoneNumber": "Enter the correct phone number. It must start with the international prefix + or 00.",
         "phoneNumberDiffer": "The phone number entered is not the same as in the previous field.",
         "phoneNumberVerification": "Enter the correct phone number. It must start with the international prefix + or 00.",
+        "sequencingStatement": "Please accept your consent to sample sequencing.",
         "slovakId": "Enter the correct birth number in the form XXXXXXYYYY or BIC.",
         "street": "Enter the street.",
         "wrongCountry": "Select a country from the list.",
@@ -194,7 +195,10 @@
       "back": "Back",
       "sendRegistration": "Submit registration"
     },
-    "notRequiredField": "(optional)"
+    "notRequiredField": "(optional)",
+    "sequencingStatement": {
+      "text": "I agree that the sample of biological material may be used for further investigations, including in the context of research and development in relation to COVID-19."
+    }
   },
   "home": {
     "exceptionNone": "none",

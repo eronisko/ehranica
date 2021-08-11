@@ -65,6 +65,8 @@ function StepFinal({ isTest, wizard }) {
     vSex: "X",
 
     // preferred_drivein_id: values.driveIn && values.driveIn.id ? values.driveIn.id : 0,
+
+    specimen_lab_processing: 1,
   };
 
   people.push(personData);

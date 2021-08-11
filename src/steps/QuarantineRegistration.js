@@ -168,6 +168,9 @@ function QuarantineRegistration({ wizard }) {
         <CheckboxField name="correctnessStatement">
           {t("global.correctnessStatement.text")}
         </CheckboxField>
+        <CheckboxField name="sequencingStatement">
+          {t("global.sequencingStatement.text")}
+        </CheckboxField>
       </Fieldset>
       <Button label={t("global.navigation.sendRegistration")} />
     </>
@@ -232,6 +235,10 @@ step.validationSchema = Yup.object({
   correctnessStatement: Yup.bool().oneOf(
     [true],
     "required.correctnessStatement"
+  ),
+  sequencingStatement: Yup.bool().oneOf(
+    [true],
+    "required.sequencingStatement"
   ),
 });
 

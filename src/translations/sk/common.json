@@ -173,6 +173,7 @@
         "phoneNumber": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
         "phoneNumberDiffer": "Zadané telefónne číslo nie je rovnaké ako v predchádzajúcom políčku.",
         "phoneNumberVerification": "Zadajte správne telefónne číslo. Musí začínať medzinárodnou predvoľbou + alebo 00.",
+        "sequencingStatement": "Prosím, akceptujte súhlas so sekvenovaním vzorky.",
         "slovakId": "Zadajte správne rodné číslo v tvare XXXXXXYYYY alebo BIČ.",
         "street": "Zadajte ulicu.",
         "wrongCountry": "Vyberte krajinu zo zoznamu.",
@@ -194,7 +195,10 @@
       "back": "Späť",
       "sendRegistration": "Odoslať registráciu"
     },
-    "notRequiredField": "(nepovinný údaj)"
+    "notRequiredField": "(nepovinný údaj)",
+    "sequencingStatement": {
+      "text": "Súhlasím, že vzorka biologického materiálu môže byť využitá na ďalšie vyšetrenia a to aj v rámci výskumu a vývoja v súvislosti s ochorením COVID-19."
+    }
   },
   "home": {
     "exceptionNone": "ziadna",
