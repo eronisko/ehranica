@@ -124,13 +124,13 @@ function QuarantineRegistration({ wizard }) {
           />
         </Fieldset>
       )}
-      {/* <Fieldset legend={t("preferredDriveIn.legend")}>
+      <Fieldset legend={t("preferredDriveIn.legend")}>
         <DriveInField
           name="driveIn.id"
           label={t("preferredDriveIn.label")}
           hint={t("global.notRequiredField")}
         />
-      </Fieldset> */}
+      </Fieldset>
       <Fieldset legend={t("quarantineRegistration.additionalInfoLegend")}>
         <p className="govuk-hint">
           {t("quarantineRegistration.additionalInfoHelper")}
