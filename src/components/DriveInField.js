@@ -85,11 +85,11 @@ function suggest(query, populateResults) {
     id: drivein.id,
     label: 
       drivein.id !== 0
-        ? `${drivein.city}, ${drivein.title}, ${drivein.street_name} ${drivein.street_number}, ${drivein.zip_code}, ${drivein.operated_by}`
+        ? `${drivein.city}, ${drivein.title}, ${drivein.street_name} ${drivein.street_number}, ${drivein.zip_code + (drivein.operated_by ? ', '+drivein.operated_by : '')}`
         : i18next.t("common:component.driveInField.notPreferredDrivein"),
     searchToken: 
       drivein.id !== 0
-        ? replaceDiacritics(`${drivein.city}, ${drivein.title}, ${drivein.street_name} ${drivein.street_number}, ${drivein.zip_code}, ${drivein.operated_by}`.toLowerCase())
+        ? replaceDiacritics(`${drivein.city}, ${drivein.title}, ${drivein.street_name} ${drivein.street_number}, ${drivein.zip_code + (drivein.operated_by ? ', '+drivein.operated_by : '')}`.toLowerCase())
         : replaceDiacritics(` ${i18next.t("common:component.driveInField.notPreferredDrivein")}`.toLowerCase()),
   }))
   .sort((a, b) => {
