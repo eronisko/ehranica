@@ -263,7 +263,7 @@
     },
     "idNumber": {
       "byCountry": "ID assigned by another country",
-      "icoBic": "Slovak birth number or BIČ",
+      "icoBic": "Slovak birth number (enter without a slash) or BIČ",
       "icoBicHelper": "Fill in only if you do not have a Slovak birth number or BIČ.",
       "legend": "Identification number"
     },

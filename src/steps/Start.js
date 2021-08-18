@@ -77,10 +77,12 @@ function Start() {
         <InputField
           name="firstName"
           label={t("startStep.personalInfo.firstName")}
+          autocomplete="on"
         />
         <InputField
           name="lastName"
           label={t("startStep.personalInfo.lastName")}
+          autocomplete="on"
         />
       </Fieldset>
 
@@ -91,7 +93,13 @@ function Start() {
             <RadioInputField
               name="idType"
               value="slovak"
-              conditionalRender={<InputField name="idSlovak" />}
+              conditionalRender={
+                <InputField 
+                  name="idSlovak" 
+                  type="number" 
+                  autocomplete="on" 
+                />
+              }
             >
               {t("startStep.idNumber.icoBic")}
             </RadioInputField>
@@ -102,6 +110,7 @@ function Start() {
                 <InputField
                   name="idForeign"
                   hint={t("startStep.idNumber.icoBicHelper")}
+                  autocomplete="on"
                 />
               }
             >
@@ -121,18 +130,21 @@ function Start() {
           name="email"
           label={t("startStep.emailMobile.email")}
           hint={t("startStep.emailMobile.emailHint")}
+          autocomplete="on"
         />
         <InputField
           name="phoneNumber"
           type="tel"
           label={t("startStep.emailMobile.phone")}
           hint={t("startStep.emailMobile.phoneHint")}
+          autocomplete="on"
         />
         <InputField
           name="phoneNumberVerification"
           type="tel"
           label={t("startStep.emailMobile.phoneVerify")}
           hint={t("startStep.emailMobile.phoneVerifyHint")}
+          autocomplete="on"
         />
       </Fieldset>
 

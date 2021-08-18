@@ -25,6 +25,7 @@ function InputField(props) {
         name={props.name}
         type={props.type || "text"}
         className={fieldClassName}
+        autocomplete={props.autocomplete || "off"}
       />
     </div>
   );

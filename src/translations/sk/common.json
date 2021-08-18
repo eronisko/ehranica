@@ -263,7 +263,7 @@
     },
     "idNumber": {
       "byCountry": "ID pridelené inou krajinou",
-      "icoBic": "Slovenské rodné číslo alebo BIČ",
+      "icoBic": "Slovenské rodné číslo (zadávajte bez lomky) alebo BIČ",
       "icoBicHelper": "Vyplňte iba ak nemáte slovenské rodné číslo alebo BIČ.",
       "legend": "Identifikačné číslo"
     },

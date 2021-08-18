@@ -31,7 +31,7 @@ function Date(props) {
                           {({ field, form, meta }) => (
                               <input
                                   id={props.name + 'day'}
-                                  type="text" {...field}
+                                  type="number" {...field}
                                   inputMode="numeric"
                                   pattern="[0-9]*"
                                   className="govuk-input govuk-date-input__input govuk-input--width-2" />
@@ -50,7 +50,7 @@ function Date(props) {
                           {({ field, form, meta }) => (
                               <input
                                   id={props.name + 'month'}
-                                  type="text" {...field}
+                                  type="number" {...field}
                                   inputMode="numeric"
                                   pattern="[0-9]*"
                                   className="govuk-input govuk-date-input__input govuk-input--width-2" />
@@ -69,7 +69,7 @@ function Date(props) {
                           {({ field, form, meta }) => (
                               <input
                                   id={props.name + 'year'}
-                                  type="text" {...field}
+                                  type="number" {...field}
                                   inputMode="numeric"
                                   pattern="[0-9]*"
                                   className="govuk-input govuk-date-input__input govuk-input--width-4" />

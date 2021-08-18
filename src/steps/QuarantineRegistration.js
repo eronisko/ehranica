@@ -68,14 +68,17 @@ function QuarantineRegistration({ wizard }) {
         <InputField
           name="quarantineAddress.street"
           label={t("quarantineRegistration.addressStreet")}
+          autocomplete="on"
         />
         <InputField
           name="quarantineAddress.houseNumber"
           label={t("quarantineRegistration.addressNumber")}
+          autocomplete="on"
         />
         <InputField
           name="quarantineAddress.zip"
           label={t("quarantineRegistration.addressZip")}
+          autocomplete="on"
         />
       </Fieldset>
       <Fieldset legend={t("quarantineRegistration.addressPermanentLegend")}>
@@ -113,14 +116,17 @@ function QuarantineRegistration({ wizard }) {
           <InputField
             name="permanentAddress.street"
             label={t("quarantineRegistration.addressStreet")}
+            autocomplete="on"
           />
           <InputField
             name="permanentAddress.houseNumber"
             label={t("quarantineRegistration.addressNumber")}
+            autocomplete="on"
           />
           <InputField
             name="permanentAddress.zip"
             label={t("quarantineRegistration.addressZip")}
+            autocomplete="on"
           />
         </Fieldset>
       )}
