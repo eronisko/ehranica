@@ -96,7 +96,6 @@ function Start() {
               conditionalRender={
                 <InputField 
                   name="idSlovak" 
-                  type="number" 
                   autocomplete="on" 
                 />
               }
