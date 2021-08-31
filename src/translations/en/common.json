@@ -243,7 +243,7 @@
     },
     "insuranceCompanyLegend": "Health insurance company",
     "intro1": "Complete the registration After entering Slovakia, it is necessary to stay in home isolation.",
-    "intro2": "Home isolation ends after the negative PCR test you will be ordered for."
+    "intro2": "Home isolation ends after the negative PCR test you will be ordered no earlier than the 5th day after arrival from abroad. The 1st day of isolation is the day after crossing the border - if you arrive, for example, on Monday, the 1st day of isolation counts from Tuesday."
   },
   "startStep": {
     "addAnotherCountry": "Add another country visited",

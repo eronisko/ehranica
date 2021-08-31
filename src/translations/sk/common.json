@@ -242,8 +242,8 @@
       "99": "Bez poistenia v EÚ"
     },
     "insuranceCompanyLegend": "Zdravotná poisťovňa",
-    "intro1": "Dokončite registráciu do ehranice. Po vstupe na Slovensko je nutné ostať v domácej izolácii.",
-    "intro2": "Domáca izolácia skončí po negatívnom PCR teste, na ktorý budete objednaný."
+    "intro1": "Dokončite registráciu do eHranice. Po vstupe na Slovensko je nutné ostať v domácej izolácii.",
+    "intro2": "Domáca izolácia skončí po negatívnom PCR teste, na ktorý budete objednaný najskôr na 5. deň od príchodu zo zahraničia. 1. deň izolácie je nasledujúci deň po prekročení hraníc - ak prídete napríklad v pondelok, 1. deň izolácie sa počíta od utorka."
   },
   "startStep": {
     "addAnotherCountry": "Pridať ďalšiu navštívenú krajinu",
