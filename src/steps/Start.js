@@ -42,7 +42,7 @@ function Start() {
             <>
               {values.originCountries.map((country, index) => (
                 <CountryField
-                  key={`originCountries.${index}-${values.originCountries[index]}`}
+                  key={`originCountries.${index}`}
                   name={`originCountries.${index}`}
                   label={getCountryFieldLabel(index)}
                   // hint={getCountryFieldHint(index)}
@@ -64,7 +64,19 @@ function Start() {
                   }
                 />
               ))}
-              <Link onClick={() => push("")}>
+              <Link 
+                onClick={() => {
+                  push("");
+                  
+                  const countries = document.getElementsByClassName("autocomplete__input");
+                  
+                  const timeout = setTimeout(() => {
+                    countries[countries.length-1].focus();
+                  }, 10);
+
+                  return () => clearTimeout(timeout);
+                }}
+              >
                 {t("startStep.addAnotherCountry")}
               </Link>
             </>
